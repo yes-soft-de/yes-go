@@ -1,0 +1,44 @@
+footer {
+  background-color: #111;
+  .footer-left {
+    .footer-logo {
+      width: 40%;
+      height: auto;
+    }
+    p {
+      a {
+        color: #ffffff;
+        font-size: 1.5rem;
+        &:hover {
+          color: #3399ff;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .footer-right {
+    font-size: .8rem;
+    h6 {
+      font-size: .9rem;
+      color: #aaa;
+    }
+    .footer-social {
+      li {
+        display: inline-block;
+        padding: 2px;
+        margin-right: 10px;
+        i {
+          color: #fff;
+          &:hover, &:focus, &:active {
+            color: #aaa;
+          }
+        }
+      }
+    }
+    // Grouping
+    .footer-contact p,
+    .footer-location p {
+      font-size: 1rem;
+    }
+  }
+}

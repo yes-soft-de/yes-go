@@ -1,0 +1,20 @@
+.employee {
+  background-color: #3399ff;
+  .team-member {
+    position: relative;
+    background-color: #000;
+    color: #aaa;
+    height: 80px;
+    line-height: 80px;
+    padding-left: 10%;
+    cursor: pointer;
+    i {
+      position: absolute;
+      right: 8px;
+      top: 9px;
+    }
+  }
+  .team-member.selected {
+    background-color: #222;
+  }
+}

@@ -1,0 +1,25 @@
+<div *ngIf="employee">
+  <div class="row">
+    <div class="col-12 col-sm-3 offset-sm-3">
+      <div class="employee-image">
+        <img src="../../../assets/avatar.png" class="img-fluid" />
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 align-self-center">
+      <div class="employee-info ">
+        <p class="mb-1">{{employee.name}}</p>
+        <p class="mb-1">{{employee.id}}</p>
+        <p class="mb-1">Skill1 - Skill2 - Skill3</p>
+        <span>
+        <star-rating
+                value="5"
+                totalstars="5"
+                checkedcolor="grey"
+                uncheckedcolor="white"
+                size="24px"
+                readonly="false" (rate)="onRate($event)"></star-rating>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
