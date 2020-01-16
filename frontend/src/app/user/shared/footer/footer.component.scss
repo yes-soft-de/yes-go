@@ -42,3 +42,54 @@ footer {
     }
   }
 }
+
+/*style for md Screen*/
+@media (min-width: 768px) and (max-width: 991px) {
+  footer {
+    .footer-left {
+      .footer-logo {
+        width: 60%;
+      }
+      p {
+        a {
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .footer-right {
+      .footer-social {
+        li {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+/*style for sm Screen*/
+@media (min-width: 576px) and (max-width: 767px) {
+  footer {
+    .col-12.border-left.border-secondary {
+      border-left: none!important;
+      .footer-contact {
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        padding: 20px 0;
+      }
+    }
+  }
+}
+
+/*style for xs Screen*/
+@media (max-width: 575px) {
+  footer {
+    .col-12.border-left.border-secondary {
+      border-left: none!important;
+      .footer-contact {
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        padding: 20px 0;
+      }
+    }
+  }
+}

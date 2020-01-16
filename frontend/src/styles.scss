@@ -40,3 +40,69 @@
     display: none;
   }
 }
+
+/*style for lg Screen*/
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+/*style for md Screen*/
+@media (min-width: 768px) and (max-width: 991px) {
+  // Edit Carousel Inside Home Component
+  .about-us {
+    .carousel-indicators {
+      bottom: -40% !important;
+    }
+
+    .carousel .carousel-indicators li {
+      width: .8rem;
+      height: .8rem;
+      margin: 0 10px;
+    }
+  }
+}
+
+/*style for sm Screen*/
+@media (min-width: 576px) and (max-width: 767px) {
+  .employee {
+    .carousel-indicators {
+      bottom: -100% !important;
+    }
+
+    .carousel .carousel-indicators li {
+      width: .7rem;
+      height: .7rem;
+      margin: 0 6px;
+    }
+  }
+
+  // Edit Carousel Inside Home Component
+  .about-us {
+    .carousel-indicators {
+      bottom: -50% !important;
+    }
+
+    .carousel .carousel-indicators li {
+      width: .7rem;
+      height: .7rem;
+      margin: 0 8px;
+    }
+  }
+}
+
+/*style for xs Screen*/
+@media (max-width: 575px) {
+  // Edit Carousel Inside Home Component
+  .about-us {
+    .carousel-indicators {
+      bottom: -40% !important;
+    }
+
+    .carousel .carousel-indicators li {
+      width: .7rem;
+      height: .7rem;
+      margin: 0 8px;
+    }
+  }
+}
+
+/*style for small than xs Screen*/
+@media (max-width: 499px) {}

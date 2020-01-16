@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { StarRatingComponent } from 'ng-starrating';
-import {Employee} from '../../entity/employee';
+import {EmployeeDetail} from '../../entity/employee-detail';
 
 @Component({
   selector: 'app-employee-detail',
@@ -8,12 +8,12 @@ import {Employee} from '../../entity/employee';
   styleUrls: ['./employee-detail.component.scss']
 })
 export class EmployeeDetailComponent implements OnInit {
-  @Input() employee: Employee;
-  constructor() { }
+  @Input() employee: EmployeeDetail;
 
-  ngOnInit() {
-    console.log(this.employee);
+  constructor() {
   }
+
+  ngOnInit() {}
 
   onRate($event: { oldValue: number, newValue: number, starRating: StarRatingComponent}) {
     alert(`Old Value:${$event.oldValue},

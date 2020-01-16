@@ -1,16 +1,16 @@
 <div *ngIf="employee">
   <div class="row">
-    <div class="col-12 col-sm-3 offset-sm-3">
+    <div class="col-8 col-sm-3 offset-sm-3 mx-auto mr-sm-0">
       <div class="employee-image">
         <img src="../../../assets/avatar.png" class="img-fluid" />
       </div>
     </div>
-    <div class="col-12 col-sm-6 align-self-center">
-      <div class="employee-info ">
-        <p class="mb-1">{{employee.name}}</p>
-        <p class="mb-1">{{employee.id}}</p>
-        <p class="mb-1">Skill1 - Skill2 - Skill3</p>
-        <span>
+    <div class="col-10 col-sm-6 align-self-center mx-auto mx-sm-0">
+      <div class="employee-info">
+        <p class="mb-1"><a href="#">{{employee.fullName}}</a></p>
+        <p class="mb-1">{{employee.position}}</p>
+        <p class="mb-1">{{employee.skills}}</p>
+        <span class="text-center text-sm-left">
         <star-rating
                 value="5"
                 totalstars="5"

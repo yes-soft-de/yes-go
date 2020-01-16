@@ -1,6 +1,7 @@
 
 
 .about-us {
+  min-height: 300px;
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f8f9fa+0,c8c8c8+100 */
   background: #f8f9fa; /* Old browsers */
   background: -moz-radial-gradient(center, ellipse cover, #f8f9fa 0%, #c8c8c8 100%); /* FF3.6-15 */
@@ -11,12 +12,71 @@
     font-size: .7rem;
   }
   p {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 
 .our-price {
   p {
     font-size: 2rem;
+    strong {
+      color: #3399ff;}
   }
 }
+
+/*style for lg Screen*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .our-price {
+    p {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+/*style for md Screen*/
+@media (min-width: 768px) and (max-width: 991px) {
+  .about-us {
+    p {
+      font-size: 1.7rem;
+    }
+  }
+
+  .our-price {
+    p {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+/*style for sm Screen*/
+@media (min-width: 576px) and (max-width: 767px) {
+  .about-us {
+    p {
+      font-size: 1.6rem;
+    }
+  }
+
+  .our-price {
+    p {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+/*style for xs Screen*/
+@media (max-width: 575px) {
+  .about-us {
+    p {
+      font-size: 1.7rem;
+    }
+  }
+
+  .our-price {
+    p {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+/*style for small than xs Screen*/
+@media (max-width: 499px) {}

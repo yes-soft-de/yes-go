@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule, routingComponents  } from './controller/app-routing.module';
 import { UserModule } from './user/user.module';
 import { AdminModule } from './admin/admin.module';
-
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app/app.component';
 
@@ -17,7 +17,8 @@ import { AppComponent } from './app/app.component';
     BrowserModule,
     AppRoutingModule,
     UserModule,
-    AdminModule
+    AdminModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
