@@ -6,6 +6,7 @@ namespace App\Request;
 
 class GetEmployeeByIdResponse
 {
+    public $id;
     public $fullName;
     public $position;
     public $language;
@@ -20,7 +21,24 @@ class GetEmployeeByIdResponse
     public $birthDate;
     public $joiningDate;
     public $skills;
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
   //  public $projects;
+
 
     /**
      * @return mixed

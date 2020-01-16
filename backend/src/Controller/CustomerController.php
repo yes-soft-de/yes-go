@@ -2,18 +2,48 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\AutoMapping;
+use App\Request\GetByIdRequest;
+use App\Service\CustomerService;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-class CustomerController extends AbstractController
+class CustomerController extends BaseController
 {
+    private $autoMapping;
+    private $customerService;
+
     /**
-     * @Route("/customer", name="customer")
+     * CustomerController constructor.
+     * @param $autoMapping
+     * @param $customerService
      */
-    public function index()
+    public function __construct(AutoMapping $autoMapping,CustomerService $customerService)
     {
-        return $this->render('customer/index.html.twig', [
-            'controller_name' => 'CustomerController',
-        ]);
+        $this->autoMapping = $autoMapping;
+        $this->customerService = $customerService;
     }
+
+    /**
+     * @Route("/customers", name="getAllCustomers",methods={"GET"})
+     * @return JsonResponse
+     */
+    public function getAll()
+    {
+        $result = $this->customerService->getAll();
+        return $this->response($result, self::FETCH);
+    }
+    /**
+     * @Route("/customer/{id}", name="getCustomerById",methods={"GET"})
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function getCustomerById(Request $request)
+    {
+        $request=new GetByIdRequest($request->get('id'));
+        $result = $this->customerService->getCustomerById($request);
+        return $this->response($result, self::FETCH);
+    }
+
 }
