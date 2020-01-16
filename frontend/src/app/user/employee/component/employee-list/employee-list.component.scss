@@ -13,8 +13,9 @@
       right: 8px;
       top: 9px;
     }
+    &.selected, &:hover {
+      background-color: #222;
+    }
   }
-  .team-member.selected {
-    background-color: #222;
-  }
+
 }
