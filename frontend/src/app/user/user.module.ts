@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { CustomerListComponent } from './customer/component/customer-list/customer-list.component';
 import { EmployeeListComponent } from './employee/component/employee-list/employee-list.component';
 import { EmployeeDetailComponent } from './employee/component/employee-detail/employee-detail.component';
+import { SearchComponent } from './search/component/search/search.component';
 
 
 
@@ -22,7 +23,8 @@ import { EmployeeDetailComponent } from './employee/component/employee-detail/em
     HomeComponent,
     CustomerListComponent,
     EmployeeListComponent,
-    EmployeeDetailComponent
+    EmployeeDetailComponent,
+    SearchComponent
   ],
   imports: [
     CommonModule,
