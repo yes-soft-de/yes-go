@@ -21,7 +21,6 @@ export class EmployeeListComponent implements OnInit {
       employeesList => {
         this.employeesList = employeesList;
         this.employees = this.chunk(employeesList, this.onResize());
-        console.log('chunck: ', this.employees);
       }
     );
   }
@@ -42,12 +41,11 @@ export class EmployeeListComponent implements OnInit {
   }
 
   // create chunk of Employees array to use it in employee carousel
-  chunk(paintingsArr, chunkSize) {
+  chunk(employeeArray, chunkSize) {
     const arr = [];
-    for (let i = 0, len = paintingsArr.length; i < len; i += chunkSize) {
-      arr.push(paintingsArr.slice(i, i + chunkSize));
+    for (let i = 0, len = employeeArray.length; i < len; i += chunkSize) {
+      arr.push(employeeArray.slice(i, i + chunkSize));
     }
-    console.log('erray', arr);
     return arr;
   }
 

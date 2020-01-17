@@ -21,6 +21,27 @@
   }
 }
 
+// Edit Carousel Inside Customers List Component
+.our-customer {
+  .carousel-indicators {
+    bottom: -40% !important;
+  }
+
+  .carousel .carousel-indicators li {
+    width: .8rem;
+    height: .8rem;
+    margin: 0 7px;
+    background-color: #aaa;
+    &.active {
+      background-color: $blue;
+    }
+  }
+
+  .controls-top {
+    display: none;
+  }
+}
+
 // Edit Carousel Inside Home Component
 .about-us {
   .carousel-indicators {
@@ -90,18 +111,28 @@
 
 /*style for xs Screen*/
 @media (max-width: 575px) {
+  // Edit Carousel Inside Customers List Component
+  .our-customer {
+    .carousel-indicators {
+      bottom: -60% !important;
+    }
+  }
+
   // Edit Carousel Inside Home Component
   .about-us {
     .carousel-indicators {
       bottom: -40% !important;
     }
-
-    .carousel .carousel-indicators li {
-      width: .7rem;
-      height: .7rem;
-      margin: 0 8px;
-    }
   }
+
+  .employee .carousel .carousel-indicators li,
+  .our-customer .carousel .carousel-indicators li,
+  .about-us .carousel .carousel-indicators li {
+    width: .7rem;
+    height: .7rem;
+    margin: 0 8px;
+  }
+
 }
 
 /*style for small than xs Screen*/
