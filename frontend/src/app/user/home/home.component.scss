@@ -79,4 +79,10 @@
 }
 
 /*style for small than xs Screen*/
-@media (max-width: 499px) {}
+@media (max-width: 499px) {
+  .about-us {
+    p {
+      font-size: 1.5rem;
+    }
+  }
+}

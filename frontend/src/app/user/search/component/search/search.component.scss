@@ -9,3 +9,13 @@
     padding: .6rem 1.14rem;
   }
 }
+
+/*style for xs Screen*/
+@media (max-width: 575px) {
+  .search-section {
+    button.btn {
+      padding: .4rem .9rem;
+      font-size: .7rem;
+    }
+  }
+}

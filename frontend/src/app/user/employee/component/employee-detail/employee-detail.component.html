@@ -2,7 +2,8 @@
   <div class="row">
     <div class="col-8 col-sm-3 offset-sm-3 mx-auto mr-sm-0">
       <div class="employee-image">
-        <img src="../../../assets/avatar.png" class="img-fluid" />
+        <img class="img-fluid" src="{{employee.image}}"
+             (error)="employee.image = '../../../assets/avatar.png'" alt="Employee Image" />
       </div>
     </div>
     <div class="col-10 col-sm-6 align-self-center mx-auto mx-sm-0">

@@ -121,7 +121,11 @@
   // Edit Carousel Inside Home Component
   .about-us {
     .carousel-indicators {
-      bottom: -40% !important;
+      bottom: -35% !important;
+    }
+
+    mdb-carousel-item.carousel-item{
+      min-height: 170px !important
     }
   }
 
