@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {UserComponent} from '../user/user.component';
 import {HomeComponent} from '../user/home/home.component';
+import {EmployeeDetailComponent} from '../user/employee/component/employee-detail/employee-detail.component';
 
 const routes: Routes = [
   {
     path: '',
     component: UserComponent,
     children: [
-      {path: '', component: HomeComponent}
+      {path: '', component: HomeComponent},
+      {path: 'employee/:id', component: EmployeeDetailComponent}
     ]
   }
 ];

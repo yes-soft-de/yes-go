@@ -2,11 +2,57 @@ $black-blue: #fff;
 $dark-background: #333;
 $blue: #3399ff;
 
-// Small devices (landscape phones, 576px and up)
-$bp-sm: 576px;
-
-// Medium devices (tablets, 768px and up)
-$bp-md: 768px;
-
-// Large devices (desktops, 992px and up)
-$bp-lg: 992px;
+@mixin progress-bar() {
+  .progress-title{
+    font-size: 16px;
+    font-weight: 700;
+    color: #011627;
+    margin: 0 0 20px;
+  }
+  .progress{
+    height: 5px;
+    background: #cbcbcb;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 30px;
+    overflow: visible;
+  }
+  .progress.gery-color {
+    background-color: #dddddd;
+  }
+  .progress .progress-bar{
+    background: #dddddd;
+    box-shadow: none;
+    position: relative;
+    -webkit-animation: animate-positive 2s;
+    animation: animate-positive 2s;
+  }
+  .progress .progress-bar:after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: $blue;
+    position: absolute;
+    top: -3px;
+    right: 15px;
+  }
+  .progress .progress-value{
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+    position: absolute;
+    top: 10px;
+    right: 0;
+  }
+  .progress.pink .progress-bar:after{
+    border-bottom-color: $blue;
+  }
+  @-webkit-keyframes animate-positive{
+    0% { width: 0; }
+  }
+  @keyframes animate-positive{
+    0% { width: 0; }
+  }
+}

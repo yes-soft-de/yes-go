@@ -1,48 +1,53 @@
 <!--Start Our Customers Section-->
 <div class="our-customer py-5">
+  <div *ngIf="customersList != null">
     <div class="container">
-        <div class="row" *ngIf="customersList?.length < (onResize() + 1)">
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto" *ngFor="let customerInfo of customersList">
-                <div class="customer-say">
-                    <div class="row">
-                        <div class="col-2">
-                            <i class="fas fa-check-circle fa-2x text-secondary"></i>
-                        </div>
-                        <div class="col-10">
-                            <h6>{{customerInfo.clientName}}</h6>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Adipisci alias dolore eaque
-                            </p>
-                        </div>
-                    </div>
-                </div>
+      <div class="row" *ngIf="customersList?.length < (onResize() + 1)">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto" *ngFor="let customerInfo of customersList">
+          <div class="customer-say">
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x text-secondary"></i>
+              </div>
+              <div class="col-10">
+                <h6>{{customerInfo.clientName}}</h6>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Adipisci alias dolore eaque
+                </p>
+              </div>
             </div>
+          </div>
         </div>
-        <div class="row" *ngIf="customersList?.length > onResize()">
-            <mdb-carousel [isControls]="true" class="w-100 carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
-                          [animation]="'slide'">
-                <mdb-carousel-item *ngFor="let customer of customers; let i = index">
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto" *ngFor="let customerInfo of customer">
-                        <div class="customer-say">
-                            <div class="row">
-                                <div class="col-2">
-                                    <i class="fas fa-check-circle fa-2x text-secondary"></i>
-                                </div>
-                                <div class="col-10">
-                                    <h6>{{customerInfo.clientName}}</h6>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                        Adipisci alias dolore eaque
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </mdb-carousel-item>
-            </mdb-carousel>
+      </div>
+      <div class="row" *ngIf="customersList?.length > onResize()">
+        <mdb-carousel [isControls]="true" class="w-100 carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
+                      [animation]="'slide'">
+          <mdb-carousel-item *ngFor="let customer of customers; let i = index">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto" *ngFor="let customerInfo of customer">
+              <div class="customer-say">
+                <div class="row">
+                  <div class="col-2">
+                    <i class="fas fa-check-circle fa-2x text-secondary"></i>
+                  </div>
+                  <div class="col-10">
+                    <h6>{{customerInfo.clientName}}</h6>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Adipisci alias dolore eaque
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mdb-carousel-item>
+        </mdb-carousel>
 
-        </div>
+      </div>
     </div>
+  </div>
+  <div class="" *ngIf="customersList == null">
+    <h4 class="text-center">Loading...</h4>
+  </div>
 </div>
 <!--End Our Customers Section-->

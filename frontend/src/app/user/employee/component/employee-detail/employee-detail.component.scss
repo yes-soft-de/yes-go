@@ -1,10 +1,44 @@
-.employee-info {
-  p {
-    font-size: 2.2rem;
-    a {
-      color: #000;
-      &:hover {
-        color: #fff;
+@import "../../../../../variables";
+.employee-detail {
+  .employee-header-background {
+    background-color: $blue;
+    height: 30vh;
+  }
+
+  .employee-header-content {
+    top: -20vh;
+    .employee-image {
+      background-color: #aaa;
+    }
+    .employee-info {
+      p {
+        font-size: 2.2rem;
+        a {
+          color: #000;
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .employee-body-section {
+    .program-expert {
+      .program-expert-info {
+        img {
+          height: 50px;
+          width: 50px;
+        }
+        .program-expert-name {
+          font-weight: 500;
+        }
+      }
+    }
+    .language-experience-year {
+      .experience-year {
+        margin-top: 25%;
+        @include progress-bar;
       }
     }
   }
