@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Request\CreateEmployeeRequest;
+use App\Request\DeleteRequest;
 use App\Request\GetByIdRequest;
+use App\Request\UpdateEmployeeRequest;
 use App\Service\EmployeeService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -19,7 +21,7 @@ class EmployeeController extends BaseController
     private $employeeService;
     private $autoMapping;
     /**
-     * ArtistController constructor.
+     * EmployeeController constructor.
      * @param EmployeeService $employeeService
      */
     public function __construct(EmployeeService $employeeService,AutoMapping $autoMapping)
@@ -41,43 +43,34 @@ class EmployeeController extends BaseController
         return $this->response($result, self::CREATE);
     }
 
-//    /**
-//     *  @IsGranted("ROLE_ADMIN", message="access denied")
-//     * @Route("/artist/{id}", name="updateArtist",methods={"PUT"})
-//     * @param Request $request
-//     * @param ArtistValidateInterface $artistValidate
-//     * @return JsonResponse|Response
-//     * @throws UnregisteredMappingException
-//     */
-//    public function update(Request $request, ArtistValidateInterface $artistValidate)
-//    {
-//        $validateResult = $artistValidate->artistValidator($request, 'update');
-//        if (!empty($validateResult)) {
-//            $resultResponse = new Response($validateResult, Response::HTTP_OK, ['content-type' => 'application/json']);
-//            $resultResponse->headers->set('Access-Control-Allow-Origin', '*');
-//            return $resultResponse;
-//        }
-//        $data = json_decode($request->getContent(), true);
-//        $id=$request->get('id');
-//        $request=$this->autoMapping->map(\stdClass::class,UpdateArtistRequest::class,(object)$data);
-//        $request->setId($id);
-//        $result = $this->artistService->update($request);
-//        return $this->response($result, self::UPDATE);
-//    }
-//
-//    /**
-//     *  @IsGranted("ROLE_ADMIN", message="access denied")
-//     * @Route("/artist/{id}", name="deleteArtist",methods={"DELETE"})
-//     * @param Request $request
-//     * @return JsonResponse
-//     */
-//    public function delete(Request $request)
-//    {
-//        $request=new DeleteRequest($request->get('id'));
-//        $result = $this->artistService->delete($request);
-//        return $this->response($result, self::DELETE);
-//    }
-//
+    /**
+     * @Route("/employee/{id}", name="updateEmployee",methods={"PUT"})
+     * @param Request $request
+     * @return JsonResponse|Response
+     * @throws UnregisteredMappingException
+     */
+    public function update(Request $request)
+    {
+        $data = json_decode($request->getContent(), true);
+        $id=$request->get('id');
+        $request=$this->autoMapping->map(\stdClass::class,UpdateEmployeeRequest::class,(object)$data);
+        $request->setId($id);
+        $result = $this->employeeService->update($request);
+        return $this->response($result, self::UPDATE);
+    }
+
+    /**
+     * @Route("/employee/{id}", name="deleteEmployee",methods={"DELETE"})
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function delete(Request $request)
+    {
+        $request=new DeleteRequest($request->get('id'));
+        $result = $this->employeeService->delete($request);
+        return $this->response($result, self::DELETE);
+    }
+
     /**
      * @Route("/employees", name="getAllEmployee",methods={"GET"})
      * @return JsonResponse
@@ -99,27 +92,4 @@ class EmployeeController extends BaseController
         $result = $this->employeeService->getEmployeeById($request);
         return $this->response($result, self::FETCH);
     }
-
-//    /**
-//     * @Route("/search", name="search")
-//     * @param Request $request
-//     * @return Response
-//     * @throws \Exception
-//     */
-//    public function search(Request $request)
-//    {
-//        $result = $this->artistService->search($request);
-//        return $this->response($result, self::FETCH);
-//    }
-//
-//    /**
-//     * @Route("/artistsdetails", name="getAllArtistData",methods={"GET"})
-//     *
-//     * @return
-//     */
-//    public function getAllDetails()
-//    {
-//        $result = $this->artistService->getAllDetails();
-//        return $this->response($result, self::FETCH);
-//    }
 }

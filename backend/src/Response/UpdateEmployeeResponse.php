@@ -4,7 +4,7 @@
 namespace App\Response;
 
 
-class GetEmployeesResponse
+class UpdateEmployeeResponse
 {
     public $id;
     public $fullName;

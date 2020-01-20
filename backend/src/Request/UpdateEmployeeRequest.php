@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\Response;
+namespace App\Request;
 
 
-class GetEmployeesResponse
+class UpdateEmployeeRequest
 {
     public $id;
     public $fullName;

@@ -47,4 +47,20 @@ class CustomerEntityRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function getAll()
+    {
+        return $this->createQueryBuilder('customer')
+            ->getQuery()
+            ->getResult();
+    }
+    public function findCustomerById($id):CustomerEntity
+    {
+        return $this->createQueryBuilder('customer')
+            ->andWhere('customer.id = :id')
+            ->setParameter('id', $id)
+            ->orderBy('customer.id', 'ASC')
+            ->getQuery()
+            ->getOneOrNullResult()
+            ;
+    }
 }
