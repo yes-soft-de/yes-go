@@ -2,6 +2,15 @@ $black-blue: #fff;
 $dark-background: #333;
 $blue: #3399ff;
 
+@mixin gradient-grey-background {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f8f9fa+0,c8c8c8+100 */
+  background: #f8f9fa; /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, #f8f9fa 0%, #c8c8c8 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, #f8f9fa 0%, #c8c8c8 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, #f8f9fa 0%, #c8c8c8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8f9fa', endColorstr='#c8c8c8', GradientType=1); /* IE6-9 fallback on horizontal gradient */
+}
+
 @mixin progress-bar() {
   .progress-title{
     font-size: 16px;

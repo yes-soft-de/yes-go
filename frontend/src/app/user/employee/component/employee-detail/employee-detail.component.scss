@@ -1,4 +1,5 @@
-@import "../../../../../variables";
+@import "~src/variables";
+
 .employee-detail {
   .employee-header-background {
     background-color: $blue;
@@ -9,17 +10,6 @@
     top: -20vh;
     .employee-image {
       background-color: #aaa;
-    }
-    .employee-info {
-      p {
-        font-size: 2.2rem;
-        a {
-          color: #000;
-          &:hover {
-            color: #fff;
-          }
-        }
-      }
     }
   }
 
@@ -40,6 +30,21 @@
         margin-top: 25%;
         @include progress-bar;
       }
+    }
+    .what-customer-say {
+      .customer-say-image {
+        img {
+          height: 70px;
+          width: 70px;
+        }
+        .customer-company-name {
+          vertical-align: middle;
+        }
+      }
+    }
+    .customer-say-about {
+      @include gradient-grey-background;
+      min-height: 300px;
     }
   }
 }

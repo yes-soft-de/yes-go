@@ -4,7 +4,7 @@ import {StarRatingComponent} from 'ng-starrating';
 @Component({
   selector: 'app-employee-detail',
   templateUrl: './employee-detail.component.html',
-  styleUrls: ['./employee-detail.component.scss']
+  styleUrls: ['./employee-detail.component.scss', '../employee-short-detail/employee-short-detail.component.scss']
 })
 export class EmployeeDetailComponent implements OnInit {
 
