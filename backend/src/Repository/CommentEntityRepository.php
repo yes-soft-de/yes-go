@@ -36,15 +36,41 @@ class CommentEntityRepository extends ServiceEntityRepository
     }
     */
 
-    /*
-    public function findOneBySomeField($value): ?CommentEntity
+
+    public function findCommentById($id): ?CommentEntity
     {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
+        return $this->createQueryBuilder('comment')
+            ->andWhere('comment.id =id')
+            ->setParameter('id', $id)
             ->getQuery()
             ->getOneOrNullResult()
         ;
     }
-    */
+    public function findCustomercomments($id): array
+    {
+        return $this->createQueryBuilder('comment')
+            ->andWhere('comment.customer =id')
+            ->setParameter('id', $id)
+            ->groupBy('comment.customer')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+    public function findEmployeecomments($id): array
+    {
+        return $this->createQueryBuilder('comment')
+            ->andWhere('comment.employee =id')
+            ->setParameter('id', $id)
+            ->groupBy('comment.employee')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+    public function getAll():array
+    {
+    return $this->createQueryBuilder('comment')
+    ->orderBy('comment.id')
+    ->getQuery()
+    ->getResult() ;
+    }
 }
