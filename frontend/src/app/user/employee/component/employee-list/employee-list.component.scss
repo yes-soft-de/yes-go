@@ -13,8 +13,20 @@
       right: 8px;
       top: 9px;
     }
-  }
-  .team-member.selected {
-    background-color: #222;
+    &.selected, &:hover {
+      background-color: #222;
+      p {color: #fff;}
+    }
   }
 }
+
+/*style for sm Screen*/
+@media (min-width: 576px) and (max-width: 767px) {
+  .employee {
+    .team-member {
+      height: 60px;
+      line-height: 60px;
+    }
+  }
+}
+

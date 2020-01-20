@@ -7,9 +7,9 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   cards = [
-    {description: 'Some quick example text to build on the '},
-    {description: 'and make up the bulk of the card content'},
-    {description: 'text to build on the Some up the bulk of'}
+    {description: 'Its team consists of developers, designers, content makers, testers and team managers'},
+    {description: 'Our Team are working together remotely and results are always great'},
+    {description: 'They use up-to-date technologies to bring your imaginary requirements to reality'}
   ];
 
   slides: any = [[]];

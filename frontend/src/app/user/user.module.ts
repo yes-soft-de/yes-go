@@ -10,6 +10,8 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CustomerListComponent } from './customer/component/customer-list/customer-list.component';
 import { EmployeeListComponent } from './employee/component/employee-list/employee-list.component';
+import { EmployeeShortDetailComponent } from './employee/component/employee-short-detail/employee-short-detail.component';
+import { SearchComponent } from './search/component/search/search.component';
 import { EmployeeDetailComponent } from './employee/component/employee-detail/employee-detail.component';
 
 
@@ -22,6 +24,8 @@ import { EmployeeDetailComponent } from './employee/component/employee-detail/em
     HomeComponent,
     CustomerListComponent,
     EmployeeListComponent,
+    EmployeeShortDetailComponent,
+    SearchComponent,
     EmployeeDetailComponent
   ],
   imports: [

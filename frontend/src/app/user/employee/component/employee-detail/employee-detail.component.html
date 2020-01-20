@@ -1,25 +1,172 @@
-<div *ngIf="employee">
-  <div class="row">
-    <div class="col-12 col-sm-3 offset-sm-3">
-      <div class="employee-image">
-        <img src="../../../assets/avatar.png" class="img-fluid" />
+<!--Start Employee Main Detail-->
+<div class="employee-detail">
+  <div class="employee-header-background"></div>
+  <div class="employee-header-content position-relative">
+    <div class="container">
+      <div class="row">
+        <div class="col-8 col-sm-3 mx-auto">
+          <div class="employee-image rounded-circle p-2">
+            <img class="img-fluid rounded-circle" src="../../../../../assets/avatar.png" alt="" />
+<!--            <img class="img-fluid" src="{{employee.image}}"-->
+<!--                 (error)="employee.image = '../../../assets/avatar.png'" alt="Employee Image" />-->
+          </div>
+        </div>
+        <div class="col-10 col-sm-9 align-self-center mx-auto mx-sm-0 pt-5">
+          <div class="employee-info">
+            <span class="text-center text-sm-left">
+              <star-rating
+                      value="5"
+                      totalstars="5"
+                      checkedcolor="white"
+                      uncheckedcolor="grey"
+                      size="24px"
+                      readonly="false" (rate)="onRate($event)"></star-rating>
+            </span>
+            <p class="mb-1">Talal Danoun</p>
+            <p class="mb-1">Web Developer</p>
+            <p class="mb-1">Clever - Professional - Intelligent - Clever - Professional - Intelligent</p>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-12 col-sm-6 align-self-center">
-      <div class="employee-info ">
-        <p class="mb-1">{{employee.name}}</p>
-        <p class="mb-1">{{employee.id}}</p>
-        <p class="mb-1">Skill1 - Skill2 - Skill3</p>
-        <span>
-        <star-rating
-                value="5"
-                totalstars="5"
-                checkedcolor="grey"
-                uncheckedcolor="white"
-                size="24px"
-                readonly="false" (rate)="onRate($event)"></star-rating>
-        </span>
+  </div><!--.employee-header-content-->
+  <div class="employee-body-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+          <div class="program-expert">
+            <h3 class="mb-4">Programs expert in</h3>
+            <div class="row border-right">
+              <div class="col-12 col-md-6">
+                <div class="program-expert-info">
+                  <img src="http://dummyimage.com/152x194.bmp/dddddd/ffffff" class="img-fluid rounded-circle" alt="" />
+                  <span class="program-expert-name ml-3">Cherel Baker</span>
+                  <span class="program-expert-title ml-2">Roll Name Here</span>
+                  <hr class="w-50 bg-muted" />
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="program-expert-info">
+                  <img src="http://dummyimage.com/152x194.bmp/dddddd/ffffff" class="img-fluid rounded-circle" alt="" />
+                  <span class="program-expert-name ml-3">Cherel Baker</span>
+                  <span class="program-expert-title ml-2">Roll Name Here</span>
+                  <hr class="w-50 bg-muted" />
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="program-expert-info">
+                  <img src="http://dummyimage.com/152x194.bmp/dddddd/ffffff" class="img-fluid rounded-circle" alt="" />
+                  <span class="program-expert-name ml-3">Cherel Baker</span>
+                  <span class="program-expert-title ml-2">Roll Name Here</span>
+                  <hr class="w-50 bg-muted" />
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="program-expert-info">
+                  <img src="http://dummyimage.com/152x194.bmp/dddddd/ffffff" class="img-fluid rounded-circle" alt="" />
+                  <span class="program-expert-name ml-3">Cherel Baker</span>
+                  <span class="program-expert-title ml-2">Roll Name Here</span>
+                  <hr class="w-50 bg-muted" />
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="program-expert-info">
+                  <img src="http://dummyimage.com/152x194.bmp/dddddd/ffffff" class="img-fluid rounded-circle" alt="" />
+                  <span class="program-expert-name ml-3">Cherel Baker</span>
+                  <span class="program-expert-title ml-2">Roll Name Here</span>
+                  <hr class="w-50 bg-muted" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="language-experience-year">
+            <h4 class="mb-4">Speaks in <span>Arabic - Engilsh</span></h4>
+            <div class="experience-year">
+              <h3 class="text-center mb-4">Years of experience</h3>
+              <div class="progress gery-color">
+                <!--Every 10 years == 1 experience year -->
+                <div class="progress-bar" style="width:70%;">
+                  <div class="progress-value">7 Years</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="employee-detail-projects py-5">
+            <h3 class="mb-5">Projects with yes soft company</h3>
+            <div class="row">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto">
+                <div class="customer-say">
+                  <div class="row">
+                    <div class="col-2">
+                      <i class="fas fa-check-circle fa-2x text-secondary"></i>
+                    </div>
+                    <div class="col-10">
+                      <h6>clientName</h6>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Adipisci alias dolore eaque
+                      </p>
+                    </div>
+                  </div>
+                </div><!--.customer-say-->
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto">
+                <div class="customer-say">
+                  <div class="row">
+                    <div class="col-2">
+                      <i class="fas fa-check-circle fa-2x text-secondary"></i>
+                    </div>
+                    <div class="col-10">
+                      <h6>clientName</h6>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Adipisci alias dolore eaque
+                      </p>
+                    </div>
+                  </div>
+                </div><!--.customer-say-->
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto">
+                <div class="customer-say">
+                  <div class="row">
+                    <div class="col-2">
+                      <i class="fas fa-check-circle fa-2x text-secondary"></i>
+                    </div>
+                    <div class="col-10">
+                      <h6>clientName</h6>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Adipisci alias dolore eaque
+                      </p>
+                    </div>
+                  </div>
+                </div><!--.customer-say-->
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto">
+                <div class="customer-say">
+                  <div class="row">
+                    <div class="col-2">
+                      <i class="fas fa-check-circle fa-2x text-secondary"></i>
+                    </div>
+                    <div class="col-10">
+                      <h6>clientName</h6>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Adipisci alias dolore eaque
+                      </p>
+                    </div>
+                  </div>
+                </div><!--.customer-say-->
+              </div>
+            </div>
+          </div><!--.employee-detail-projects-->
+        </div><!--.col-12-->
       </div>
-    </div>
-  </div>
+    </div><!--.container-->
+  </div><!--.employee-body-section-->
 </div>
+<!--End Employee Main Detail-->
