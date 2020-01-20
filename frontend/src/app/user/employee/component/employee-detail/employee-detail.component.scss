@@ -14,11 +14,15 @@
   }
 
   .employee-body-section {
+    p { text-align: justify; }
     .program-expert {
       .program-expert-info {
         img {
           height: 50px;
           width: 50px;
+        }
+        & > div {
+          vertical-align: middle;
         }
         .program-expert-name {
           font-weight: 500;
@@ -49,42 +53,86 @@
   }
 }
 
-/*style for lg Screen*/
-@media (min-width: 992px) and (max-width: 1199px) {
-  .employee-info {
-    p {
-      font-size: 1.9rem;
-    }
-  }
-}
-
 /*style for md Screen*/
 @media (min-width: 768px) and (max-width: 991px) {
-  .employee-info {
-    p {
-      font-size: 1.4rem;
+  .employee-detail {
+    .employee-header-content {
+      top: -12vh;
+    }
+    .employee-body-section {
+      .what-customer-say {
+        .customer-say-image {
+          img {
+            height: 60px;
+            width: 60px;
+          }
+          .customer-company-name {
+            h4 {
+              font-size: 1.2rem;
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
     }
   }
 }
 
 /*style for sm Screen*/
 @media (min-width: 576px) and (max-width: 767px) {
-  .employee-info {
-    p {
-      font-size: 1.1rem;
+  h3 {
+    font-size: 1.5rem;}
+  .employee-detail {
+    .employee-header-content {
+      top: -9vh;
+    }
+    .employee-body-section {
+      .what-customer-say {
+        .customer-say-image {
+          img {
+            height: 50px;
+            width: 50px;
+          }
+          .customer-company-name {
+            h4 {
+              font-size: 1rem;
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
     }
   }
 }
 
 /*style for xs Screen*/
 @media (max-width: 575px) {
-  .employee-info {
-    p {
-      font-size: 1.5rem;
-      text-align: center;
+  h3 {
+    font-size: 1.3rem;}
+  .employee-detail {
+    .employee-header-content {
+      top: -13vh;
+    }
+    .employee-body-section {
+      .language-experience-year {
+        .experience-year {
+          margin-top: 10%;
+        }
+      }
+      .what-customer-say {
+        .customer-say-image {
+          img {
+            height: 50px;
+            width: 50px;
+          }
+          .customer-company-name {
+            h4 {
+              font-size: 1rem;
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
     }
   }
 }
-
-/*style for small than xs Screen*/
-@media (max-width: 499px) {}
