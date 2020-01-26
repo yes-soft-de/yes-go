@@ -12,6 +12,8 @@ class GetEmployeeCommentsResponse
     public $body;
     public $date;
     public $details;
+    public $clientName;
+    public $image;
 
     /**
      * @return mixed
@@ -107,6 +109,38 @@ class GetEmployeeCommentsResponse
     public function setDetails($details): void
     {
         $this->details = $details;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getClientName()
+    {
+        return $this->clientName;
+    }
+
+    /**
+     * @param mixed $clientName
+     */
+    public function setClientName($clientName): void
+    {
+        $this->clientName = $clientName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param mixed $image
+     */
+    public function setImage($image): void
+    {
+        $this->image = $image;
     }
 
 

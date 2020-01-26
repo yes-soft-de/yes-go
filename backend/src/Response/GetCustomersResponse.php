@@ -13,6 +13,7 @@ class GetCustomersResponse
     public $email;
     public $phone;
     public $image;
+    public $saysAboutUs;
 
     /**
      * @return mixed
@@ -125,5 +126,22 @@ class GetCustomersResponse
     {
         $this->image = $image;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getSaysAboutUs()
+    {
+        return $this->saysAboutUs;
+    }
+
+    /**
+     * @param mixed $saysAboutUs
+     */
+    public function setSaysAboutUs($saysAboutUs): void
+    {
+        $this->saysAboutUs = $saysAboutUs;
+    }
+
 
 }

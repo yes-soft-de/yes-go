@@ -59,7 +59,10 @@ class CommentEntityRepository extends ServiceEntityRepository
     public function findEmployeecomments($id): array
     {
         return $this->createQueryBuilder('comment')
-            ->andWhere('comment.employee =id')
+            ->select('comment','customer.clientName','customer.image')
+            ->from('App:CustomerEntity','customer')
+            ->andWhere('comment.employee =:id')
+            ->andWhere('comment.customer=customer.id')
             ->setParameter('id', $id)
             ->groupBy('comment.employee')
             ->getQuery()

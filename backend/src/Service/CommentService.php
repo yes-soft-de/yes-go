@@ -10,6 +10,7 @@ use App\Manager\CommentManager;
 use App\Response\DeleteResponse;
 use App\Response\GetCommentByIdResponse;
 use App\Response\GetCommentsResponse;
+use App\Response\GetEmployeeCommentsResponse;
 
 class CommentService
 {
@@ -58,6 +59,12 @@ class CommentService
     {
         $result = $this->commentManager->getCommentById($request);
         $response = $this->autoMapping->map(CommentEntity::class, GetCommentByIdResponse::class, $result);
+        return $response;
+    }
+    public function getEmployeeComments($request)
+    {
+        $result = $this->commentManager->getEmployeeComments($request);
+        $response = $this->autoMapping->map('array', GetEmployeeCommentsResponse::class, $result);
         return $response;
     }
 }
