@@ -7,8 +7,6 @@ namespace App\Response;
 class GetEmployeeCommentsResponse
 {
     public $id;
-    public $customer;
-    public $employee;
     public $body;
     public $date;
     public $details;
@@ -30,39 +28,7 @@ class GetEmployeeCommentsResponse
     {
         $this->id = $id;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getCustomer()
-    {
-        return $this->customer;
-    }
-
-    /**
-     * @param mixed $customer
-     */
-    public function setCustomer($customer): void
-    {
-        $this->customer = $customer;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getEmployee()
-    {
-        return $this->employee;
-    }
-
-    /**
-     * @param mixed $employee
-     */
-    public function setEmployee($employee): void
-    {
-        $this->employee = $employee;
-    }
-
+    
     /**
      * @return mixed
      */

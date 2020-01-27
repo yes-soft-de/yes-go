@@ -46,7 +46,7 @@ class CommentEntityRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
-    public function findCustomercomments($id): array
+    public function findCustomerComments($id): array
     {
         return $this->createQueryBuilder('comment')
             ->andWhere('comment.customer =id')
@@ -56,10 +56,11 @@ class CommentEntityRepository extends ServiceEntityRepository
             ->getResult()
             ;
     }
-    public function findEmployeecomments($id): array
+    public function findEmployeeComments($id): array
     {
         return $this->createQueryBuilder('comment')
-            ->select('comment','customer.clientName','customer.image')
+            ->select('comment.id','comment.body','comment.date','comment.details','customer.clientName'
+                ,'customer.image')
             ->from('App:CustomerEntity','customer')
             ->andWhere('comment.employee =:id')
             ->andWhere('comment.customer=customer.id')

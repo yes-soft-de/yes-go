@@ -21,6 +21,7 @@ class GetEmployeeByIdResponse
     public $birthDate;
     public $joiningDate;
     public $skills;
+    public $rating;
 
     /**
      * @return mixed
@@ -263,6 +264,23 @@ class GetEmployeeByIdResponse
     {
         $this->skills = $skills;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getRating()
+    {
+        return $this->rating;
+    }
+
+    /**
+     * @param mixed $rating
+     */
+    public function setRating($rating): void
+    {
+        $this->rating = $rating;
+    }
+
 
 //    /**
 //     * @return mixed

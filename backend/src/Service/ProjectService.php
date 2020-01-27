@@ -6,7 +6,6 @@ namespace App\Service;
 
 use App\AutoMapping;
 use App\Entity\ProjectEntity;
-use App\Manager\ProjectManager;
 use App\Response\CreateProjectResponse;
 use App\Response\DeleteResponse;
 use App\Response\GetProjectByIdResponse;

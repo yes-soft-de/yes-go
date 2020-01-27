@@ -64,7 +64,9 @@ class CommentService
     public function getEmployeeComments($request)
     {
         $result = $this->commentManager->getEmployeeComments($request);
-        $response = $this->autoMapping->map('array', GetEmployeeCommentsResponse::class, $result);
+        $response=[];
+        foreach ($result as $comment)
+        $response = $this->autoMapping->map('array', GetEmployeeCommentsResponse::class, $comment);
         return $response;
     }
 }

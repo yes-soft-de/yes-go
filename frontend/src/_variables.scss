@@ -2,6 +2,15 @@ $black-blue: #fff;
 $dark-background: #333;
 $blue: #3399ff;
 
+@mixin gradient-grey-background {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f8f9fa+0,c8c8c8+100 */
+  background: #f8f9fa; /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, #f8f9fa 0%, #c8c8c8 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, #f8f9fa 0%, #c8c8c8 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, #f8f9fa 0%, #c8c8c8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8f9fa', endColorstr='#c8c8c8', GradientType=1); /* IE6-9 fallback on horizontal gradient */
+}
+
 @mixin progress-bar() {
   .progress-title{
     font-size: 16px;
@@ -54,5 +63,46 @@ $blue: #3399ff;
   }
   @keyframes animate-positive{
     0% { width: 0; }
+  }
+}
+
+@mixin loader-ring() {
+  .lds-ring {
+    display: inline-block;
+    position: fixed;
+    left: 50vw;
+    top: 50vh;
+    width: 64px;
+    height: 64px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    //left: 50%;
+    width: 51px;
+    height: 51px;
+    margin: 6px;
+    border: 6px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #6c757d transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }
