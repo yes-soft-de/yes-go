@@ -1,19 +1,23 @@
 <!--Start Our Customers Section-->
-<div class="our-customer py-5">
-  <div *ngIf="customersList != null">
+<div class="our-customer py-5" *ngIf="customersList != null">
+  <div *ngIf="customersList.length != 0">
     <div class="container">
+      <h3 class="text-center mb-4">Our Customer</h3>
       <div class="row" *ngIf="customersList?.length < (onResize() + 1)">
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto" *ngFor="let customerInfo of customersList">
           <div class="customer-say">
             <div class="row">
-              <div class="col-2">
-                <i class="fas fa-check-circle fa-2x text-secondary"></i>
+              <div class="col-2 col-sm-3 pr-0">
+                <div class="employee-image">
+                  <img class="img-fluid" src="{{customersList.image}}"
+                       (error)="customersList.image = '../../../assets/grey_avatar.png'" alt="Employee Image" />
+                </div>
+<!--                <i class="fas fa-check-circle fa-2x text-secondary"></i>-->
               </div>
-              <div class="col-10">
+              <div class="col-10 col-sm-9">
                 <h6>{{customerInfo.clientName}}</h6>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Adipisci alias dolore eaque
+                  {{customerInfo.commentAboutYesGo}}
                 </p>
               </div>
             </div>
@@ -27,14 +31,17 @@
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto" *ngFor="let customerInfo of customer">
               <div class="customer-say">
                 <div class="row">
-                  <div class="col-2">
-                    <i class="fas fa-check-circle fa-2x text-secondary"></i>
+                  <div class="col-2 col-sm-3 pr-0">
+                    <div class="employee-image">
+                      <img class="img-fluid" src="{{customerInfo.image}}"
+                           (error)="customerInfo.image = '../../../assets/grey_avatar.png'" alt="Employee Image" />
+                    </div>
+  <!--                    <i class="fas fa-check-circle fa-2x text-secondary"></i>-->
                   </div>
-                  <div class="col-10">
+                  <div class="col-10 col-sm-9">
                     <h6>{{customerInfo.clientName}}</h6>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Adipisci alias dolore eaque
+                      {{customerInfo.commentAboutYesGo}}
                     </p>
                   </div>
                 </div>
@@ -46,7 +53,7 @@
       </div>
     </div>
   </div>
-  <div class="" *ngIf="customersList == null">
+  <div class="" *ngIf="customersList.length == 0">
     <h4 class="text-center">Loading...</h4>
   </div>
 </div>

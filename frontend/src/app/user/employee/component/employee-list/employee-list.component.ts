@@ -2,6 +2,8 @@ import {Component, HostListener, OnInit} from '@angular/core';
 import {EmployeeService} from '../../service/employee.service';
 import {EmployeeList} from '../../entity/employee-list';
 import {EmployeeDetail} from '../../entity/employee-detail';
+import {HelperService} from '../../../shared/helper/helper.service';
+
 
 @Component({
   selector: 'app-employee-list',
@@ -17,10 +19,14 @@ export class EmployeeListComponent implements OnInit {
 
   ngOnInit() {
     // Fetch All Employees
-    this.employeeService.getEmployees().subscribe(
+    this.employeeService.getEmployees()
+      .subscribe(
       employeesList => {
         this.employeesList = employeesList;
-        this.employees = this.chunk(employeesList, this.onResize());
+        console.log('employee: ', this.employeesList);
+        this.employees = HelperService.chunk(employeesList, this.onResize());
+        // Select First Element From Our Array
+        this.onSelected(employeesList[0]);
       }
     );
   }
@@ -38,15 +44,6 @@ export class EmployeeListComponent implements OnInit {
       chunkSize = 1;        // make 1 chunk In every array
     }
     return chunkSize;
-  }
-
-  // create chunk of Employees array to use it in employee carousel
-  chunk(employeeArray, chunkSize) {
-    const arr = [];
-    for (let i = 0, len = employeeArray.length; i < len; i += chunkSize) {
-      arr.push(employeeArray.slice(i, i + chunkSize));
-    }
-    return arr;
   }
 
   // Select Our Employee And Fetch His Detail

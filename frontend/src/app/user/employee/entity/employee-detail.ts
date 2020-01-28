@@ -19,6 +19,10 @@ export class EmployeeDetail {
     timezone: {name: string},
     timestamp: number
   };
-  skills: string;
-
+  rating: number;
+  skills: [
+    { id: number, name: string, details: string; }
+    ];
+  word: string;
+  yearsOfExperience: number;
 }

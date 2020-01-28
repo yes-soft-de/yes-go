@@ -35,6 +35,16 @@
         @include progress-bar;
       }
     }
+    .employee-detail-projects {
+      .customer-say {
+        h6 a {
+          text-decoration: none;
+          &:hover {
+            color: #aaa;
+          }
+        }
+      }
+    }
     .what-customer-say {
       .customer-say-image {
         img {

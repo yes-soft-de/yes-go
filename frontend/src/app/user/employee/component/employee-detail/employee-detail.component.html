@@ -1,6 +1,6 @@
 <!--Start Employee Main Detail-->
 <div class="employee-detail">
-  <div class="" *ngIf="employeeDetails != null">
+  <div class="" *ngIf="employeeDetails != null && employeeProjectsList != null && employeeCustomerComments != null">
   <div class="employee-header-background"></div>
   <div class="employee-header-content position-relative">
     <div class="container">
@@ -12,12 +12,12 @@
                  (error)="employeeDetails.image = '../../../assets/avatar.png'" alt="Employee Image" />
           </div>
         </div>
-        <div class="col-10 col-sm-9 align-self-center mx-auto mx-sm-0 pt-sm-1 pt-md-3 pt-lg-5">
+        <div class="col-10 col-sm-9 align-self-center mx-auto mx-sm-0 pt-sm-0 pt-md-0 pt-lg-4 pt-xl-0">
           <div class="employee-info">
             <span class="d-sm-none text-center text-sm-left">
               <star-rating
                       value="5"
-                      totalstars="5"
+                      totalstars="{{employeeDetails.rating}}"
                       checkedcolor="dodgerblue"
                       uncheckedcolor="grey"
                       size="24px"
@@ -25,7 +25,7 @@
             </span>
             <span class="d-none d-sm-inline-block text-center text-sm-left">
               <star-rating
-                      value="5"
+                      value="{{employeeDetails.rating}}"
                       totalstars="5"
                       checkedcolor="white"
                       uncheckedcolor="grey"
@@ -34,7 +34,7 @@
             </span>
             <p class="mb-1">{{employeeDetails.fullName}}</p>
             <p class="mb-1">{{employeeDetails.position}}</p>
-            <p class="mb-1">{{employeeDetails.skills}}</p>
+<!--            <p class="mb-1">{{employeeDetails.skills}}</p>-->
           </div>
         </div>
       </div>
@@ -45,148 +45,89 @@
       <div class="row">
         <div class="col-12 col-sm-6 col-md-8">
           <div class="program-expert text-center text-md-left">
-            <h3 class="mb-4">Programs expert in</h3>
-            <div class="row border-right">
-              <div class="col-12 col-md-6">
-                <div class="program-expert-info">
-                  <img src="../../../../../assets/square01.jpg" class="img-fluid rounded-circle" alt="" />
+            <h3 class="mb-4">Employee Skills</h3>
+            <div class="row border-right" *ngIf="employeeDetails.skills.length != 0">
+              <div class="col-12 col-md-6" *ngFor="let skill of employeeDetails.skills">
+                <div class="program-expert-info text-center">
+<!--                  <img src="../../../../../assets/square01.jpg" class="img-fluid rounded-circle" alt="" />-->
                   <div class="d-inline-block">
-                    <span class="program-expert-name ml-3">Cherel Baker</span>
+                    <span class="program-expert-name ml-3">{{skill.name}}</span>
                     <br class="d-none d-sm-inline-block d-lg-none" />
-                    <span class="program-expert-title ml-3 ml-lg-2">Roll Name Here</span>
+                    <span class="program-expert-title ml-3 ml-lg-2">{{skill.details}}</span>
                   </div>
-                  <hr class="w-50 bg-muted" />
+                  <hr class="w-75 bg-muted" />
                 </div>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="program-expert-info">
-                  <img src="http://dummyimage.com/152x194.bmp/dddddd/ffffff" class="img-fluid rounded-circle" alt="" />
-                  <div class="d-inline-block">
-                    <span class="program-expert-name ml-3">Cherel Baker</span>
-                    <br class="d-none d-sm-inline-block d-lg-none" />
-                    <span class="program-expert-title ml-3 ml-lg-2">Roll Name Here</span>
-                  </div>
-                  <hr class="w-50 bg-muted" />
-                </div>
-              </div>
-              <div class="col-12 col-md-6">
-                <div class="program-expert-info">
-                  <img src="http://dummyimage.com/152x194.bmp/dddddd/ffffff" class="img-fluid rounded-circle" alt="" />
-                  <div class="d-inline-block">
-                    <span class="program-expert-name ml-3">Cherel Baker</span>
-                    <br class="d-none d-sm-inline-block d-lg-none" />
-                    <span class="program-expert-title  ml-3 ml-lg-2">Roll Name Here</span>
-                  </div>
-                  <hr class="w-50 bg-muted" />
-                </div>
-              </div>
-              <div class="col-12 col-md-6">
-                <div class="program-expert-info">
-                  <img src="http://dummyimage.com/152x194.bmp/dddddd/ffffff" class="img-fluid rounded-circle" alt="" />
-                  <div class="d-inline-block">
-                    <span class="program-expert-name ml-3">Cherel Baker</span>
-                    <br class="d-none d-sm-inline-block d-lg-none" />
-                    <span class="program-expert-title  ml-3 ml-lg-2">Roll Name Here</span>
-                  </div>
-                  <hr class="w-50 bg-muted" />
-                </div>
-              </div>
-              <div class="col-12 col-md-6">
-                <div class="program-expert-info">
-                  <img src="http://dummyimage.com/152x194.bmp/dddddd/ffffff" class="img-fluid rounded-circle" alt="" />
-                  <div class="d-inline-block">
-                    <span class="program-expert-name ml-3">Cherel Baker</span>
-                    <br class="d-none d-sm-inline-block d-lg-none" />
-                    <span class="program-expert-title  ml-3 ml-lg-2">Roll Name Here</span>
-                  </div>
-                  <hr class="w-50 bg-muted" />
-                </div>
-              </div>
+            </div>
+            <div class="row border-right" *ngIf="employeeDetails.skills.length == 0">
+              <p class="col-12 col-md-10 text-center text-sm-left">This Employee Don't Have Skills Yet.</p>
             </div>
           </div>
         </div>
         <div class="col-12 col-sm-6 col-md-4">
           <div class="language-experience-year">
             <h4 class="text-center text-lg-left mt-4 mt-sm-0 mb-4">Speaks in <span class="d-inline d-sm-block d-lg-inline">{{employeeDetails.language}}</span></h4>
-            <div class="experience-year">
+            <div class="experience-year" *ngIf="employeeDetails.yearsOfExperience != null">
               <h3 class="text-center mb-4">Years of experience</h3>
               <div class="progress gery-color">
                 <!--Every 10 years == 1 experience year -->
-                <div class="progress-bar" style="width:70%;">
-                  <div class="progress-value">{{employeeDetails.experiances}} Years</div>
+                <div class="progress-bar" [style.width]="employeeDetails.yearsOfExperience + '0%'">
+                  <div class="progress-value">{{employeeDetails.yearsOfExperience}} Years</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-12">
+        <div class="col-12" *ngIf="employeeProjectsList?.length != 0">
           <div class="employee-detail-projects py-5">
             <h3 class="mb-5">Projects with yes soft company</h3>
-            <div class="row">
-              <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto">
-                <div class="customer-say mb-2">
-                  <div class="row">
-                    <div class="col-2">
-                      <i class="fas fa-check-circle fa-2x text-secondary"></i>
+            <div class="row" *ngIf="employeeProjectsList?.length < (onResize() + 1)">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto" *ngFor="let projectsList of employeeProjectsList">
+                  <div class="customer-say mb-2">
+                    <div class="row">
+                      <div class="col-3 pr-0">
+                        <div class="employee-image">
+                          <img class="img-fluid" src="{{projectsList.image}}"
+                               (error)="projectsList.image = '../../../assets/square01.jpg'" alt="Customer Image" />
+                        </div>
+  <!--                          <i class="fas fa-check-circle fa-2x text-secondary"></i>-->
+                      </div>
+                      <div class="col-9">
+                        <h6><a href="{{'http://' + projectsList.link}}">{{projectsList.name}}</a></h6>
+                        <p>
+                          {{projectsList.details}}
+                        </p>
+                      </div>
                     </div>
-                    <div class="col-10">
-                      <h6>clientName</h6>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Adipisci alias dolore eaque
-                      </p>
-                    </div>
-                  </div>
-                </div><!--.customer-say-->
+                  </div><!--.customer-say-->
               </div>
-              <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto">
-                <div class="customer-say">
-                  <div class="row">
-                    <div class="col-2">
-                      <i class="fas fa-check-circle fa-2x text-secondary"></i>
-                    </div>
-                    <div class="col-10">
-                      <h6>clientName</h6>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Adipisci alias dolore eaque
-                      </p>
-                    </div>
+            </div>
+            <div class="row" *ngIf="employeeProjectsList?.length > onResize()">
+              <mdb-carousel [isControls]="true" class="w-100 carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
+                            [animation]="'slide'">
+                <mdb-carousel-item *ngFor="let projectsCarousel of employeeProjectsCarousel">
+                  <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto" *ngFor="let employeeProjects of projectsCarousel">
+                    <div class="customer-say mb-2">
+                      <div class="row">
+                        <div class="col-3 pr-0">
+                          <div class="employee-image">
+                            <img class="img-fluid" src="{{employeeProjects.image}}"
+                                 (error)="employeeProjects.image = '../../../assets/square01.jpg'" alt="Customer Image" />
+                          </div>
+<!--                          <i class="fas fa-check-circle fa-2x text-secondary"></i>-->
+                        </div>
+                        <div class="col-9">
+                          <h6><a href="{{'http://' + employeeProjects.link}}">{{employeeProjects.name}}</a></h6>
+                          <p>
+                            {{employeeProjects.details}}
+                          </p>
+                        </div>
+                      </div>
+                    </div><!--.customer-say-->
                   </div>
-                </div><!--.customer-say-->
-              </div>
-              <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto">
-                <div class="customer-say">
-                  <div class="row">
-                    <div class="col-2">
-                      <i class="fas fa-check-circle fa-2x text-secondary"></i>
-                    </div>
-                    <div class="col-10">
-                      <h6>clientName</h6>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Adipisci alias dolore eaque
-                      </p>
-                    </div>
-                  </div>
-                </div><!--.customer-say-->
-              </div>
-              <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto">
-                <div class="customer-say">
-                  <div class="row">
-                    <div class="col-2">
-                      <i class="fas fa-check-circle fa-2x text-secondary"></i>
-                    </div>
-                    <div class="col-10">
-                      <h6>clientName</h6>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Adipisci alias dolore eaque
-                      </p>
-                    </div>
-                  </div>
-                </div><!--.customer-say-->
-              </div>
+                </mdb-carousel-item>
+              </mdb-carousel>
+
             </div>
           </div><!--.employee-detail-projects-->
         </div><!--.col-12-->
@@ -194,21 +135,20 @@
           <div class="employee-summary-section py-md-3 py-lg-5">
             <h3 class="mb-4 mb-lg-5">Portfolio & Summary</h3>
             <div class="summary-content">
-              <h3 class="employee-word mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias dolore eaque</h3>
+              <h3 class="employee-word mb-3">{{employeeDetails.word}}</h3>
               <div class="col-12 col-md-10 mx-auto">
                 <div class="row">
-                  <div class="col-12 col-sm-5">
+                  <div class="col-12 col-sm-10 col-md-10 mx-auto">
                     <p class="text-justify">
                       {{employeeDetails.details}}
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci culpa distinctio dolorem dolorum,
-                      explicabo facere incidunt magnam maiores nihil nulla officiis placeat possimus quis repellat saepe,
-                      sequi soluta voluptate.
                     </p>
                   </div>
-                  <div class="col-12 col-sm-7">
+                  <div class="col-12 col-sm-7 d-none">
                     <div class="row">
                       <div class="col-4">
-                        <img src="../../../../../assets/square01.jpg" class="img-fluid" alt="" />
+                        <img class="img-fluid" src="{{employeeProjectsList.image}}"
+                             (error)="employeeProjectsList.image = '../../../assets/square01.jpg'" alt="Customer Image" />
+<!--                        <img src="../../../../../assets/square01.jpg" class="img-fluid" alt="" />-->
                       </div>
                       <div class="col-4">
                         <img src="../../../../../assets/square01.jpg" class="img-fluid" alt="" />
@@ -223,36 +163,21 @@
             </div><!--.summary-content-->
           </div><!--.employee-summary-section-->
         </div>
-        <div class="col-12">
+        <div class="col-12" *ngIf="employeeCustomerComments.length != 0">
           <div class="what-customer-say py-5">
-            <h3 class="mb-4 mb-lg-5">What customer says about "<span>Employee Name</span>"</h3>
+            <h3 class="mb-4 mb-lg-5">What customer says about "<span>{{employeeDetails.fullName}}</span>"</h3>
             <div class="col-12 col-md-10 mx-auto">
               <div class="row">
-                <div class="col-12 col-sm-6 mb-4 mb-sm-1">
+                <div class="col-12 col-sm-6 mb-4 mb-sm-1" *ngFor="let customerComments of employeeCustomerComments">
                   <i class="fas fa-quote-left fa-sm-md fa-md-lg text-muted"></i>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores dicta doloremque earum,
-                    eius est excepturi fugit in laboriosam magnam nobis odit officia qui quidem saepe sint sit temporibus totam voluptatum!
+                    {{customerComments.body}}
                   </p>
                   <div class="customer-say-image">
-                    <img src="../../../../../assets/square01.jpg" class="img-fluid rounded-circle" alt="" />
+                    <img src="{{customerComments.image}}" (error)="customerComments.image = '../../../../../assets/square01.jpg'" class="img-fluid rounded-circle" alt="" />
                     <div class="customer-company-name d-inline-block">
-                      <h4 class="customer-say-name ml-3">Cherel Baker</h4>
-                      <h4 class="company-name ml-2">Roll Name/position</h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-6 mb-4 mb-sm-1">
-                  <i class="fas fa-quote-left fa-sm-md fa-md-lg text-muted"></i>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores dicta doloremque earum,
-                    eius est excepturi fugit in laboriosam magnam nobis odit officia qui quidem saepe sint sit temporibus totam voluptatum!
-                  </p>
-                  <div class="customer-say-image">
-                    <img src="http://dummyimage.com/152x194.bmp/dddddd/ffffff" class="img-fluid rounded-circle" alt="" />
-                    <div class="customer-company-name d-inline-block">
-                      <h4 class="customer-say-name ml-3">Cherel Baker</h4>
-                      <h4 class="company-name ml-2">Roll Name/position</h4>
+                      <h4 class="customer-say-name ml-3">{{customerComments.clientName}}</h4>
+                      <h4 class="company-name ml-2">{{customerComments.details}}</h4>
                     </div>
                   </div>
                 </div>
@@ -262,7 +187,7 @@
         </div>
       </div><!--.row-->
     </div><!--.container-->
-    <div class="customer-say-about py-5">
+    <div class="customer-say-about py-5 d-none">
       <div class="container">
         <h3 class="mb-3 mb-sm-5">What customer says about Yes Go</h3>
         <div class="row">
@@ -300,9 +225,8 @@
     </div>
   </div><!--.employee-body-section-->
   </div>
-  <div class="" *ngIf="employeeDetails == null" style="height: 50vh; width: 100%; background: #f8f9fa">
-    <!--  <h3 class="text-center text-primary">Loading Stats!</h3>-->
-    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+  <div class="col-12 text-center py-5" *ngIf="employeeDetails == null && employeeProjectsList == null && employeeCustomerComments == null">
+    <div class="lds-ring mx-auto"><div></div><div></div><div></div><div></div></div>
   </div>
 </div>
 <!--End Employee Main Detail-->

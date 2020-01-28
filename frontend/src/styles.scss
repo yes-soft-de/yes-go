@@ -48,13 +48,34 @@
 // Edit Carousel Inside Home Component
 .about-us {
   .carousel-indicators {
-    bottom: -90% !important;
+    bottom: -60% !important;
   }
 
   .carousel .carousel-indicators li {
     width: 1rem;
     height: 1rem;
     margin: 0 10px;
+    &.active {
+      background-color: $blue;
+    }
+  }
+
+  .controls-top {
+    display: none;
+  }
+}
+
+// Edit Carousel Inside Customers List Component
+.employee-detail {
+  .carousel-indicators {
+    bottom: -40% !important;
+  }
+
+  .carousel .carousel-indicators li {
+    width: .8rem;
+    height: .8rem;
+    margin: 0 7px;
+    background-color: #aaa;
     &.active {
       background-color: $blue;
     }

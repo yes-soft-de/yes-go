@@ -1,6 +1,8 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {CustomerService} from '../../service/customer.service';
 import {CustomerList} from '../../entity/customer-list';
+import {CustomerRepositoryService} from '../../repository/customer-repository.service';
+import {HelperService} from '../../../shared/helper/helper.service';
 
 @Component({
   selector: 'app-customer-list',
@@ -11,14 +13,22 @@ export class CustomerListComponent implements OnInit {
   customersList: CustomerList[];
   customers = [[]];
 
-  constructor(private customerService: CustomerService) { }
+  constructor(private customerService: CustomerService,
+              private customerSer: CustomerRepositoryService) { }
 
   ngOnInit() {
+
     this.customerService.getAllCustomers().subscribe(
       customersList => {
         this.customersList = customersList;
-        this.customers = this.chunk(customersList, this.onResize());
+        this.customers = HelperService.chunk(customersList, this.onResize());
         console.log('customers : ', this.customers);
+      }
+    );
+
+    this.customerSer.getCustomer(2).subscribe(
+      data => {
+        console.log('customer detail: ', data);
       }
     );
   }
@@ -37,14 +47,4 @@ export class CustomerListComponent implements OnInit {
     }
     return chunkSize;
   }
-
-  // create chunk of Customers array to use it in customer carousel
-  chunk(customersArray, chunkSize) {
-    const arr = [];
-    for (let i = 0, len = customersArray.length; i < len; i += chunkSize) {
-      arr.push(customersArray.slice(i, i + chunkSize));
-    }
-    return arr;
-  }
-
 }

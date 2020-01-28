@@ -12,7 +12,7 @@
             <div class="row">
               <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto" *ngFor="let employee of employeesList">
                 <div class="team-member" [class.selected]="employee == selectedEmployee" (click)="onSelected(employee)">
-                  <i class="fas fa-external-link-alt fa-fw fa-sm"></i>
+<!--                  <i class="fas fa-external-link-alt fa-fw fa-sm"></i>-->
                   <p>{{employee?.fullName}}</p>
                 </div>
               </div>
@@ -25,7 +25,7 @@
                 <mdb-carousel-item *ngFor="let employee of employees; let i = index">
                   <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto" *ngFor="let member of employee">
                     <div class="team-member" [class.selected]="member == selectedEmployee" (click)="onSelected(member)">
-                      <i class="fas fa-external-link-alt fa-fw fa-sm"></i>
+<!--                      <i class="fas fa-external-link-alt fa-fw fa-sm"></i>-->
                       <p>{{member?.fullName}}</p>
                     </div>
                   </div>

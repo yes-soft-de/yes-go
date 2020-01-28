@@ -13,7 +13,9 @@ export class EmployeeShortDetailComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
 
   onRate($event: { oldValue: number, newValue: number, starRating: StarRatingComponent}) {
     alert(`Old Value:${$event.oldValue},

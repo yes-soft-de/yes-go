@@ -6,4 +6,5 @@ export class CustomerList {
   email: string;
   phone: string;
   image: string;
+  commentAboutYesGo: string;
 }
