@@ -4,15 +4,14 @@
 namespace App\Response;
 
 
-class GetCustomerCommentsResponse
+class CreateProjectResponse
 {
     public $id;
-    public $customer;
-    public $employee;
-    public $body;
-    public $date;
+    public $name;
+    public $link;
+    public $publishedDate;
+    public $workingPeriod;
     public $details;
-
 
     /**
      * @return mixed
@@ -33,65 +32,65 @@ class GetCustomerCommentsResponse
     /**
      * @return mixed
      */
-    public function getCustomer()
+    public function getName()
     {
-        return $this->customer;
+        return $this->name;
     }
 
     /**
-     * @param mixed $customer
+     * @param mixed $name
      */
-    public function setCustomer($customer): void
+    public function setName($name): void
     {
-        $this->customer = $customer;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getEmployee()
-    {
-        return $this->employee;
-    }
-
-    /**
-     * @param mixed $employee
-     */
-    public function setEmployee($employee): void
-    {
-        $this->employee = $employee;
+        $this->name = $name;
     }
 
     /**
      * @return mixed
      */
-    public function getBody()
+    public function getLink()
     {
-        return $this->body;
+        return $this->link;
     }
 
     /**
-     * @param mixed $body
+     * @param mixed $link
      */
-    public function setBody($body): void
+    public function setLink($link): void
     {
-        $this->body = $body;
+        $this->link = $link;
     }
 
     /**
      * @return mixed
      */
-    public function getDate()
+    public function getPublishedDate()
     {
-        return $this->date;
+        return $this->publishedDate;
     }
 
     /**
-     * @param mixed $date
+     * @param mixed $publishedDate
      */
-    public function setDate($date): void
+    public function setPublishedDate($publishedDate): void
     {
-        $this->date = $date;
+        $this->publishedDate = $publishedDate;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWorkingPeriod()
+    {
+        return $this->workingPeriod;
+    }
+
+    /**
+     * @param mixed $workingPeriod
+     */
+    public function setWorkingPeriod($workingPeriod): void
+    {
+        $this->workingPeriod = $workingPeriod;
     }
 
     /**

@@ -64,7 +64,6 @@ class EmployeeManager
     public function getAll()
     {
         $data = $this->employeeRepository->getAll();
-
         return $data;
     }
 
@@ -75,5 +74,9 @@ class EmployeeManager
     public function getEmployeeProjects(GetByIdRequest $request)
     {
         return $result=$this->employeeRepository->findEmployeeProjects($request->getId());
+    }
+    public function getEmployeeSkills($request)
+    {
+        return $result = $this->employeeRepository->getEmployeeSkills($request);
     }
 }

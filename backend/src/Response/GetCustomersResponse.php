@@ -13,6 +13,7 @@ class GetCustomersResponse
     public $email;
     public $phone;
     public $image;
+    public $commentAboutYesGo;
 
     /**
      * @return mixed
@@ -126,4 +127,19 @@ class GetCustomersResponse
         $this->image = $image;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getCommentAboutYesGo()
+    {
+        return $this->commentAboutYesGo;
+    }
+
+    /**
+     * @param mixed $commentAboutYesGo
+     */
+    public function setCommentAboutYesGo($commentAboutYesGo): void
+    {
+        $this->commentAboutYesGo = $commentAboutYesGo;
+    }
 }

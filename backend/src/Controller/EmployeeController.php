@@ -92,4 +92,15 @@ class EmployeeController extends BaseController
         $result = $this->employeeService->getEmployeeById($request);
         return $this->response($result, self::FETCH);
     }
+    /**
+     * @Route("/employeeprojects/{id}", name="getEmployeeProjects",methods={"GET"})
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function getEmployeeProjects(Request $request)
+    {
+        $request=new GetByIdRequest($request->get('id'));
+        $result = $this->employeeService->getEmployeeProjects($request);
+        return $this->response($result, self::FETCH);
+    }
 }

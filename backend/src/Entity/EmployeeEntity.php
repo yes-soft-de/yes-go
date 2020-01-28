@@ -108,6 +108,26 @@ class EmployeeEntity
      */
     private $isActive;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $rating;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\ServicesEntity")
+     */
+    private $service;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $yearsOfExperience;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $word;
+
     public function __construct()
     {
         $this->employeeComments = new ArrayCollection();
@@ -389,6 +409,54 @@ class EmployeeEntity
     public function setIsActive(?bool $isActive): self
     {
         $this->isActive = $isActive;
+
+        return $this;
+    }
+
+    public function getRating(): ?int
+    {
+        return $this->rating;
+    }
+
+    public function setRating(?int $rating): self
+    {
+        $this->rating = $rating;
+
+        return $this;
+    }
+
+    public function getService(): ?ServicesEntity
+    {
+        return $this->service;
+    }
+
+    public function setService(?ServicesEntity $service): self
+    {
+        $this->service = $service;
+
+        return $this;
+    }
+
+    public function getYearsOfExperience(): ?int
+    {
+        return $this->yearsOfExperience;
+    }
+
+    public function setYearsOfExperience(?int $yearsOfExperience): self
+    {
+        $this->yearsOfExperience = $yearsOfExperience;
+
+        return $this;
+    }
+
+    public function getWord(): ?string
+    {
+        return $this->word;
+    }
+
+    public function setWord(?string $word): self
+    {
+        $this->word = $word;
 
         return $this;
     }

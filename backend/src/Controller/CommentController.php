@@ -91,4 +91,15 @@ class CommentController extends BaseController
         $result = $this->commentService->getCommentById($request);
         return $this->response($result, self::FETCH);
     }
+    /**
+     * @Route("/employeecomments/{id}", name="getEmployeeComments",methods={"GET"})
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function getEmployeeComments(Request $request)
+    {
+        $request=new GetByIdRequest($request->get('id'));
+        $result = $this->commentService->getEmployeeComments($request);
+        return $this->response($result, self::FETCH);
+    }
 }

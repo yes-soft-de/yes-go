@@ -33,6 +33,11 @@ class ServicesEntity
      */
     private $employeeService;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $isActive;
+
     public function __construct()
     {
         $this->employeeService = new ArrayCollection();
@@ -94,6 +99,18 @@ class ServicesEntity
                 $employeeService->setService(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getIsActive(): ?bool
+    {
+        return $this->isActive;
+    }
+
+    public function setIsActive(?bool $isActive): self
+    {
+        $this->isActive = $isActive;
 
         return $this;
     }

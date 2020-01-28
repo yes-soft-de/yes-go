@@ -43,6 +43,11 @@ class CommentEntity
      */
     private $details;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $isForEmployee;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -104,6 +109,18 @@ class CommentEntity
     public function setDetails(?string $details): self
     {
         $this->details = $details;
+
+        return $this;
+    }
+
+    public function getIsForEmployee(): ?bool
+    {
+        return $this->isForEmployee;
+    }
+
+    public function setIsForEmployee(?bool $isForEmployee): self
+    {
+        $this->isForEmployee = $isForEmployee;
 
         return $this;
     }

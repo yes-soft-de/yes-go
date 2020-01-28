@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\ServiceEmployeeEntity;
+use App\Entity\SkillEmployeeEntity;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method ServiceEmployeeEntity|null find($id, $lockMode = null, $lockVersion = null)
- * @method ServiceEmployeeEntity|null findOneBy(array $criteria, array $orderBy = null)
- * @method ServiceEmployeeEntity[]    findAll()
- * @method ServiceEmployeeEntity[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method SkillEmployeeEntity|null find($id, $lockMode = null, $lockVersion = null)
+ * @method SkillEmployeeEntity|null findOneBy(array $criteria, array $orderBy = null)
+ * @method SkillEmployeeEntity[]    findAll()
+ * @method SkillEmployeeEntity[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ServiceEmployeeEntityRepository extends ServiceEntityRepository
+class SkillEmployeeEntityRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, ServiceEmployeeEntity::class);
+        parent::__construct($registry, SkillEmployeeEntity::class);
     }
 
     // /**
-    //  * @return ServiceEmployeeEntity[] Returns an array of ServiceEmployeeEntity objects
+    //  * @return SkillEmployeeEntity[] Returns an array of SkillEmployeeEntity objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class ServiceEmployeeEntityRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?ServiceEmployeeEntity
+    public function findOneBySomeField($value): ?SkillEmployeeEntity
     {
         return $this->createQueryBuilder('s')
             ->andWhere('s.exampleField = :val')
@@ -47,5 +47,4 @@ class ServiceEmployeeEntityRepository extends ServiceEntityRepository
         ;
     }
     */
-
 }
