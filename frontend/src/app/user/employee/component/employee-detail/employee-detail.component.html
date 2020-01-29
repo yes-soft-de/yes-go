@@ -5,14 +5,14 @@
   <div class="employee-header-content position-relative">
     <div class="container">
       <div class="row">
-        <div class="col-8 col-sm-3 mx-auto">
-          <div class="employee-image rounded-circle p-2">
+        <div class="col-8 col-sm-3 short-employee-image mx-auto">
+          <div class="employee-image rounded-circle text-center p-2">
 <!--            <img class="img-fluid rounded-circle" src="../../../../../assets/avatar.png" alt="" />-->
-            <img class="img-fluid" src="{{employeeDetails.image}}"
+            <img class="img-fluid rounded-circle" src="{{employeeDetails.image}}"
                  (error)="employeeDetails.image = '../../../assets/avatar.png'" alt="Employee Image" />
           </div>
         </div>
-        <div class="col-10 col-sm-9 align-self-center mx-auto mx-sm-0 pt-sm-0 pt-md-0 pt-lg-4 pt-xl-0">
+        <div class="col-10 col-sm-9 align-self-center mx-auto mx-sm-0 pt-sm-0 pt-md-0 pt-lg-4 pt-xl-0 mb-3">
           <div class="employee-info">
             <span class="d-sm-none text-center text-sm-left">
               <star-rating
@@ -46,7 +46,7 @@
         <div class="col-12 col-sm-6 col-md-8">
           <div class="program-expert text-center text-md-left">
             <h3 class="mb-4">Employee Skills</h3>
-            <div class="row border-right" *ngIf="employeeDetails.skills.length != 0">
+            <div class="row border-right" *ngIf="employeeDetails.skills.length > 0">
               <div class="col-12 col-md-6" *ngFor="let skill of employeeDetails.skills">
                 <div class="program-expert-info text-center">
 <!--                  <img src="../../../../../assets/square01.jpg" class="img-fluid rounded-circle" alt="" />-->
@@ -59,7 +59,7 @@
                 </div>
               </div>
             </div>
-            <div class="row border-right" *ngIf="employeeDetails.skills.length == 0">
+            <div class="row border-right" *ngIf="employeeDetails.skills.length < 1">
               <p class="col-12 col-md-10 text-center text-sm-left">This Employee Don't Have Skills Yet.</p>
             </div>
           </div>
@@ -146,9 +146,9 @@
                   <div class="col-12 col-sm-7 d-none">
                     <div class="row">
                       <div class="col-4">
-                        <img class="img-fluid" src="{{employeeProjectsList.image}}"
-                             (error)="employeeProjectsList.image = '../../../assets/square01.jpg'" alt="Customer Image" />
-<!--                        <img src="../../../../../assets/square01.jpg" class="img-fluid" alt="" />-->
+<!--                        <img class="img-fluid" src="{{employeeProjectsList.image}}"-->
+<!--                             (error)="employeeProjectsList.image = '../../../assets/square01.jpg'" alt="Customer Image" />-->
+                        <img src="../../../../../assets/square01.jpg" class="img-fluid" alt="" />
                       </div>
                       <div class="col-4">
                         <img src="../../../../../assets/square01.jpg" class="img-fluid" alt="" />

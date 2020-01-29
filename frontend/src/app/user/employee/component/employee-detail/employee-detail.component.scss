@@ -37,6 +37,7 @@
     }
     .employee-detail-projects {
       .customer-say {
+        min-height: 100px;
         h6 a {
           text-decoration: none;
           &:hover {
@@ -122,6 +123,13 @@
   .employee-detail {
     .employee-header-content {
       top: -13vh;
+      .employee-image {
+        background-color: transparent;
+        img {
+          padding: 10px;
+          background-color: #aaa;
+        }
+      }
     }
     .employee-body-section {
       .language-experience-year {

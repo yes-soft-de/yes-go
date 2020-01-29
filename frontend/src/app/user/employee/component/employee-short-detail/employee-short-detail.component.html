@@ -1,8 +1,8 @@
 <div *ngIf="employee">
   <div class="row">
-    <div class="col-8 col-sm-3 offset-sm-3 mx-auto mr-sm-0">
-      <div class="employee-image">
-        <img class="img-fluid" src="{{employee.image}}"
+    <div class="col-8 col-sm-3 short-employee-image offset-sm-3 mx-auto mr-sm-0">
+      <div class="employee-image text-center">
+        <img class="img-fluid rounded-circle" src="{{employee.image}}"
              (error)="employee.image = '../../../assets/avatar.png'" alt="Employee Image" />
       </div>
     </div>

@@ -27,7 +27,7 @@ export class EmployeeDetailComponent implements OnInit {
         this.employeeService.getEmployee(Number(urlSegments[1].path)).subscribe(
           employeeDetails => {
             this.employeeDetails = employeeDetails;
-            console.log('employeeDetails', employeeDetails);
+            console.log('employeeDetails', employeeDetails, (employeeDetails.skills.length < 1));
           }
         );
         this.employeeService.getEmployeeCustomerComments(Number(urlSegments[1].path)).subscribe(
