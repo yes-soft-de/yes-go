@@ -5,6 +5,7 @@ import { AppRoutingModule, routingComponents  } from './controller/app-routing.m
 import { UserModule } from './user/user.module';
 import { AdminModule } from './admin/admin.module';
 import { HttpClientModule } from '@angular/common/http';
+// import { NgxJsonLdModule } from '@ngx-lite/json-ld';
 
 import { AppComponent } from './app/app.component';
 

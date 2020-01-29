@@ -13,6 +13,8 @@ import { EmployeeListComponent } from './employee/component/employee-list/employ
 import { EmployeeShortDetailComponent } from './employee/component/employee-short-detail/employee-short-detail.component';
 import { SearchComponent } from './search/component/search/search.component';
 import { EmployeeDetailComponent } from './employee/component/employee-detail/employee-detail.component';
+import { EmployeeKnowledgeComponent } from './employee/component/employee-knowledge/employee-knowledge.component';
+import {NgxJsonLdModule} from '@ngx-lite/json-ld';
 
 
 
@@ -26,13 +28,15 @@ import { EmployeeDetailComponent } from './employee/component/employee-detail/em
     EmployeeListComponent,
     EmployeeShortDetailComponent,
     SearchComponent,
-    EmployeeDetailComponent
+    EmployeeDetailComponent,
+    EmployeeKnowledgeComponent
   ],
   imports: [
     CommonModule,
     UserRoutingModule,
     CarouselModule,
-    RatingModule
+    RatingModule,
+    NgxJsonLdModule
   ]
 })
 export class UserModule { }
