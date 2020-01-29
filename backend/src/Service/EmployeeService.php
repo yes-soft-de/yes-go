@@ -10,6 +10,7 @@ use App\Manager\EmployeeManager;
 use App\Request\GetEmployeeByIdResponse;
 use App\Response\CreateEmployeeResponse;
 use App\Response\DeleteResponse;
+use App\Response\GetEmployeeProjectsResponse;
 use App\Response\GetEmployeesResponse;
 use App\Response\UpdateEmployeeResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -46,8 +47,13 @@ class EmployeeService
     {
         $result = $this->employeeManager->getAll();
         $response=[];
-        foreach ($result as $row)
-            $response[] = $this->autoMapping->map(EmployeeEntity::class, GetEmployeesResponse::class, $row);
+        $counter=0;
+        foreach ($result as $row) {
+            $response[$counter] = $this->autoMapping->map(EmployeeEntity::class, GetEmployeesResponse::class, $row);
+            $skills=$this->employeeManager->getEmployeeSkills($row->getId());
+            $response[$counter]->setSkills($skills);
+            $counter++;
+        }
         return $response;
     }
 
@@ -61,9 +67,17 @@ class EmployeeService
     public function getEmployeeById($request)
     {
         $result = $this->employeeManager->getEmployeeById($request);
-       // $projects=$this->employeeManager->getEmployeeProjects($request);
+        $skills=$this->employeeManager->getEmployeeSkills($request->getId());
         $response = $this->autoMapping->map(EmployeeEntity::class, GetEmployeeByIdResponse::class, $result);
-      //  $response->setProjects($projects);
+        $response->setSkills($skills);
+        return $response;
+    }
+    public function getEmployeeProjects($request)
+    {
+        $result = $this->employeeManager->getEmployeeProjects($request);
+        $response=[];
+        foreach ($result as $project)
+        $response[] = $this->autoMapping->map('array', GetEmployeeProjectsResponse::class,$project);
         return $response;
     }
 }

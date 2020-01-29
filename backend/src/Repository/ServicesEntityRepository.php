@@ -47,4 +47,18 @@ class ServicesEntityRepository extends ServiceEntityRepository
         ;
     }
     */
+
+  public function findServiceTeam($id): ?array
+  {
+      return $this->createQueryBuilder('service')
+          ->select('employee')
+          ->from('App:EmployeeEntity','employee')
+          ->where('employee.service=service.id')
+          ->andWhere('service.id=:id')
+          ->setParameter('id', $id)
+          ->getQuery()
+          ->getResult()
+      ;
+  }
+
 }

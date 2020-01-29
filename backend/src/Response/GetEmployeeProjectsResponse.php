@@ -4,13 +4,12 @@
 namespace App\Response;
 
 
-class GetEmployeeCommentsResponse
+class GetEmployeeProjectsResponse
 {
     public $id;
-    public $body;
-    public $date;
+    public $name;
+    public $link;
     public $details;
-    public $clientName;
     public $image;
 
     /**
@@ -32,33 +31,33 @@ class GetEmployeeCommentsResponse
     /**
      * @return mixed
      */
-    public function getBody()
+    public function getName()
     {
-        return $this->body;
+        return $this->name;
     }
 
     /**
-     * @param mixed $body
+     * @param mixed $name
      */
-    public function setBody($body): void
+    public function setName($name): void
     {
-        $this->body = $body;
+        $this->name = $name;
     }
 
     /**
      * @return mixed
      */
-    public function getDate()
+    public function getLink()
     {
-        return $this->date;
+        return $this->link;
     }
 
     /**
-     * @param mixed $date
+     * @param mixed $link
      */
-    public function setDate($date): void
+    public function setLink($link): void
     {
-        $this->date = $date;
+        $this->link = $link;
     }
 
     /**
@@ -80,22 +79,6 @@ class GetEmployeeCommentsResponse
     /**
      * @return mixed
      */
-    public function getClientName()
-    {
-        return $this->clientName;
-    }
-
-    /**
-     * @param mixed $clientName
-     */
-    public function setClientName($clientName): void
-    {
-        $this->clientName = $clientName;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getImage()
     {
         return $this->image;
@@ -108,6 +91,5 @@ class GetEmployeeCommentsResponse
     {
         $this->image = $image;
     }
-
 
 }

@@ -66,7 +66,7 @@ class CommentService
         $result = $this->commentManager->getEmployeeComments($request);
         $response=[];
         foreach ($result as $comment)
-        $response = $this->autoMapping->map('array', GetEmployeeCommentsResponse::class, $comment);
+        $response[] = $this->autoMapping->map('array', GetEmployeeCommentsResponse::class, $comment);
         return $response;
     }
 }

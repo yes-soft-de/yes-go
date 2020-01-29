@@ -18,10 +18,12 @@ class GetEmployeeByIdResponse
     public $twitter;
     public $linkedin;
     public $gmail;
-    public $birthDate;
-    public $joiningDate;
+//    public $birthDate;
+//    public $joiningDate;
     public $skills;
     public $rating;
+    public $word;
+    public $yearsOfExperience;
 
     /**
      * @return mixed
@@ -217,37 +219,37 @@ class GetEmployeeByIdResponse
         $this->gmail = $gmail;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getBirthDate()
-    {
-        return $this->birthDate;
-    }
-
-    /**
-     * @param mixed $birthDate
-     */
-    public function setBirthDate($birthDate): void
-    {
-        $this->birthDate = $birthDate;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getJoiningDate()
-    {
-        return $this->joiningDate;
-    }
-
-    /**
-     * @param mixed $joiningDate
-     */
-    public function setJoiningDate($joiningDate): void
-    {
-        $this->joiningDate = $joiningDate;
-    }
+//    /**
+//     * @return mixed
+//     */
+//    public function getBirthDate()
+//    {
+//        return $this->birthDate;
+//    }
+//
+//    /**
+//     * @param mixed $birthDate
+//     */
+//    public function setBirthDate($birthDate): void
+//    {
+//        $this->birthDate = $birthDate;
+//    }
+//
+//    /**
+//     * @return mixed
+//     */
+//    public function getJoiningDate()
+//    {
+//        return $this->joiningDate;
+//    }
+//
+//    /**
+//     * @param mixed $joiningDate
+//     */
+//    public function setJoiningDate($joiningDate): void
+//    {
+//        $this->joiningDate = $joiningDate;
+//    }
 
     /**
      * @return mixed
@@ -281,21 +283,36 @@ class GetEmployeeByIdResponse
         $this->rating = $rating;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getWord()
+    {
+        return $this->word;
+    }
 
-//    /**
-//     * @return mixed
-//     */
-//    public function getProjects()
-//    {
-//        return $this->projects;
-//    }
-//
-//    /**
-//     * @param mixed $projects
-//     */
-//    public function setProjects($projects): void
-//    {
-//        $this->projects = $projects;
-//    }
+    /**
+     * @param mixed $word
+     */
+    public function setWord($word): void
+    {
+        $this->word = $word;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getYearsOfExperience()
+    {
+        return $this->yearsOfExperience;
+    }
+
+    /**
+     * @param mixed $yearsOfExperience
+     */
+    public function setYearsOfExperience($yearsOfExperience): void
+    {
+        $this->yearsOfExperience = $yearsOfExperience;
+    }
 
 }

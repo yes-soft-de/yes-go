@@ -61,7 +61,7 @@ class CustomerEntity
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $CommentAboutUs;
+    private $commentAboutYesGo;
 
     public function __construct()
     {
@@ -188,14 +188,14 @@ class CustomerEntity
         return $this;
     }
 
-    public function getCommentAboutUs(): ?string
+    public function getCommentAboutYesGo(): ?string
     {
-        return $this->CommentAboutUs;
+        return $this->commentAboutYesGo;
     }
 
-    public function setCommentAboutUs(?string $CommentAboutUs): self
+    public function setCommentAboutYesGo(?string $commentAboutYesGo): self
     {
-        $this->CommentAboutUs = $CommentAboutUs;
+        $this->commentAboutYesGo = $commentAboutYesGo;
 
         return $this;
     }

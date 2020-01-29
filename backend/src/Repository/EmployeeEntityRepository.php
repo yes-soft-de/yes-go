@@ -61,7 +61,7 @@ class EmployeeEntityRepository extends ServiceEntityRepository
     public function findEmployeeProjects($id)
     {
         return $this->createQueryBuilder('employee')
-            ->select('project.name ')
+            ->select('project.id','project.name','project.link','project.details','project.image')
             ->from('App:ProjectEmployeeEntity','projectEmployee')
             ->from('App:ProjectEntity','project')
             ->andWhere('projectEmployee.employee=employee.id')
@@ -76,5 +76,30 @@ class EmployeeEntityRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('employee')
             ->getQuery()
             ->getResult();
+    }
+    public function search($key)
+    {
+        $result=$this->createQueryBuilder('employee')
+            ->select('id','name','image','position')
+            ->andWhere('name like :key' )
+            ->orWhere('positon like :key')
+            ->setParameter('key', '%'.$key.'%')
+            ->getQuery()
+            ->getResult();
+        return $result;
+    }
+    public function getEmployeeSkills($id)
+    {
+        $result=$this->createQueryBuilder('employee')
+            ->select('skill.id','skill.name','skill.details')
+            ->from('App:SkillEntity','skill')
+            ->from('App:SkillEmployeeEntity','skillEmployee')
+            ->andWhere('skillEmployee.skill=skill.id')
+            ->andWhere('skillEmployee.employee=employee.id')
+            ->andWhere('employee.id=:id')
+            ->setParameter('id',$id)
+            ->getQuery()
+            ->getResult();
+        return $result;
     }
 }

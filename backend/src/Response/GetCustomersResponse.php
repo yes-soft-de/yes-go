@@ -13,7 +13,7 @@ class GetCustomersResponse
     public $email;
     public $phone;
     public $image;
-    public $commentAboutUs;
+    public $commentAboutYesGo;
 
     /**
      * @return mixed
@@ -130,18 +130,16 @@ class GetCustomersResponse
     /**
      * @return mixed
      */
-    public function getCommentAboutUs()
+    public function getCommentAboutYesGo()
     {
-        return $this->commentAboutUs;
+        return $this->commentAboutYesGo;
     }
 
     /**
-     * @param mixed $commentAboutUs
+     * @param mixed $commentAboutYesGo
      */
-    public function setCommentAboutUs($commentAboutUs): void
+    public function setCommentAboutYesGo($commentAboutYesGo): void
     {
-        $this->commentAboutUs = $commentAboutUs;
+        $this->commentAboutYesGo = $commentAboutYesGo;
     }
-
-
 }

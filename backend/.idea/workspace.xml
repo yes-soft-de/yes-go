@@ -2,93 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5edf6ce-0268-4b33-866a-87bdb3e79317" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/01.0a3750e6fdb29fcd632e.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/02.351bd6828f980ec53eb3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/03.e438ea2aabdb1087dc4f.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/04.0284d042a6c29213aaa1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/05.5014f9cce435c71ade63.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/06.21612b9d3e9d84e7e876.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/07.f8da0281186df8f17f73.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/08.975f7e0074400e7561ba.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/09.fd19309a1932b4751387.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/3rdpartylicenses.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/5-es2015.e3f797b713279625a8df.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/5-es5.e3f797b713279625a8df.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/6-es2015.e78a52a36f7115b8be59.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/6-es5.e78a52a36f7115b8be59.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/Roboto-Bold.39b2c3031be6b4ea96e2.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/Roboto-Bold.dc81817def276b4f2139.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/Roboto-Bold.e31fcf1885e371e19f57.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/Roboto-Bold.ecdd509cadbf1ea78b8d.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/Roboto-Light.3b813c2ae0d04909a33a.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/Roboto-Light.46e48ce0628835f68a73.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/Roboto-Light.69f8a0617ac472f78e45.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/Roboto-Light.a990f611f2305dc12965.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/Roboto-Medium.4d9f3f9e5195e7b074bb.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/Roboto-Medium.574fd0b50367f886d359.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/Roboto-Medium.894a2ede85a483bf9bed.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/Roboto-Medium.fc78759e93a6cac50458.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/Roboto-Regular.2751ee43015f9884c364.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/Roboto-Regular.30799efa5bf74129468a.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/Roboto-Regular.ba3dcd8903e3d0af5de7.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/Roboto-Regular.df7b648ce5356ea1ebce.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/Roboto-Thin.7500519de3d82e33d158.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/Roboto-Thin.94998475f6aea65f5584.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/Roboto-Thin.954bbdeb86483e4ffea0.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/Roboto-Thin.dfe56a876d0282555d1e.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/arrow_left.270f72df47e036d9cfa1.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/arrow_right.d9ccc77c8240ad0dc272.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/assets/avatar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/assets/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/assets/square01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/fa-brands-400.06147b6cd88c7346cecd.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/fa-brands-400.5063b105c7646c8043d5.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/fa-brands-400.a9c4bb7348f42626454c.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/fa-brands-400.c5e0f14f88a828261ba0.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/fa-brands-400.cccc9d29470e879e40eb.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/fa-regular-400.65b286af947c0d982ca0.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/fa-regular-400.7b9568e6389b1f8ae090.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/fa-regular-400.c1a866ec0e04a5e1915b.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/fa-regular-400.c4f508e7c4f01a9eeba7.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/fa-regular-400.f5f2566b93e89391da4d.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/fa-solid-900.0bff33a5fd7ec3902354.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/fa-solid-900.333bae208dc363746961.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/fa-solid-900.44d537ab79f921fde5a2.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/fa-solid-900.8e4a6dcc692b3887f9f5.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/fa-solid-900.c2801fb415f03c7b1709.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/main-es2015.18b980bf0eb93d79c6b2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/main-es5.18b980bf0eb93d79c6b2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/polyfills-es2015.2987770fde9daa1d8a2e.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/polyfills-es5.ef4b1e1fc703b3ff76e3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/runtime-es2015.1f81d5c17b7651ea4084.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/runtime-es5.1f81d5c17b7651ea4084.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/scripts.76d41fbab69877b36452.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/dist/ishtar/styles.6748dd1d713cc9244d83.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Response/GetEmployeeProjectsResponse.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Response/GetServiceTeamResponse.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/ServicesService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProjectController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Manager/ProjectManager.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EmployeeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ServicesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ServicesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/CustomerEntity.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/CustomerEntity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EmployeeEntity.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EmployeeEntity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ProjectEntity.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ProjectEntity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Manager/EmployeeManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/EmployeeManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Manager/ServicesManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Manager/ServicesManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/CommentEntityRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CommentEntityRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EmployeeEntityRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/EmployeeEntityRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ServiceEmployeeEntityRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ServiceEmployeeEntityRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ServicesEntityRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ServicesEntityRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Response/GetCustomerByIdResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Response/GetCustomerByIdResponse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Response/GetCustomerCommentsResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Response/GetCustomerCommentsResponse.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Response/GetCustomersResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Response/GetCustomersResponse.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Response/GetEmployeeByIdResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Response/GetEmployeeByIdResponse.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Response/GetEmployeeCommentsResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Response/GetEmployeeCommentsResponse.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Response/GetEmployeesResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Response/GetEmployeesResponse.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Service/CommentService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/CommentService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/ProjectService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProjectService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/user/employee/component/employee-detail/employee-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/user/employee/component/employee-detail/employee-detail.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/user/employee/component/employee-detail/employee-detail.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/user/employee/component/employee-detail/employee-detail.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/user/employee/component/employee-detail/employee-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/user/employee/component/employee-detail/employee-detail.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/user/employee/component/employee-short-detail/employee-short-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/user/employee/component/employee-short-detail/employee-short-detail.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/user/employee/component/employee-short-detail/employee-short-detail.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/user/employee/component/employee-short-detail/employee-short-detail.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/user/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/user/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/user/home/home.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/user/home/home.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/user/search/component/search/search.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/user/search/component/search/search.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/user/user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/user/user.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/EmployeeService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/EmployeeService.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -105,10 +40,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Manager/CommentManager.php">
+        <entry file="file://$PROJECT_DIR$/src/Service/ServicesService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="82" column="1" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="1" />
+            <state relative-caret-position="402">
+              <caret line="72" column="25" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
               <folding>
                 <element signature="e#33#53#0#PHP" expanded="true" />
               </folding>
@@ -117,43 +52,49 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/CommentController.php">
+        <entry file="file://$PROJECT_DIR$/src/Service/EmployeeService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="94" column="25" selection-start-line="94" selection-start-column="25" selection-end-line="94" selection-end-column="25" />
+            <state relative-caret-position="195">
+              <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Manager/EmployeeManager.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="79" column="78" selection-start-line="79" selection-start-column="78" selection-end-line="79" selection-end-column="78" />
               <folding>
-                <element signature="e#34#54#0#PHP" expanded="true" />
+                <element signature="e#32#52#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Service/CommentService.php">
+        <entry file="file://$PROJECT_DIR$/src/Entity/CustomerEntity.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="65" column="71" selection-start-line="65" selection-start-column="71" selection-end-line="65" selection-end-column="71" />
-              <folding>
-                <element signature="e#33#53#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="107">
+              <caret line="188" column="5" selection-start-line="188" selection-start-column="5" selection-end-line="188" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Repository/CommentEntityRepository.php">
+        <entry file="file://$PROJECT_DIR$/src/Response/GetCustomerByIdResponse.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="62" column="16" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
+            <state relative-caret-position="311">
+              <caret line="143" column="5" selection-start-line="143" selection-start-column="5" selection-end-line="143" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Response/GetEmployeeCommentsResponse.php">
+        <entry file="file://$PROJECT_DIR$/src/Response/GetCustomersResponse.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+            <state relative-caret-position="328">
+              <caret line="143" column="5" selection-start-line="143" selection-start-column="5" selection-end-line="143" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -164,15 +105,16 @@
     <findStrings>
       <find>artist</find>
       <find>employee</find>
+      <find>project</find>
     </findStrings>
     <replaceStrings>
       <replace>Employee</replace>
       <replace>Project</replace>
       <replace>project</replace>
-      <replace>Services</replace>
-      <replace>services</replace>
       <replace>comment</replace>
       <replace>Comment</replace>
+      <replace>services</replace>
+      <replace>Services</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -181,23 +123,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Repository/ServiceEntityRepository.php" />
-        <option value="$PROJECT_DIR$/src/Request/GetEmployeeByIdRequest.php" />
-        <option value="$PROJECT_DIR$/src/Request/GetByIdRequest.php" />
-        <option value="$PROJECT_DIR$/src/Entity/EmployeeEntity.php" />
-        <option value="$PROJECT_DIR$/src/Migrations/Version20200115202231.php" />
-        <option value="$PROJECT_DIR$/src/Entity/SkillEntity.php" />
-        <option value="$PROJECT_DIR$/src/Repository/EmployeeEntityRepository.php" />
-        <option value="$PROJECT_DIR$/src/Request/CreateEmployeeRequest.php" />
         <option value="$PROJECT_DIR$/src/Response/CreateEmployeeResponse.php" />
         <option value="$PROJECT_DIR$/src/Controller/CustomerController.php" />
-        <option value="$PROJECT_DIR$/src/Service/CustomerService.php" />
         <option value="$PROJECT_DIR$/src/Repository/CustomerEntityRepository.php" />
         <option value="$PROJECT_DIR$/src/Request/UpdateEmployeeRequest.php" />
         <option value="$PROJECT_DIR$/src/Response/UpdateEmployeeResponse.php" />
-        <option value="$PROJECT_DIR$/src/Controller/EmployeeController.php" />
-        <option value="$PROJECT_DIR$/src/Manager/EmployeeManager.php" />
-        <option value="$PROJECT_DIR$/src/Service/EmployeeService.php" />
         <option value="$PROJECT_DIR$/src/Request/CreateCustomerRequest.php" />
         <option value="$PROJECT_DIR$/src/Request/UpdateCustomerRequest.php" />
         <option value="$PROJECT_DIR$/src/Request/UpdateProjectRequest.php" />
@@ -214,24 +144,36 @@
         <option value="$PROJECT_DIR$/src/Repository/ProjectEntityRepository.php" />
         <option value="$PROJECT_DIR$/src/Manager/CustomerManager.php" />
         <option value="$PROJECT_DIR$/src/Manager/ProjectManager.php" />
-        <option value="$PROJECT_DIR$/src/Repository/ServicesEntityRepository.php" />
         <option value="$PROJECT_DIR$/src/Controller/ProjectController.php" />
         <option value="$PROJECT_DIR$/src/Request/CreateProjectRequest.php" />
         <option value="$PROJECT_DIR$/src/Response/CreateProjectResponse.php" />
         <option value="$PROJECT_DIR$/src/Response/UpdateProjectResponse.php" />
         <option value="$PROJECT_DIR$/src/Manager/CommentManager.php" />
-        <option value="$PROJECT_DIR$/src/Manager/ServicesManager.php" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/Controller/CommentController.php" />
+        <option value="$PROJECT_DIR$/src/Response/GetCustomerCommentsResponse.php" />
+        <option value="$PROJECT_DIR$/src/Service/ProjectService.php" />
+        <option value="$PROJECT_DIR$/src/Response/GetEmployeeCommentsResponse.php" />
+        <option value="$PROJECT_DIR$/src/Service/CustomerService.php" />
+        <option value="$PROJECT_DIR$/src/Repository/CommentEntityRepository.php" />
+        <option value="$PROJECT_DIR$/src/Service/CommentService.php" />
+        <option value="$PROJECT_DIR$/src/Controller/EmployeeController.php" />
+        <option value="$PROJECT_DIR$/src/Response/GetEmployeeProjectsResponse.php" />
+        <option value="$PROJECT_DIR$/src/Repository/ServiceEmployeeEntityRepository.php" />
+        <option value="$PROJECT_DIR$/src/Response/GetServiceTeamResponse.php" />
+        <option value="$PROJECT_DIR$/src/Manager/ServicesManager.php" />
+        <option value="$PROJECT_DIR$/src/Repository/ServicesEntityRepository.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/src/Controller/ServicesController.php" />
+        <option value="$PROJECT_DIR$/src/Service/ServicesService.php" />
+        <option value="$PROJECT_DIR$/src/Repository/EmployeeEntityRepository.php" />
+        <option value="$PROJECT_DIR$/src/Entity/EmployeeEntity.php" />
         <option value="$PROJECT_DIR$/src/Response/GetEmployeeByIdResponse.php" />
         <option value="$PROJECT_DIR$/src/Response/GetEmployeesResponse.php" />
-        <option value="$PROJECT_DIR$/src/Response/GetCustomersResponse.php" />
-        <option value="$PROJECT_DIR$/src/Response/GetCustomerCommentsResponse.php" />
+        <option value="$PROJECT_DIR$/src/Manager/EmployeeManager.php" />
+        <option value="$PROJECT_DIR$/src/Service/EmployeeService.php" />
+        <option value="$PROJECT_DIR$/src/Entity/CustomerEntity.php" />
         <option value="$PROJECT_DIR$/src/Response/GetCustomerByIdResponse.php" />
-        <option value="$PROJECT_DIR$/src/Service/ProjectService.php" />
-        <option value="$PROJECT_DIR$/src/Service/CommentService.php" />
-        <option value="$PROJECT_DIR$/src/Repository/CommentEntityRepository.php" />
-        <option value="$PROJECT_DIR$/src/Response/GetEmployeeCommentsResponse.php" />
+        <option value="$PROJECT_DIR$/src/Response/GetCustomersResponse.php" />
       </list>
     </option>
   </component>
@@ -331,7 +273,7 @@
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="172" />
     <option name="width" value="748" />
@@ -404,6 +346,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Request" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -446,18 +389,19 @@
       <workItem from="1579779171846" duration="632000" />
       <workItem from="1579963403828" duration="2549000" />
       <workItem from="1580032002831" duration="5624000" />
-      <workItem from="1580106512825" duration="2374000" />
+      <workItem from="1580106512825" duration="11392000" />
+      <workItem from="1580202380995" duration="7217000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53010000" />
+    <option name="totallyTimeSpent" value="69245000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="776" extended-state="7" />
+    <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.302589" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28317153" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -470,7 +414,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.24844721" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.22670807" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -482,50 +426,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Service/CustomerService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
-          <folding>
-            <element signature="e#33#53#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Request/CreateEmployeeRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="19" selection-start-line="8" selection-start-column="3" selection-end-line="21" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Request/UpdateEmployeeRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="258" column="7" lean-forward="true" selection-start-line="258" selection-start-column="7" selection-end-line="258" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Response/UpdateEmployeeResponse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="263" column="4" lean-forward="true" selection-start-line="263" selection-start-column="4" selection-end-line="263" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Response/DeleteResponse.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Request/DeleteRequest.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Request/CreateCustomerRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="18" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="13" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Request/UpdateCustomerRequest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
@@ -610,44 +510,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/EmployeeEntityRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="78" column="5" lean-forward="true" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/ProjectEntityRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/ServicesEntityRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" column="10" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Service/EmployeeService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="67" column="5" selection-start-line="19" selection-start-column="3" selection-end-line="67" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/EmployeeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
-          <folding>
-            <element signature="e#34#72#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/ProjectController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
@@ -655,13 +517,6 @@
           <folding>
             <element signature="e#34#54#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/ProjectEmployeeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -673,13 +528,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/ServicesController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
@@ -734,34 +582,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Manager/EmployeeManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-          <folding>
-            <element signature="e#32#52#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Manager/ProjectManager.php" />
-    <entry file="file://$PROJECT_DIR$/src/Manager/ServicesManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="73" column="5" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
-          <folding>
-            <element signature="e#33#53#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/CustomerEntityRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="354">
@@ -769,48 +590,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Response/GetEmployeeByIdResponse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="282" selection-start-line="282" selection-end-line="282" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Response/GetEmployeesResponse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="281" selection-start-line="281" selection-end-line="281" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Response/GetCustomerCommentsResponse.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Response/GetCustomersResponse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="144" selection-start-line="144" selection-end-line="144" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Response/GetCustomerByIdResponse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="144" selection-start-line="144" selection-end-line="144" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Service/ProjectService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-465">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#33#53#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -834,10 +617,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Service/CommentService.php">
+    <entry file="file://$PROJECT_DIR$/src/Service/CustomerService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="65" column="71" selection-start-line="65" selection-start-column="71" selection-end-line="65" selection-end-column="71" />
+        <state relative-caret-position="315">
+          <caret line="34" column="68" selection-start-line="34" selection-start-column="68" selection-end-line="34" selection-end-column="68" />
           <folding>
             <element signature="e#33#53#0#PHP" expanded="true" />
           </folding>
@@ -846,15 +629,190 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/CommentEntityRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="62" column="16" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
+        <state relative-caret-position="320">
+          <caret line="67" column="33" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Response/GetEmployeeCommentsResponse.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+        <state relative-caret-position="510">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Service/CommentService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="68" column="19" selection-start-line="68" selection-start-column="19" selection-end-line="68" selection-end-column="19" />
+          <folding>
+            <element signature="e#33#53#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/ProjectEmployeeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/ServiceEmployeeEntityRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Response/GetEmployeeProjectsResponse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/ProjectEntityRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/ServicesEntityRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="59" column="22" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Manager/ServicesManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="76" column="74" selection-start-line="76" selection-start-column="74" selection-end-line="76" selection-end-column="74" />
+          <folding>
+            <element signature="e#33#53#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/ServicesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="e#34#54#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/EmployeeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="30" column="5" selection-start-line="20" selection-start-column="4" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <element signature="e#34#72#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Service/ProjectService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="65" selection-start-line="16" selection-start-column="4" selection-end-line="65" />
+          <folding>
+            <element signature="e#33#53#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Response/GetServiceTeamResponse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="61" column="1" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/EmployeeEntityRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="102" column="23" selection-start-line="102" selection-start-column="23" selection-end-line="102" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Service/ServicesService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="72" column="25" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
+          <folding>
+            <element signature="e#33#53#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="49" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/EmployeeEntity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="446" column="32" selection-start-line="446" selection-start-column="32" selection-end-line="446" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Response/GetEmployeesResponse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="249" column="7" selection-start-line="219" selection-start-column="6" selection-end-line="249" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Response/GetEmployeeByIdResponse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="252" selection-start-line="221" selection-start-column="5" selection-end-line="252" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Manager/EmployeeManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="79" column="78" selection-start-line="79" selection-start-column="78" selection-end-line="79" selection-end-column="78" />
+          <folding>
+            <element signature="e#32#52#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Service/EmployeeService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/CustomerEntity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="188" column="5" selection-start-line="188" selection-start-column="5" selection-end-line="188" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Response/GetCustomerByIdResponse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="143" column="5" selection-start-line="143" selection-start-column="5" selection-end-line="143" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Response/GetCustomersResponse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="143" column="5" selection-start-line="143" selection-start-column="5" selection-end-line="143" selection-end-column="5" />
         </state>
       </provider>
     </entry>

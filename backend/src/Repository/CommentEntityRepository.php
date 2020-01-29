@@ -65,7 +65,7 @@ class CommentEntityRepository extends ServiceEntityRepository
             ->andWhere('comment.employee =:id')
             ->andWhere('comment.customer=customer.id')
             ->setParameter('id', $id)
-            ->groupBy('comment.employee')
+            ->groupBy('comment.id')
             ->getQuery()
             ->getResult()
             ;
