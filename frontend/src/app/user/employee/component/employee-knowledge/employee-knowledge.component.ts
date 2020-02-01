@@ -20,7 +20,7 @@ export class EmployeeKnowledgeComponent implements OnInit {
     this.jsonLdObject = {
       '@context': 'http://www.schema.org',
       '@type': 'Person',
-      '@id': 'http://yes-go.yes-soft.de/' + this.employee.id,
+      '@id': 'http://yes-go.yes-soft.de/employee/' + this.employee.id,
       name: this.employee.fullName,
       nationality: 'Syrian',
       birthPlace: {
@@ -30,9 +30,30 @@ export class EmployeeKnowledgeComponent implements OnInit {
           addressCountry: 'Syria'
         }
       },
-      Description: 'Employee',
+      brand: {
+        '@type': 'Organization',
+        email: 'mailto:info@yes-soft.de',
+        address: {
+          "@type": 'PostalAddress',
+          addressLocality: 'Deutschland',
+          addressRegion: 'Berlin',
+          postalCode: '10827',
+        }
+      },
+      Description: this.employee.details,
       jobTitle: this.employee.position,
-      image: this.employee.image
+      image: this.employee.image,
+      email: this.employee.gmail,
+      knowsLanguage: {
+        '@type': 'Language',
+        name: this.employee.language,
+      },
+      sameAs: [
+        this.employee.facebook,
+        this.employee.linkedin,
+        this.employee.twitter,
+        this.employee.linkedin,
+      ]
     };
 
     this.jsonLD = this.getSafeHTML(this.jsonLdObject);
