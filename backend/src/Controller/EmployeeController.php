@@ -103,4 +103,14 @@ class EmployeeController extends BaseController
         $result = $this->employeeService->getEmployeeProjects($request);
         return $this->response($result, self::FETCH);
     }
+    /**
+     * @Route("/search/{key}", name="search",methods={"GET"})
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function search(Request $request)
+    {
+        $result = $this->employeeService->search($request->get('key'));
+        return $this->response($result, self::FETCH);
+    }
 }

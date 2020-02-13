@@ -1,110 +1,111 @@
 footer {
-  background-color: #111;
-  .footer-left {
-    .footer-logo {
-      width: 40%;
-      height: auto;
-    }
-    p {
-      a {
-        color: #ffffff;
-        font-size: 1.5rem;
-        &:hover {
-          color: #3399ff;
-          text-decoration: none;
-        }
+    background-color: #111;
+    .footer-left {
+      .footer-logo {
+        width: 40%;
+        height: auto;
       }
-    }
-  }
-  .footer-right {
-    font-size: .8rem;
-    h6 {
-      font-size: .9rem;
-      color: #aaa;
-    }
-    .footer-social {
-      li {
-        display: inline-block;
-        padding: 2px;
-        margin-right: 10px;
-        i {
-          color: #fff;
-          &:hover, &:focus, &:active {
-            color: #aaa;
+      p {
+        a {
+          color: #ffffff;
+          font-size: 1.5rem;
+          &:hover {
+            color: #3399ff;
+            text-decoration: none;
           }
         }
       }
     }
-    // Grouping
-    .footer-contact p,
-    .footer-location p {
-      font-size: 1rem;
-    }
-
-    .map-container{
-      overflow:hidden;
-      padding-bottom:56.25%;
-      position:relative;
-      height:0;
-    }
-    
-    .map-container iframe{
-      left:0;
-      top:0;
-      height:100%;
-      width:100%;
-      position:absolute;
-    }
-  }
-}
-
-/*style for md Screen*/
-@media (min-width: 768px) and (max-width: 991px) {
-  footer {
-    .footer-left {
-      .footer-logo {
-        width: 60%;
-      }
-      p {
-        a {
-          font-size: 1.2rem;
-        }
-      }
-    }
     .footer-right {
+      font-size: .8rem;
+      h6 {
+        font-size: .9rem;
+        color: #aaa;
+      }
       .footer-social {
         li {
-          margin-right: 0;
+          display: inline-block;
+          padding: 2px;
+          margin-right: 10px;
+          i {
+            color: #fff;
+            &:hover, &:focus, &:active {
+              color: #aaa;
+            }
+          }
+        }
+      }
+      // Grouping
+      .footer-contact p,
+      .footer-location p {
+        font-size: 1rem;
+      }
+  
+      .map-container{
+        overflow:hidden;
+        padding-bottom:56.25%;
+        position:relative;
+        height:0;
+      }
+      
+      .map-container iframe{
+        left:0;
+        top:0;
+        height:100%;
+        width:100%;
+        position:absolute;
+      }
+    }
+  }
+  
+  /*style for md Screen*/
+  @media (min-width: 768px) and (max-width: 991px) {
+    footer {
+      .footer-left {
+        .footer-logo {
+          width: 60%;
+        }
+        p {
+          a {
+            font-size: 1.2rem;
+          }
+        }
+      }
+      .footer-right {
+        .footer-social {
+          li {
+            margin-right: 0;
+          }
         }
       }
     }
   }
-}
-
-/*style for sm Screen*/
-@media (min-width: 576px) and (max-width: 767px) {
-  footer {
-    .col-12.border-left.border-secondary {
-      border-left: none!important;
-      .footer-contact {
-        border-top: 1px solid #fff;
-        border-bottom: 1px solid #fff;
-        padding: 20px 0;
+  
+  /*style for sm Screen*/
+  @media (min-width: 576px) and (max-width: 767px) {
+    footer {
+      .col-12.border-left.border-secondary {
+        border-left: none!important;
+        .footer-contact {
+          border-top: 1px solid #fff;
+          border-bottom: 1px solid #fff;
+          padding: 20px 0;
+        }
       }
     }
   }
-}
-
-/*style for xs Screen*/
-@media (max-width: 575px) {
-  footer {
-    .col-12.border-left.border-secondary {
-      border-left: none!important;
-      .footer-contact {
-        border-top: 1px solid #fff;
-        border-bottom: 1px solid #fff;
-        padding: 20px 0;
+  
+  /*style for xs Screen*/
+  @media (max-width: 575px) {
+    footer {
+      .col-12.border-left.border-secondary {
+        border-left: none!important;
+        .footer-contact {
+          border-top: 1px solid #fff;
+          border-bottom: 1px solid #fff;
+          padding: 20px 0;
+        }
       }
     }
   }
-}
+  

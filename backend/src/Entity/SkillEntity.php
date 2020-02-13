@@ -33,6 +33,16 @@ class SkillEntity
      */
     private $skillEmployeeEntities;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $image;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $keywords;
+
     public function __construct()
     {
         $this->skillEmployeeEntities = new ArrayCollection();
@@ -94,6 +104,30 @@ class SkillEntity
                 $skillEmployeeEntity->setSkill(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    public function getKeywords(): ?string
+    {
+        return $this->keywords;
+    }
+
+    public function setKeywords(?string $keywords): self
+    {
+        $this->keywords = $keywords;
 
         return $this;
     }

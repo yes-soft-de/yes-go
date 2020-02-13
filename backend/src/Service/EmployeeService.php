@@ -12,6 +12,7 @@ use App\Response\CreateEmployeeResponse;
 use App\Response\DeleteResponse;
 use App\Response\GetEmployeeProjectsResponse;
 use App\Response\GetEmployeesResponse;
+use App\Response\SearchResponse;
 use App\Response\UpdateEmployeeResponse;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -78,6 +79,14 @@ class EmployeeService
         $response=[];
         foreach ($result as $project)
         $response[] = $this->autoMapping->map('array', GetEmployeeProjectsResponse::class,$project);
+        return $response;
+    }
+    public function search($request)
+    {
+        $result = $this->employeeManager->search($request);
+        $response=[];
+        foreach ($result as $employee)
+            $response[] = $this->autoMapping->map('array', SearchResponse::class,$employee);
         return $response;
     }
 }

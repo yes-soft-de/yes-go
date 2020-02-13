@@ -1,18 +1,41 @@
 <!--Start Search Section-->
 <div class="search-section pb-4">
-  <div class="container">
-    <div class="col-12 col-md-8 col-lg-7 col-xl-6 mx-auto text-center">
-      <div class="input-group d-none">
-        <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" placeholder="Type Here To Search">
-        <div class="input-group-append">
-          <span class="input-group-text">Search</span>
+    <div class="container">
+      <div class="col-12 col-md-8 col-lg-7 col-xl-6 mx-auto text-center">
+        <div class="input-group">
+          <input
+            type="text"
+            #searchInput
+            class="form-control"
+            (keyup)="search($event)"
+            aria-label="Dollar amount (with dot and two decimal places)" 
+            placeholder="Type Here To Search">
+          <div class="input-group-append">
+            <span class="input-group-text">Search</span>
+          </div>
+        </div>
+        <button class="btn m-2">Programming</button>
+        <button class="btn m-2">Design</button>
+        <button class="btn m-2">Emarketing</button>
+      </div>
+  <!--    <div class="col-12"></div>-->
+    </div>
+  </div>
+  <div class="col-12 search-result py-5" *ngIf="(dataSearch$ | async).length != 0">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto mb-3" *ngFor="let searchItem of (dataSearch$ | async)">
+          <a routerLink="/employee/{{searchItem.id}}" (click)="inputRest()">
+            <div class="card mx-auto" [ngStyle]="{'opacity': imageClicked ? .7 : 1}">
+              <img class="card-img-top" src="{{searchItem?.image}}" (error)="searchItem.image = '../../../assets/avatar.png'" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{searchItem.fullName}}</h5>
+                <p class="card-text">{{searchItem.position}}</p>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
-      <button class="btn m-2">Programming</button>
-      <button class="btn m-2">Design</button>
-      <button class="btn m-2">Emarketing</button>
     </div>
-<!--    <div class="col-12"></div>-->
   </div>
-</div>
-<!--End Search Section-->
+  <!--End Search Section-->

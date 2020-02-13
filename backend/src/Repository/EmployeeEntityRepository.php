@@ -80,10 +80,14 @@ class EmployeeEntityRepository extends ServiceEntityRepository
     public function search($key)
     {
         $result=$this->createQueryBuilder('employee')
-            ->select('id','name','image','position')
-            ->andWhere('name like :key' )
-            ->orWhere('positon like :key')
+            ->select('employee.id','employee.fullName','employee.image','employee.position')
+            ->from('App:ServicesEntity','service')
+            ->andWhere('employee.fullName like :key' )
+            ->orWhere('employee.position like :key')
+            ->orWhere('employee.experiances like :key')
+          //  ->orWhere('employee.service=(select service.id where service.name like :key ) ')
             ->setParameter('key', '%'.$key.'%')
+            ->groupBy('employee.id')
             ->getQuery()
             ->getResult();
         return $result;

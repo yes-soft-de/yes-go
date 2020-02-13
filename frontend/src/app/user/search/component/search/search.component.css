@@ -1,0 +1,17 @@
+.search-section {
+  background-color: #f8f9fa;
+}
+.search-section button.btn {
+  border: 1px solid #aaa;
+  border-radius: 20px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  padding: 0.6rem 1.14rem;
+}
+@media (max-width: 575px) {
+  .search-section button.btn {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.7rem;
+  }
+}

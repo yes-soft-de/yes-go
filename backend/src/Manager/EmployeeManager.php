@@ -79,4 +79,8 @@ class EmployeeManager
     {
         return $result = $this->employeeRepository->getEmployeeSkills($request);
     }
+    public function search($request)
+    {
+        return $result = $this->employeeRepository->search($request);
+    }
 }

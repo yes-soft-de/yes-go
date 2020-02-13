@@ -2,6 +2,9 @@ export class UserConfig {
   // General Source
   public static sourceAPI = '/backend/public/';
 
+  // Search API
+  public static searchAPI = UserConfig.sourceAPI + 'search';
+
   // Employee API
   public static employeesAPI = UserConfig.sourceAPI + 'employees';
   public static employeeAPI = UserConfig.sourceAPI + 'employee';

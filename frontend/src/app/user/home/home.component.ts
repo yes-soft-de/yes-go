@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {HelperService} from '../shared/helper/helper.service';
+import { Component, OnInit } from '@angular/core';
+import { HelperService } from '../shared/helper/helper.service';
 
 @Component({
   selector: 'app-home',
@@ -20,6 +20,5 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.slides = HelperService.chunk(this.cards, 1);
   }
-
 
 }

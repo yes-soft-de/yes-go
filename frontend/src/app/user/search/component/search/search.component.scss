@@ -1,21 +1,29 @@
 .search-section {
+    background-color: #f8f9fa;
+    button.btn {
+      border: 1px solid #aaa;
+      border-radius: 20px;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      padding: .6rem 1.14rem;
+    }
+  }
+
+.search-result {
+  //width: 100%;
   background-color: #f8f9fa;
-  button.btn {
-    border: 1px solid #aaa;
-    border-radius: 20px;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    padding: .6rem 1.14rem;
+  .card-img-top {
+    height: 40vh;
   }
 }
 
 /*style for xs Screen*/
-@media (max-width: 575px) {
-  .search-section {
-    button.btn {
-      padding: .4rem .9rem;
-      font-size: .7rem;
+  @media (max-width: 575px) {
+    .search-section {
+      button.btn {
+        padding: .4rem .9rem;
+        font-size: .7rem;
+      }
     }
   }
-}

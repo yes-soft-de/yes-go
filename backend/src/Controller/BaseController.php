@@ -73,11 +73,12 @@ class BaseController extends AbstractController
         $this->serializer=new Serializer($normalizers, $encoders);
                 $result = $this->serializer->serialize($result, "json", [
                     'enable_max_depth' => true]);
-        $response = new jsonResponse(["status_code" => $status[1],
-            "msg" => $status[0]. " "."Successfully.",
-            "Data" => json_decode($result)
-            ]
-        , Response::HTTP_OK);
+        // $response = new jsonResponse(["status_code" => $status[1],
+        //     "msg" => $status[0]. " "."Successfully.",
+        //     "Data" => json_decode($result)
+        //     ]
+        // , Response::HTTP_OK);
+                $response = new jsonResponse(json_decode($result), Response::HTTP_OK);
         $response->headers->set('Access-Control-Allow-Headers', 'X-Header-One,X-Header-Two');
         $response->headers->set('Access-Control-Allow-Origin', '*');
         $response->headers->set('Access-Control-Allow-Methods', 'PUT');

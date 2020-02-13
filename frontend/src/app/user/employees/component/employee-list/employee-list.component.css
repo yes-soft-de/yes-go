@@ -1,0 +1,31 @@
+.employee {
+  background-color: #3399ff;
+}
+.employee .team-member {
+  position: relative;
+  background-color: #000;
+  color: #aaa;
+  height: 80px;
+  line-height: 80px;
+  padding-left: 10%;
+  cursor: pointer;
+}
+.employee .team-member i {
+  position: absolute;
+  right: 8px;
+  top: 9px;
+}
+.employee .team-member.selected,
+.employee .team-member:hover {
+  background-color: #222;
+}
+.employee .team-member.selected p,
+.employee .team-member:hover p {
+  color: #fff;
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .employee .team-member {
+    height: 60px;
+    line-height: 60px;
+  }
+}

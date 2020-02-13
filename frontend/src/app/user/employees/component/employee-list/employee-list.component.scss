@@ -1,0 +1,33 @@
+.employee {
+    background-color: #3399ff;
+    .team-member {
+      position: relative;
+      background-color: #000;
+      color: #aaa;
+      height: 80px;
+      line-height: 80px;
+      padding-left: 10%;
+      cursor: pointer;
+      i {
+        position: absolute;
+        right: 8px;
+        top: 9px;
+      }
+      &.selected, &:hover {
+        background-color: #222;
+        p {color: #fff;}
+      }
+    }
+  }
+  
+  /*style for sm Screen*/
+  @media (min-width: 576px) and (max-width: 767px) {
+    .employee {
+      .team-member {
+        height: 60px;
+        line-height: 60px;
+      }
+    }
+  }
+  
+  

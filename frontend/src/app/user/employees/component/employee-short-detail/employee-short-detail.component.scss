@@ -1,0 +1,89 @@
+.short-employee-image {
+  .employee-image {
+    img {
+      width: 250px;
+      height: 250px;
+    }
+  }
+}
+.employee-info {
+  p {
+    font-size: 2.2rem;
+    a {
+      color: #fff;
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+}
+
+/*style for lg Screen*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .short-employee-image {
+    .employee-image {
+      img {
+        width: 210px;
+        height: 210px;
+      }
+    }
+  }
+  .employee-info {
+    p {
+      font-size: 1.9rem;
+    }
+  }
+}
+
+/*style for md Screen*/
+@media (min-width: 768px) and (max-width: 991px) {
+  .short-employee-image {
+    .employee-image {
+      img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  }
+  .employee-info {
+    p {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+/*style for sm Screen*/
+@media (min-width: 576px) and (max-width: 767px) {
+  .short-employee-image {
+    .employee-image {
+      img {
+        width: 105px;
+        height: 105px;
+      }
+    }
+  }
+  .employee-info {
+    p {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+/*style for xs Screen*/
+@media (max-width: 575px) {
+  .employee-image {
+    img {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  .employee-info {
+    p {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+}
+
+/*style for small than xs Screen*/
+@media (max-width: 499px) {}
