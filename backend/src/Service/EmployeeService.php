@@ -7,7 +7,7 @@ namespace App\Service;
 use App\AutoMapping;
 use App\Entity\EmployeeEntity;
 use App\Manager\EmployeeManager;
-use App\Request\GetEmployeeByIdResponse;
+use App\Response\GetEmployeeByIdResponse;
 use App\Response\CreateEmployeeResponse;
 use App\Response\DeleteResponse;
 use App\Response\GetEmployeeProjectsResponse;

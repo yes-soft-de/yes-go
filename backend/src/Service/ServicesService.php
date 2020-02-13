@@ -8,7 +8,7 @@ use App\AutoMapping;
 use App\Entity\EmployeeEntity;
 use App\Entity\ServicesEntity;
 use App\Manager\ServicesManager;
-use App\Request\GetEmployeeByIdResponse;
+use App\Response\GetEmployeeByIdResponse;
 use App\Response\DeleteResponse;
 use App\Response\GetServiceByIdResponse;
 use App\Response\GetServicesResponse;
