@@ -10,11 +10,10 @@ import { EmployeeProjectsEffects } from '../employees/store/effects/employee-pro
 import { searchReducer, SearchState } from '../search/store/reducers/search.reducer';
 import { SearchEffects } from '../search/store/effects/search.effects';
 import { routerReducer, RouterReducerState } from '@ngrx/router-store';
-import { RouterStateUrl } from './router-state';
+import { RouterStateUrl } from '../../app/store/router-state';
 
 
 export interface UserState {
-    router: RouterReducerState<RouterStateUrl>;
     employees: EmployeeState;
     customers: CustomerState;
     customerComments: CustomerCommentsState;
@@ -25,7 +24,6 @@ export interface UserState {
 
 // Create General Reducers
 export const reducers: ActionReducerMap<UserState> = {
-    router: routerReducer,
     employees: employeeReducer,
     customers: customerReducer,
     customerComments: customerCommentsReducer,

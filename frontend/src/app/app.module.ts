@@ -10,8 +10,9 @@ import { UserModule } from './user/user.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
-import { StoreRouterConnectingModule, RouterStateSerializer } from '@ngrx/router-store';
-import { CustomSerializer } from './user/store/router-state';
+import {StoreRouterConnectingModule, RouterStateSerializer, routerReducer} from '@ngrx/router-store';
+import {CustomSerializer, reducers} from './app/store/router-state';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,11 +22,11 @@ import { CustomSerializer } from './user/store/router-state';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UserModule,
+    HttpClientModule,
     // StoreModule.forRoot({     // initialize the root application state
     //   router: routerReducer,
     // }),
-    StoreModule.forRoot({}),
+    StoreModule.forRoot(reducers),
     StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),  // initialize the root application state
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument()

@@ -3,9 +3,9 @@ import {EmployeeList} from '../../entity/employee-list';
 import * as employeeAction from '../actions/employee.actions';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { UserState } from 'src/app/user/store/app-state';
-import { RouterStateUrl} from '../../../store/router-state';
+import {getRouterState} from '../../../../app/store/router-state';
 import {EmployeeDetail} from '../../entity/employee-detail';
-import {RouterReducerState} from '@ngrx/router-store';
+
 
 // Generate Our Employee State
 export interface EmployeeState extends EntityState<EmployeeList> {
@@ -34,7 +34,7 @@ export const initialState = employeeAdepter.getInitialState(defaultEmployee);
 
 // Generate Employee Reducer
 export function employeeReducer(state = initialState, action: employeeAction.action) {
-    switch(action.type) {
+    switch (action.type) {
         case employeeAction.EmployeeActionsType.LOAD_EMPLOYEES_SUCCESS:
             return employeeAdepter.addAll(action.payload, {
                 ...state,
@@ -71,28 +71,28 @@ export function employeeReducer(state = initialState, action: employeeAction.act
 }
 
 
-// Create Feature Selector for our employees
-// const employeeFeatureSelector = createFeatureSelector<EmployeeState>('employees');
+// Create User Feature Selector
 const getAppState = createFeatureSelector<UserState>('user');
-// export const getRouteState = createFeatureSelector<RouterReducerState<RouterStateUrl>>('router');
+
 // Employees State Selector
 const getEmployeesState = createSelector(
     getAppState,
     (state: UserState) => state.employees
 );
 
-// const getRouterState = createSelector(
-//   getAppState,
-//   (state: UserState) => state.router
-// );
+// Create Employee Entities Selector
+export const getEmployeeEntities = createSelector(
+  getEmployeesState,
+  employeeAdepter.getSelectors().selectEntities
+);
 
-// export const getSelectedEmployee = createSelector(
-//     getEmployeesSelector,
-//   getRouterState,
-//     (entities, router) => {
-//         return router.state && entities[router.state.params.id];
-//     }
-// );
+export const getSelectorEmployee = createSelector(
+  getEmployeeEntities,
+  getRouterState,
+  (entities, router): EmployeeDetail => {
+    return router.state && entities[router.state.params.id];
+  }
+);
 
 // Create Employee Load Selector
 export const getEmployeesSelector = createSelector(

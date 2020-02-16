@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 import { UserState } from 'src/app/user/store/app-state';
 import { getCustomerCommentsSelector } from 'src/app/user/customers/store/reducers/customer-comments.reducer';
 import { Observable } from 'rxjs';
-import {getEmployeeDetailSelector} from '../../store/reducer/employee.reducer';
+import {getEmployeeDetailSelector, getSelectorEmployee} from '../../store/reducer/employee.reducer';
 import { getEmployeeProjectsSelector } from '../../store/reducer/employee-projects.reducer';
 import { HelperService } from 'src/app/user/shared/helper/helper.service';
 
@@ -32,10 +32,6 @@ export class EmployeeDetailsComponent implements OnInit {
     private activateRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    // this.store.select(getSelectedEmployee).subscribe(
-    //     data => console.log('usingRouter : ', data)
-    // );
-
     this.activateRoute.url.subscribe(
       urlSegments => {
         // Dispatch our Loading Employee Action

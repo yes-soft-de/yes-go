@@ -21,10 +21,11 @@
   <!--    <div class="col-12"></div>-->
     </div>
   </div>
-  <div class="col-12 search-result py-5" *ngIf="(dataSearch$ | async).length != 0">
+
+  <div class="col-12 search-result py-5" *ngIf="dataSearch.length != 0">
     <div class="container">
       <div class="row">
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto mb-3" *ngFor="let searchItem of (dataSearch$ | async)">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto mb-3" *ngFor="let searchItem of dataSearch">
           <a routerLink="/employee/{{searchItem.id}}" (click)="inputRest()">
             <div class="card mx-auto" [ngStyle]="{'opacity': imageClicked ? .7 : 1}">
               <img class="card-img-top" src="{{searchItem?.image}}" (error)="searchItem.image = '../../../assets/avatar.png'" alt="Card image cap">
@@ -39,7 +40,7 @@
     </div>
   </div>
 <!--Search Loading-->
-<div class="col-12" *ngIf="loading && (dataSearch$ | async).length == 0">
+<div class="col-12" *ngIf="typing && dataSearch.length == 0">
   <div class="container">
     <h2 class="text-center py-5">Searching...</h2>
   </div>

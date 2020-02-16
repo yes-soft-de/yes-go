@@ -13,9 +13,9 @@ import { Search } from '../../entity/search';
 })
 export class SearchComponent implements OnInit {
   @ViewChild('searchInput', {static: true}) inputSearch: ElementRef;
-  dataSearch$: Observable<Search[]>;
+  dataSearch: Search[];
   imageClicked: boolean;
-  loading: boolean;
+  typing = false;
 
 
   constructor(private store: Store<UserState>) {
@@ -23,23 +23,28 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     this.imageClicked = true;
-    this.dataSearch$ = this.store.pipe(select(fromReducer.searchSelector));
+    this.store.select(fromReducer.searchSelector).subscribe(
+      searchResult => {
+        this.dataSearch = searchResult;
+        this.typing = false;
+      }
+    );
   }
 
   search(text) {
     this.imageClicked = false;
     if (text.target.value !== '') {
-      this.loading = true;
+      this.typing = true;
       this.store.dispatch(new searchActions.LoadSearch(text.target.value));
     } else {
-      this.loading = false;
+      this.typing = false;
       this.store.dispatch(new searchActions.LoadSearch(null));
     }
   }
 
   inputRest() {
     this.imageClicked = true;
-    this.loading = false;
+    this.typing = false;
     this.inputSearch.nativeElement.value = '';
     this.store.dispatch(new searchActions.LoadSearch(null));
   }

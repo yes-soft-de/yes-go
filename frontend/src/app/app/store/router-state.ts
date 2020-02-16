@@ -41,4 +41,4 @@ export const reducers: ActionReducerMap<State> = {
   router: routerReducer
 };
 
-
+export const getRouterState = createFeatureSelector<RouterReducerState<RouterStateUrl>>('router');

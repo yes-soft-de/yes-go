@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarouselModule } from 'angular-bootstrap-md';
 import { RatingModule } from 'ng-starrating';
-import { HttpClientModule } from '@angular/common/http';
+// import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UserRoutingModule } from '../controller/user-routing.module';
 import { NgxJsonLdModule } from '@ngx-lite/json-ld';
@@ -40,7 +40,7 @@ import { reducers, effects } from './store/app-state';
     UserRoutingModule,
     CarouselModule,
     RatingModule,
-    HttpClientModule,
+    // HttpClientModule,
     FormsModule,
     NgxJsonLdModule,
     StoreModule.forFeature('user', reducers),
