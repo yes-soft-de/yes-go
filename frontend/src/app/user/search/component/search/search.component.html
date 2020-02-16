@@ -38,4 +38,10 @@
       </div>
     </div>
   </div>
+<!--Search Loading-->
+<div class="col-12" *ngIf="loading && (dataSearch$ | async).length == 0">
+  <div class="container">
+    <h2 class="text-center py-5">Searching...</h2>
+  </div>
+</div>
   <!--End Search Section-->

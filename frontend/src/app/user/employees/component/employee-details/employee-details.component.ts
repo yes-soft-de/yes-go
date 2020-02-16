@@ -4,15 +4,15 @@ import { StarRatingComponent } from 'ng-starrating';
 import { EmployeeDetail } from '../../entity/employee-detail';
 import { EmployeeCustomerComments } from '../../../customers/entity/employee-customer-comments';
 import { EmployeeProjects } from '../../entity/employee-projects';
-import * as employeeAction from '../../state/actions/employee.actions';
-import * as employeeCustomerCommentsAction from '../../../customers/state/actions/customer-comments.actions';
-import * as employeeProjectsActions from '../../state/actions/employee-projects.actions';
+import * as employeeAction from '../../store/actions/employee.actions';
+import * as employeeCustomerCommentsAction from '../../../customers/store/actions/customer-comments.actions';
+import * as employeeProjectsActions from '../../store/actions/employee-projects.actions';
 import { ActivatedRoute } from '@angular/router';
-import { AppState } from 'src/app/user/state/app-state';
-import { getCustomerCommentsSelector } from 'src/app/user/customers/state/reducers/customer-comments.reducer';
+import { UserState } from 'src/app/user/store/app-state';
+import { getCustomerCommentsSelector } from 'src/app/user/customers/store/reducers/customer-comments.reducer';
 import { Observable } from 'rxjs';
-import { getEmployeeDetailSelector } from '../../state/reducer/employee.reducer';
-import { getEmployeeProjectsSelector } from '../../state/reducer/employee-projects.reducer';
+import {getEmployeeDetailSelector} from '../../store/reducer/employee.reducer';
+import { getEmployeeProjectsSelector } from '../../store/reducer/employee-projects.reducer';
 import { HelperService } from 'src/app/user/shared/helper/helper.service';
 
 
@@ -28,10 +28,14 @@ export class EmployeeDetailsComponent implements OnInit {
   employeeProjectsCarousel: any = [[]];
 
   constructor(
-    private store: Store<AppState>,
+    private store: Store<UserState>,
     private activateRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    // this.store.select(getSelectedEmployee).subscribe(
+    //     data => console.log('usingRouter : ', data)
+    // );
+
     this.activateRoute.url.subscribe(
       urlSegments => {
         // Dispatch our Loading Employee Action
@@ -80,5 +84,5 @@ export class EmployeeDetailsComponent implements OnInit {
     return chunkSize;
   }
 
-  
+
 }

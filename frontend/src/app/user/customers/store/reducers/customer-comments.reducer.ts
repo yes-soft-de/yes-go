@@ -2,6 +2,7 @@ import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import * as customerCommentsActions from '../actions/customer-comments.actions';
 import { EmployeeCustomerComments } from '../../entity/employee-customer-comments';
+import {UserState} from '../../../store/app-state';
 
 // Our Customer State
 export interface CustomerCommentsState extends EntityState<EmployeeCustomerComments> {
@@ -51,18 +52,24 @@ export function customerCommentsReducer(state = initialState, action: customerCo
 
 
 // Create Customers Feature Selector
-const customerCommentsFeatureSelector = createFeatureSelector<CustomerCommentsState>('customerComments');
+const getAppState = createFeatureSelector<UserState>('user');
+
+// Customer Comments State Selector
+const getCustomerCommentsState = createSelector(
+  getAppState,
+  (state: UserState) => state.customerComments
+);
 
 // Create Selector To Get All Customers Directly
 export const getCustomerCommentsSelector = createSelector(
-    customerCommentsFeatureSelector,
-    customerCommentsAdepter.getSelectors().selectAll
+  getCustomerCommentsState,
+  customerCommentsAdepter.getSelectors().selectAll
 );
 
 // Create Customer Error Selector
 export const customerCommentsErrorSelector = createSelector(
-    customerCommentsFeatureSelector,
-    (state: CustomerCommentsState) => state.error
+  getCustomerCommentsState,
+  (state: CustomerCommentsState) => state.error
 );
 
 

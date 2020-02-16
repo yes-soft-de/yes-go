@@ -1,7 +1,8 @@
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
-import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { createSelector, createFeatureSelector } from '@ngrx/store';
 import * as customerActions from '../actions/customer.actions';
 import { CustomerList } from '../../entity/customer-list';
+import { UserState } from 'src/app/user/store/app-state';
 
 // Our Customer State
 export interface CustomerState extends EntityState<CustomerList> {
@@ -51,17 +52,22 @@ export function customerReducer(state = initialState, action: customerActions.ac
 
 
 // Create Customers Feature Selector
-const customerFeatureSelector = createFeatureSelector<CustomerState>('customers');
+// const customerFeatureSelector = createFeatureSelector<CustomerState>('customers');
+const getAppState = createFeatureSelector<UserState>('user');
 
+export const getCustomersState = createSelector(
+    getAppState,
+    (state: UserState) => state.customers
+);
 // Create Selector To Get All Customers Directly
 export const getCustomersSelector = createSelector(
-    customerFeatureSelector,
+    getCustomersState,
     customerAdepter.getSelectors().selectAll
 );
 
 // Create Customer Error Selector
 export const customerErrorSelector = createSelector(
-    customerFeatureSelector,
+    getCustomersState,
     (state: CustomerState) => state.error
 );
 

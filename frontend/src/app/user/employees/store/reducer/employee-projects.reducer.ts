@@ -2,6 +2,7 @@ import {createEntityAdapter, EntityAdapter, EntityState} from '@ngrx/entity';
 import * as employeeProjectsAction from '../actions/employee-projects.actions';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { EmployeeProjects } from '../../entity/employee-projects';
+import {UserState} from '../../../store/app-state';
 
 // Generate Our Employee State
 export interface EmployeeProjectsState extends EntityState<EmployeeProjects> {
@@ -29,7 +30,7 @@ export const initialState = employeeProjectsAdepter.getInitialState(defaultEmplo
 
 // Generate Employee Reducer
 export function employeeProjectsReducer(state = initialState, action: employeeProjectsAction.action) {
-    switch(action.type) {        
+    switch (action.type) {
         case employeeProjectsAction.EmployeeActionsType.LOAD_EMPLOYEE_PROJECTS_SUCCESS:
             return employeeProjectsAdepter.addAll(action.payload, {
                 ...state,
@@ -50,28 +51,33 @@ export function employeeProjectsReducer(state = initialState, action: employeePr
     }
 }
 
+const getAppState = createFeatureSelector<UserState>('user');
+// export const getRouteState = createFeatureSelector<RouterReducerState<RouterStateUrl>>('router');
 
-// Create Feature Selector for our employees
-const employeeProjectsFeatureSelector = createFeatureSelector<EmployeeProjectsState>('employeeProjects');
+// Employees Projects State Selector
+const getEmployeesProjectsState = createSelector(
+  getAppState,
+  (state: UserState) => state.employeeProjects
+);
 
 // Create Employee Load Selector
 export const getEmployeeProjectsSelector = createSelector(
-    employeeProjectsFeatureSelector, 
-    employeeProjectsAdepter.getSelectors().selectAll
+  getEmployeesProjectsState,
+  employeeProjectsAdepter.getSelectors().selectAll
 );
 
 export const getEmployeeProjectsLoadingSelector = createSelector(
-    employeeProjectsFeatureSelector,
-    (state: EmployeeProjectsState) => state.loading
+  getEmployeesProjectsState,
+  (state: EmployeeProjectsState) => state.loading
 );
-  
-  export const getEmployeeProjectsLoadedSelector = createSelector(
-    employeeProjectsFeatureSelector,
-    (state: EmployeeProjectsState) => state.loaded
+
+export const getEmployeeProjectsLoadedSelector = createSelector(
+  getEmployeesProjectsState,
+  (state: EmployeeProjectsState) => state.loaded
 );
-  
+
 // Create Employee Error Selector
 export const getEmployeeProjectsErrorSelector = createSelector(
-    employeeProjectsFeatureSelector,
-    (state: EmployeeProjectsState) => state.error
+  getEmployeesProjectsState,
+  (state: EmployeeProjectsState) => state.error
 );

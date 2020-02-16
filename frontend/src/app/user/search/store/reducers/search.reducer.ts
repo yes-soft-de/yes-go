@@ -2,6 +2,7 @@ import { EntityState, createEntityAdapter, EntityAdapter } from '@ngrx/entity';
 import { Search } from '../../entity/search';
 import * as searchActions from '../actions/search.actions';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { UserState } from 'src/app/user/store/app-state';
 
 
 // Generate Serach State
@@ -53,16 +54,20 @@ export function searchReducer(state = initialState, action: searchActions.action
 
 
 // Feature Search Selector
-const searchFeatureSelector = createFeatureSelector<SearchState>('search');
-
+// const searchFeatureSelector = createFeatureSelector<SearchState>('search');
+const getAppState = createFeatureSelector<UserState>('user');
+export const getSearchState = createSelector(
+    getAppState,
+    (state: UserState) => state.search
+);
 // Search Result Selector
 export const searchSelector = createSelector(
-    searchFeatureSelector,
+    getSearchState,
     searchAdepter.getSelectors().selectAll
 );
 
 // Search Error Result Selector
 export const searchErrorSelector = createSelector(
-    searchFeatureSelector,
+    getSearchState,
     (state: SearchState) => state.error
 );

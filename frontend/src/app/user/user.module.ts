@@ -17,6 +17,9 @@ import { SearchComponent } from './search/component/search/search.component';
 import { UserComponent } from './user.component';
 import { CustomerListComponent } from './customers/component/customer-list/customer-list.component';
 import { EmployeeKnowledgeComponent } from './employees/component/employee-knowledge/employee-knowledge.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { reducers, effects } from './store/app-state';
 
 
 @NgModule({
@@ -39,9 +42,10 @@ import { EmployeeKnowledgeComponent } from './employees/component/employee-knowl
     RatingModule,
     HttpClientModule,
     FormsModule,
-    NgxJsonLdModule
-    // StoreModule.forFeature('user', reducers),
-    // EffectsModule.forFeature(effects),
-  ]
+    NgxJsonLdModule,
+    StoreModule.forFeature('user', reducers),
+    EffectsModule.forFeature(effects),
+  ],
+  providers: []
 })
 export class UserModule { }

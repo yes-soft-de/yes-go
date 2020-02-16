@@ -1,10 +1,10 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Store } from '@ngrx/store';
-import * as customerAction from '../../state/actions/customer.actions';
-import { getCustomersSelector } from '../../state/reducers/customer.reduce';
+import * as customerAction from '../../store/actions/customer.actions';
+import { getCustomersSelector } from '../../store/reducers/customer.reducer';
 import { CustomerList } from '../../entity/customer-list';
 import { HelperService } from 'src/app/user/shared/helper/helper.service';
-import { AppState } from 'src/app/user/state/app-state';
+import { UserState } from 'src/app/user/store/app-state';
 
 
 @Component({
@@ -16,7 +16,7 @@ export class CustomerListComponent implements OnInit {
   customersList: CustomerList[];
   customers = [[]];
 
-  constructor(private store: Store<AppState>) { }
+  constructor(private store: Store<UserState>) { }
 
 
   ngOnInit() {

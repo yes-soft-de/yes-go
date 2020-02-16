@@ -1,9 +1,9 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { EmployeeList } from '../../entity/employee-list';
 import { Store, select } from '@ngrx/store';
-import { AppState } from 'src/app/user/state/app-state';
-import * as employeeAction from '../../state/actions/employee.actions';
-import { getEmployeesSelector } from '../../state/reducer/employee.reducer';
+import { UserState } from 'src/app/user/store/app-state';
+import * as employeeAction from '../../store/actions/employee.actions';
+import { getEmployeesSelector } from '../../store/reducer/employee.reducer';
 import { HelperService } from 'src/app/user/shared/helper/helper.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class EmployeeListComponent implements OnInit {
   selectedEmployee: any;
 
 
-  constructor(private store: Store<AppState>) { }
+  constructor(private store: Store<UserState>) { }
 
   ngOnInit() {
     // Dispatch Loading Employee

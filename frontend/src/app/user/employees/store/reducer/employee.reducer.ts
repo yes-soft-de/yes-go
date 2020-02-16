@@ -2,6 +2,10 @@ import {createEntityAdapter, EntityAdapter, EntityState} from '@ngrx/entity';
 import {EmployeeList} from '../../entity/employee-list';
 import * as employeeAction from '../actions/employee.actions';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { UserState } from 'src/app/user/store/app-state';
+import { RouterStateUrl} from '../../../store/router-state';
+import {EmployeeDetail} from '../../entity/employee-detail';
+import {RouterReducerState} from '@ngrx/router-store';
 
 // Generate Our Employee State
 export interface EmployeeState extends EntityState<EmployeeList> {
@@ -68,39 +72,59 @@ export function employeeReducer(state = initialState, action: employeeAction.act
 
 
 // Create Feature Selector for our employees
-const employeeFeatureSelector = createFeatureSelector<EmployeeState>('employees');
+// const employeeFeatureSelector = createFeatureSelector<EmployeeState>('employees');
+const getAppState = createFeatureSelector<UserState>('user');
+// export const getRouteState = createFeatureSelector<RouterReducerState<RouterStateUrl>>('router');
+// Employees State Selector
+const getEmployeesState = createSelector(
+    getAppState,
+    (state: UserState) => state.employees
+);
+
+// const getRouterState = createSelector(
+//   getAppState,
+//   (state: UserState) => state.router
+// );
+
+// export const getSelectedEmployee = createSelector(
+//     getEmployeesSelector,
+//   getRouterState,
+//     (entities, router) => {
+//         return router.state && entities[router.state.params.id];
+//     }
+// );
 
 // Create Employee Load Selector
 export const getEmployeesSelector = createSelector(
-    employeeFeatureSelector, 
+    getEmployeesState,
     employeeAdepter.getSelectors().selectAll
 );
 
 export const getEmployeesLoadingSelector = createSelector(
-    employeeFeatureSelector,
+    getEmployeesState,
     (state: EmployeeState) => state.loading
 );
-  
-  export const getEmployeesLoadedSelector = createSelector(
-    employeeFeatureSelector,
+
+export const getEmployeesLoadedSelector = createSelector(
+    getEmployeesState,
     (state: EmployeeState) => state.loaded
 );
-  
+
 // Create Employee Error Selector
 export const getErrorSelector = createSelector(
-    employeeFeatureSelector,
+    getEmployeesState,
     (state: EmployeeState) => state.error
 );
 
 // Get Current Id For THis Employee
 export const getCurrentEmployeeId = createSelector(
-    employeeFeatureSelector,
+    getEmployeesState,
     (state: EmployeeState) => state.selectedEmployeeId
 );
 
 // Get Employee Detail Selector
 export const getEmployeeDetailSelector = createSelector(
-    employeeFeatureSelector,
+    getEmployeesState,
     getCurrentEmployeeId,
     state => state.entities[state.selectedEmployeeId]
 );
