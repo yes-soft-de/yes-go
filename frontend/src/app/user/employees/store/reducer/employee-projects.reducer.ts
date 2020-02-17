@@ -3,6 +3,7 @@ import * as employeeProjectsAction from '../actions/employee-projects.actions';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { EmployeeProjects } from '../../entity/employee-projects';
 import {UserState} from '../../../store/app-state';
+import { getRouterState } from 'src/app/app/store/router-state';
 
 // Generate Our Employee State
 export interface EmployeeProjectsState extends EntityState<EmployeeProjects> {

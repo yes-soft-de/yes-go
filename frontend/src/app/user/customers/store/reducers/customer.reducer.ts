@@ -66,10 +66,16 @@ export const getCustomersSelector = createSelector(
 );
 
 // Create Customer Error Selector
-export const customerErrorSelector = createSelector(
+export const customersErrorSelector = createSelector(
     getCustomersState,
     (state: CustomerState) => state.error
 );
+
+// Create Customer Loaded Success Selector
+export const customersLoadedSuccessSelector = createSelector(
+    getCustomersState,
+    (state: CustomerState) => state.loaded
+); 
 
 
 

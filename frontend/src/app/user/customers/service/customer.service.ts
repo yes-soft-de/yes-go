@@ -11,8 +11,11 @@ import { EmployeeCustomerComments } from '../entity/employee-customer-comments';
   providedIn: 'root'
 })
 export class CustomerService {
+  // httpClient: HttpClient;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) { 
+    // this.httpClient = httpClient;
+  }
   
   // Get All Customers
   getCustomers(): Observable<CustomerList[]> {

@@ -68,17 +68,23 @@ $blue: #3399ff;
 
 @mixin loader-ring() {
   .lds-ring {
+    // display: inline-block;
+    // width: 64px;
+    // height: 25vh;
     display: inline-block;
+    position: fixed;
+    left: 50vw;
+    top: 40vh;
     width: 64px;
-    height: 25vh;
+    height: 64px;
   }
   .lds-ring div {
     box-sizing: border-box;
     display: block;
     position: absolute;
     top: 40%;
-    width: 51px;
-    height: 51px;
+    width: 60px;
+    height: 60px;
     margin: 6px;
     border: 6px solid #fff;
     border-radius: 50%;

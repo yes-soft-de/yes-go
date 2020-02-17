@@ -20,6 +20,9 @@ import { EmployeeKnowledgeComponent } from './employees/component/employee-knowl
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { reducers, effects } from './store/app-state';
+import {EmployeesGuard} from './employees/guards/employees.guard';
+import {EmployeeExistGuard} from './employees/guards/employee-exist.guard';
+import { CustomersGuards } from './customers/guards/customers.guard';
 
 
 @NgModule({
@@ -46,6 +49,10 @@ import { reducers, effects } from './store/app-state';
     StoreModule.forFeature('user', reducers),
     EffectsModule.forFeature(effects),
   ],
-  providers: []
+  providers: [
+    EmployeesGuard,
+    CustomersGuards, 
+    EmployeeExistGuard,
+  ]
 })
 export class UserModule { }

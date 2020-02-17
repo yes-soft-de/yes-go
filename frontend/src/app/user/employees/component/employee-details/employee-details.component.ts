@@ -7,11 +7,10 @@ import { EmployeeProjects } from '../../entity/employee-projects';
 import * as employeeAction from '../../store/actions/employee.actions';
 import * as employeeCustomerCommentsAction from '../../../customers/store/actions/customer-comments.actions';
 import * as employeeProjectsActions from '../../store/actions/employee-projects.actions';
-import { ActivatedRoute } from '@angular/router';
 import { UserState } from 'src/app/user/store/app-state';
 import { getCustomerCommentsSelector } from 'src/app/user/customers/store/reducers/customer-comments.reducer';
 import { Observable } from 'rxjs';
-import {getEmployeeDetailSelector, getSelectorEmployee} from '../../store/reducer/employee.reducer';
+import { getEmployeeRoutingSelector } from '../../store/reducer/employee.reducer';
 import { getEmployeeProjectsSelector } from '../../store/reducer/employee-projects.reducer';
 import { HelperService } from 'src/app/user/shared/helper/helper.service';
 
@@ -23,37 +22,31 @@ import { HelperService } from 'src/app/user/shared/helper/helper.service';
 })
 export class EmployeeDetailsComponent implements OnInit {
   employeeDetails: EmployeeDetail;
-  employeeCustomerComments: Observable<EmployeeCustomerComments[]>;
+  employeeCustomerComments$: Observable<EmployeeCustomerComments[]>;
   employeeProjectsList: EmployeeProjects[];
   employeeProjectsCarousel: any = [[]];
 
   constructor(
-    private store: Store<UserState>,
-    private activateRoute: ActivatedRoute) { }
+    private store: Store<UserState>) { }
 
   ngOnInit() {
-    this.activateRoute.url.subscribe(
-      urlSegments => {
-        // Dispatch our Loading Employee Action
-        this.store.dispatch(new employeeAction.LoadEmployee(Number(urlSegments[1].path)));
-        // Subscribe All Our Data
-        this.store.select(getEmployeeDetailSelector).subscribe(
-          employeeDetails => this.employeeDetails = employeeDetails
-        );
+    this.store.select(getEmployeeRoutingSelector).subscribe(
+      employeeDetail => this.employeeDetails = employeeDetail
+    );
 
-        // Dispatch our Loading Employee Customer Comments Action
-        this.store.dispatch(new employeeCustomerCommentsAction.LoadEmployeeCustomerComments(Number(urlSegments[1].path)));
-        this.employeeCustomerComments = this.store.select(getCustomerCommentsSelector);
+    // Dispatch our Loading Employee Customer Comments Action
+    this.store.dispatch(new employeeCustomerCommentsAction.LoadEmployeeCustomerComments(this.employeeDetails.id));
+    this.employeeCustomerComments$ = this.store.select(getCustomerCommentsSelector);
 
-        // Dispatch our Loading Employee Projects Action
-        this.store.dispatch(new employeeProjectsActions.LoadEmployeeProjects(Number(urlSegments[1].path)));
-        this.store.select(getEmployeeProjectsSelector).subscribe(
-          customerProjects => {
-            this.employeeProjectsList = customerProjects;
-            this.employeeProjectsCarousel = HelperService.chunk(customerProjects, this.onResize());
-          }
-        );
-      });
+    // Dispatch our Loading Employee Projects Action
+    this.store.dispatch(new employeeProjectsActions.LoadEmployeeProjects(this.employeeDetails.id));
+    this.store.select(getEmployeeProjectsSelector).subscribe(
+      customerProjects => {
+        this.employeeProjectsList = customerProjects;
+        this.employeeProjectsCarousel = HelperService.chunk(customerProjects, this.onResize());
+      }
+    );
+
   }
 
 

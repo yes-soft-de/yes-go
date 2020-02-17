@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { HelperService } from '../shared/helper/helper.service';
 
 @Component({
@@ -15,10 +15,12 @@ export class HomeComponent implements OnInit {
 
   slides: any = [[]];
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     this.slides = HelperService.chunk(this.cards, 1);
+    console.log(window.onload);
+    
   }
 
 }

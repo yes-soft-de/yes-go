@@ -1,6 +1,6 @@
 <!--Start Employee Main Detail-->
 <div class="employee-detail">
-    <div class="" *ngIf="employeeDetails != null && employeeProjectsList != null && employeeCustomerComments != null">
+    <div class="" *ngIf="employeeDetails != null && employeeProjectsList != null && (employeeCustomerComments$ | async)">
     <div class="employee-header-background"></div>
     <div class="employee-header-content position-relative">
       <div class="container">
@@ -163,12 +163,12 @@
               </div><!--.summary-content-->
             </div><!--.employee-summary-section-->
           </div>
-          <div class="col-12" *ngIf="(employeeCustomerComments | async).length != 0">
+          <div class="col-12" *ngIf="(employeeCustomerComments$ | async).length != 0">
             <div class="what-customer-say py-5">
               <h3 class="mb-4 mb-lg-5">What customer says about "<span>{{employeeDetails.fullName}}</span>"</h3>
               <div class="col-12 col-md-10 mx-auto">
                 <div class="row">
-                  <div class="col-12 col-sm-6 mb-4 mb-sm-1" *ngFor="let customerComments of (employeeCustomerComments | async)">
+                  <div class="col-12 col-sm-6 mb-4 mb-sm-1" *ngFor="let customerComments of (employeeCustomerComments$ | async)">
                     <i class="fas fa-quote-left fa-sm-md fa-md-lg text-muted"></i>
                     <p>
                       {{customerComments.body}}
@@ -225,7 +225,7 @@
       </div>
     </div><!--.employee-body-section-->
     </div>
-    <div class="col-12 text-center py-5" *ngIf="employeeDetails == null && employeeProjectsList == null && employeeCustomerComments == null">
+    <div class="col-12 text-center py-5" *ngIf="employeeDetails == null && employeeProjectsList == null && !(employeeCustomerComments$)">
       <div class="lds-ring mx-auto"><div></div><div></div><div></div><div></div></div>
     </div>
   </div>

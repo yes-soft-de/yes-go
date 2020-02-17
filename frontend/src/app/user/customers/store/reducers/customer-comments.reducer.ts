@@ -60,10 +60,22 @@ const getCustomerCommentsState = createSelector(
   (state: UserState) => state.customerComments
 );
 
+// Create Customer Comments Entities Selector
+export const customerCommentsEntitiesSelector = createSelector(
+    getCustomerCommentsState,
+    customerCommentsAdepter.getSelectors().selectEntities
+);
+
 // Create Selector To Get All Customers Directly
 export const getCustomerCommentsSelector = createSelector(
   getCustomerCommentsState,
   customerCommentsAdepter.getSelectors().selectAll
+);
+
+// Create Customer Loaded Selector
+export const customerCommentsLoadedSelector = createSelector(
+    getCustomerCommentsState,
+    (state: CustomerCommentsState) => state.loaded
 );
 
 // Create Customer Error Selector

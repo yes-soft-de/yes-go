@@ -81,13 +81,13 @@ const getEmployeesState = createSelector(
 );
 
 // Create Employee Entities Selector
-export const getEmployeeEntities = createSelector(
+export const getEmployeesEntities = createSelector(
   getEmployeesState,
   employeeAdepter.getSelectors().selectEntities
 );
 
-export const getSelectorEmployee = createSelector(
-  getEmployeeEntities,
+export const getEmployeeRoutingSelector = createSelector(
+  getEmployeesEntities,
   getRouterState,
   (entities, router): EmployeeDetail => {
     return router.state && entities[router.state.params.id];

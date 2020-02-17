@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from '../user/home/home.component';
 import { UserComponent } from '../user/user.component';
-import { EmployeeListComponent } from '../user/employees/component/employee-list/employee-list.component';
 import { EmployeeDetailsComponent } from '../user/employees/component/employee-details/employee-details.component';
-import { CustomerListComponent } from '../user/customers/component/customer-list/customer-list.component';
+import { EmployeesGuard } from '../user/employees/guards/employees.guard';
+import { EmployeeExistGuard } from '../user/employees/guards/employee-exist.guard';
+import { CustomersGuards } from '../user/customers/guards/customers.guard';
 
 
 const routes: Routes = [
@@ -12,10 +13,16 @@ const routes: Routes = [
     path: '',
     component: UserComponent,
     children: [
-      {path: '', component: HomeComponent},
-      // {path: 'employees', component: EmployeeListComponent},
-      {path: 'employee/:id', component: EmployeeDetailsComponent},
-      // {path: 'customers', component: CustomerListComponent}
+      {
+        path: '',
+        canActivate: [EmployeesGuard, CustomersGuards],
+        component: HomeComponent
+      },
+      {
+        path: 'employee/:id',
+        canActivate: [EmployeeExistGuard],
+        component: EmployeeDetailsComponent
+      },
     ]
   }
 ];
