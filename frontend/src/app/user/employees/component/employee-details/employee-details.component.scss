@@ -1,19 +1,77 @@
 @import "~src/variables";
 
-.employee-detail {
-  .employee-header-background {
-    background-color: $blue;
-    height: 30vh;
-  }
 
-  .employee-header-content {
-    top: -20vh;
-    .employee-image {
-      background-color: #aaa;
+.employee-details-section {
+  background: url('../../../../../assets/Employee-details-background.png') no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  .employee-details-content {
+    position: relative;
+    top: 85px;
+    color: #fff;
+    .language-experience-year {
+      .experience-year {
+        @include progress-bar;
+      }
+      p {
+        i { color: $red }
+      }
+    }
+    .employee-details-image {
+      width: 50%;
+    }
+    .employee-skills-rate-section {
+      p {
+       font-weight: 600;
+       font-size: 1.2rem 
+      }
+    }
+    .employee-skills {
+      .employee-skills-info {
+        img {
+          height: 50px;
+          width: 50px;
+        }
+        & > div {
+          vertical-align: middle;
+        }
+        .employee-skills-name {
+          font-weight: 500;
+        }
+      }
+    }
+    .employee-detail-projects {
+      .customer-say {
+        min-height: 100px;
+        h6 a {
+          text-decoration: none;
+          &:hover {
+            color: #aaa;
+          }
+        }
+      }
     }
   }
+}
 
-  .employee-body-section {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.employee-details-sections {
+  .employee-details-contents {
+    background-color: #03142f5c;
     p { text-align: justify; }
     .program-expert {
       .program-expert-info {

@@ -7,6 +7,26 @@
 // Loader Ring Function
 @include loader-ring;
 
+.flickity-enabled.is-draggable {
+  .flickity-viewport {
+    .flickity-slider {
+      .is-selected {
+        .employee-display-selected-section {
+          display: block;
+          position: relative;
+          top: -200px;
+          background: url('assets/employee-more-details.png') no-repeat;
+          -webkit-background-size: contain;
+          background-size: contain;
+        }
+        .employee-display-section {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
 // Edit Carousel Inside Employee List Component
 .employee {
   .carousel-indicators {

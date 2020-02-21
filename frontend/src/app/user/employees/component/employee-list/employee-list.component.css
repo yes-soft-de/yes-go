@@ -1,31 +1,51 @@
-.employee {
-  background-color: #3399ff;
+.employee-list {
+  background: url("../../../../../assets/slider-background.jpg") no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
 }
-.employee .team-member {
+.employee-list .employee-list-top {
   position: relative;
-  background-color: #000;
-  color: #aaa;
-  height: 80px;
-  line-height: 80px;
-  padding-left: 10%;
-  cursor: pointer;
+  top: 12vh;
 }
-.employee .team-member i {
-  position: absolute;
-  right: 8px;
-  top: 9px;
+.employee-list .employee-list-top .logo-image {
+  width: 50%;
 }
-.employee .team-member.selected,
-.employee .team-member:hover {
-  background-color: #222;
-}
-.employee .team-member.selected p,
-.employee .team-member:hover p {
+.employee-list .employee-list-top p {
+  font-size: 2.7rem;
   color: #fff;
+  margin-bottom: -25px;
+  font-weight: bold;
 }
-@media (min-width: 576px) and (max-width: 767px) {
-  .employee .team-member {
-    height: 60px;
-    line-height: 60px;
-  }
+.employee-list-carousel {
+  height: 145vh;
+}
+.employee-list-carousel .flickity-enabled.is-draggable {
+  position: relative;
+  top: 60%;
+}
+.employee-list-carousel .employee-display-section {
+  position: relative;
+}
+.employee-list-carousel .employee-display-section .employee-image {
+  height: 120px;
+  width: 120px;
+  background: url("../../../../../assets/profile-pic-frame.png") no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.employee-list-carousel .employee-display-section .employee-info {
+  width: 50%;
+  height: 105px;
+  position: absolute;
+  top: 80%;
+  left: 25%;
+  background: url("../../../../../assets/Employee-details.png") no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+.employee-list-carousel .employee-display-section .employee-info p {
+  font-size: 120%;
+}
+.employee-list-carousel .employee-display-selected-section {
+  display: none;
 }

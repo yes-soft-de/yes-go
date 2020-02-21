@@ -49,6 +49,7 @@
     "ngx-bootstrap-slider": "^1.7.0",
     "ngx-carousel-lib": "^0.1.2",
     "ngx-cookie-service": "^2.2.0",
+    "ngx-flickity": "0.0.9",
     "ngx-moment": "^3.4.0",
     "ngx-toastr": "^10.2.0",
     "ngx-wow": "^2.0.1",

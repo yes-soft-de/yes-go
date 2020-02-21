@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarouselModule } from 'angular-bootstrap-md';
 import { RatingModule } from 'ng-starrating';
-// import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UserRoutingModule } from '../controller/user-routing.module';
 import { NgxJsonLdModule } from '@ngx-lite/json-ld';
+import { FlickityModule } from 'ngx-flickity';
 
 import { EmployeeListComponent } from './employees/component/employee-list/employee-list.component';
 import { HomeComponent } from './home/home.component';
@@ -46,6 +46,7 @@ import { CustomersGuards } from './customers/guards/customers.guard';
     // HttpClientModule,
     FormsModule,
     NgxJsonLdModule,
+    FlickityModule,
     StoreModule.forFeature('user', reducers),
     EffectsModule.forFeature(effects),
   ],

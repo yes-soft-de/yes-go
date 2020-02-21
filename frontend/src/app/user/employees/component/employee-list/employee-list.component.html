@@ -1,44 +1,120 @@
-<!--Start Employee Section-->
-<div class="employee py-5">
-    <div *ngIf="employeeList$ != null">
-      <div class="container">
-        <app-employee-short-detail [employee]="selectedEmployee"></app-employee-short-detail>
-        <div class="row">
-          <div class="col-10 our-team mx-auto">
-            <div class="col-12">
-                <h4 class="mb-3 mb-md-4">Our Team</h4>
-            </div>
-            <div class="col-12" *ngIf="employeeList$.length < (onResize() + 1)">
-              <div class="row">
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto" *ngFor="let employee of employeeList$">
-                  <div class="team-member" [class.selected]="employee == selectedEmployee" (click)="onSelected(employee)">
-  <!--                  <i class="fas fa-external-link-alt fa-fw fa-sm"></i>-->
-                    <p>{{employee?.fullName}}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12" *ngIf="employeeList$.length > onResize()">
-              <div class="row">
-                <mdb-carousel [isControls]="true" class="w-100 carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
-                              [animation]="'slide'">
-                  <mdb-carousel-item *ngFor="let employee of employees; let i = index">
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto" *ngFor="let member of employee">
-                      <div class="team-member" [class.selected]="member == selectedEmployee" (click)="onSelected(member)">
-  <!--                      <i class="fas fa-external-link-alt fa-fw fa-sm"></i>-->
-                        <p>{{member?.fullName}}</p>
-                      </div>
+<!--Start Employee List Section-->
+<div class="employee-list pt-5">
+    <div class="employee-list-top">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col">
+                    <div class="logo-image">
+                        <img class="img-fluid" src="../../../../../assets/logo.svg" alt="logo" />
                     </div>
-                  </mdb-carousel-item>
-                </mdb-carousel>
-              </div>
+                </div>
+                <div class="col">
+                    <p>80%</p>
+                    <p>Evaluation</p>
+                </div>
+                <div class="col">
+                    <p>90%</p>
+                    <p>Evaluation</p>
+                </div>
             </div>
-          </div> <!--.our-team-->
         </div>
-      </div>
     </div>
-    <div class="" *ngIf="employeeList$ == null">
-      <h4 class="text-center">Loading...</h4>
+    <div class="employee-list-carousel">
+        <div [flickity]="{
+                pageDots: false,
+                contain: true,
+                initialIndex: '.is-initial-select'
+                }">
+            <div class="col-12 col-sm-6 col-md-4 mx-auto" [flickityChild] *ngFor="let employee of employeeList$">
+                <div class="employee-display-section">
+                    <div class="employee-image mx-auto">
+                        <img class="img-fluid rounded-circle" src="{{employee.image}}"
+                        (error)="employee.image = '../../../assets/avatar.png'" alt="Employee Image" />
+                    </div>
+                    <div class="employee-info text-center text-white pt-3">
+                        <p class="mb-0">{{employee.fullName}}</p>
+                        <p class="mb-0">{{employee.position}}</p>
+                    </div>
+                </div>
+                <div class="employee-display-selected-section py-3 px-5">
+                    <h4 class="text-center mb-0">{{employee.fullName}}</h4>
+                    <span class="text-center">
+                        <star-rating
+                                value="{{employee.rating}}"
+                                totalstars="5"
+                                checkedcolor="red"
+                                uncheckedcolor="white"
+                                size="24px"
+                                readonly="false" (rate)="onRate($event)"></star-rating>
+                        </span>
+                    <div class="row">
+                        <div class="col-8">
+                            <p class="mb-0">{{employee.position}}</p>
+                            <p class="mb-0" *ngIf="employee.skills.length != 0"><strong>{{employee.skills[0]?.name}}</strong>, <strong> {{employee.skills[0]?.name}}</strong>, <strong> {{employee.skills[0]?.name}}</strong> ...</p>
+                            <p class="mb-0">{{employee.language}}</p>
+                            <p class="mb-0">{{employee.experiances}}</p>
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded-circle" src="{{employee.image}}"
+                                (error)="employee.image = '../../../assets/avatar.png'" alt="Employee Image" />
+                        </div>
+                        <div class="col-12 text-center mt-1">
+                            <button class="btn btn-info mx-auto">more details</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
     </div>
-  </div>
+    <div class="py-5">
+        <app-search></app-search>
+    </div>
+</div>
+
+<!--End Employee List Section-->
+
+<!--Start Employee Section-->
+<!--<div class="employee py-5">-->
+<!--    <div *ngIf="employeeList$ != null">-->
+<!--      <div class="container">-->
+<!--        <app-employee-short-detail [employee]="selectedEmployee"></app-employee-short-detail>-->
+<!--        <div class="row">-->
+<!--          <div class="col-10 our-team mx-auto">-->
+<!--            <div class="col-12">-->
+<!--                <h4 class="mb-3 mb-md-4">Our Team</h4>-->
+<!--            </div>-->
+<!--            <div class="col-12" *ngIf="employeeList$.length < (onResize() + 1)">-->
+<!--              <div class="row">-->
+<!--                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto" *ngFor="let employee of employeeList$">-->
+<!--                  <div class="team-member" [class.selected]="employee == selectedEmployee" (click)="onSelected(employee)">-->
+<!--  &lt;!&ndash;                  <i class="fas fa-external-link-alt fa-fw fa-sm"></i>&ndash;&gt;-->
+<!--                    <p>{{employee?.fullName}}</p>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col-12" *ngIf="employeeList$.length > onResize()">-->
+<!--              <div class="row">-->
+<!--                <mdb-carousel [isControls]="true" class="w-100 carousel-multi-item multi-animation" [type]="'carousel-multi-item'"-->
+<!--                              [animation]="'slide'">-->
+<!--                  <mdb-carousel-item *ngFor="let employee of employees; let i = index">-->
+<!--                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto" *ngFor="let member of employee">-->
+<!--                      <div class="team-member" [class.selected]="member == selectedEmployee" (click)="onSelected(member)">-->
+<!--  &lt;!&ndash;                      <i class="fas fa-external-link-alt fa-fw fa-sm"></i>&ndash;&gt;-->
+<!--                        <p>{{member?.fullName}}</p>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </mdb-carousel-item>-->
+<!--                </mdb-carousel>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div> &lt;!&ndash;.our-team&ndash;&gt;-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="" *ngIf="employeeList$ == null">-->
+<!--      <h4 class="text-center">Loading...</h4>-->
+<!--    </div>-->
+<!--  </div>-->
   <!--End Employee Section-->

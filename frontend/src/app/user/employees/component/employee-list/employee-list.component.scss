@@ -1,33 +1,54 @@
-.employee {
-    background-color: #3399ff;
-    .team-member {
-      position: relative;
-      background-color: #000;
-      color: #aaa;
-      height: 80px;
-      line-height: 80px;
-      padding-left: 10%;
-      cursor: pointer;
-      i {
-        position: absolute;
-        right: 8px;
-        top: 9px;
-      }
-      &.selected, &:hover {
-        background-color: #222;
-        p {color: #fff;}
+.employee-list {
+  background: url('../../../../../assets/slider-background.jpg') no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  .employee-list-top {
+    position: relative;
+    top: 12vh;
+    .logo-image {
+      width: 50%;
+    }
+    p {
+      font-size: 2.7rem;
+      color: #fff;
+      margin-bottom: -25px;
+      font-weight: bold;
+    }
+  }
+
+}
+
+.employee-list-carousel {
+  height: 145vh;
+  .flickity-enabled.is-draggable {
+    position: relative;
+    top: 60%;
+  }
+  .employee-display-section {
+    position: relative;
+    .employee-image {
+      height: 120px;
+      width: 120px;
+      background: url('../../../../../assets/profile-pic-frame.png') no-repeat;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+    .employee-info {
+      width: 50%;
+      height: 105px;
+      position: absolute;
+      top: 80%;
+      left: 25%;
+      background: url('../../../../../assets/Employee-details.png') no-repeat;
+      -webkit-background-size: contain;
+      background-size: contain;
+      
+      p {
+        font-size: 120%;
       }
     }
   }
-  
-  /*style for sm Screen*/
-  @media (min-width: 576px) and (max-width: 767px) {
-    .employee {
-      .team-member {
-        height: 60px;
-        line-height: 60px;
-      }
-    }
+  .employee-display-selected-section {
+    display: none
   }
-  
-  
+}

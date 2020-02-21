@@ -73,5 +73,8 @@ export class EmployeeDetailsComponent implements OnInit {
     return chunkSize;
   }
 
+  onRate(event) {
+    return;
+  }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { EmployeeList } from '../../entity/employee-list';
 import { Store, select } from '@ngrx/store';
 import { UserState } from 'src/app/user/store/app-state';
@@ -12,6 +12,7 @@ import { HelperService } from 'src/app/user/shared/helper/helper.service';
   styleUrls: ['./employee-list.component.scss']
 })
 export class EmployeeListComponent implements OnInit {
+  @ViewChild('carouselParentDev', {static: true}) carouselParentDev: ElementRef;
   employeeList$: EmployeeList[];
   employees: any = [[]];            // Empty Array To Use It With Employee Carousel
   selectedEmployee: any;
@@ -20,6 +21,7 @@ export class EmployeeListComponent implements OnInit {
   constructor(private store: Store<UserState>) { }
 
   ngOnInit() {
+
     // Dispatch Loading Employee
     this.store.dispatch(new employeeAction.LoadEmployees());
     // Select only employee Array and subscribe it
@@ -27,9 +29,16 @@ export class EmployeeListComponent implements OnInit {
       employeeList => {
         this.employeeList$ = employeeList;
         this.employees = HelperService.chunk(employeeList, this.onResize());
+
       }
     );
   }
+
+ngAfterViewInit(): void {
+  //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+  //Add 'implements AfterViewInit' to the class.
+  console.log(document.getElementsByClassName('is-selected'));
+}
 
     // Host For Fetch Screen Size And Change The Chunk Array Size
     @HostListener('window:resize', ['$event'])
@@ -51,4 +60,7 @@ export class EmployeeListComponent implements OnInit {
       this.selectedEmployee = employee;
     }
 
+    onRate(event) {
+
+    }
 }
