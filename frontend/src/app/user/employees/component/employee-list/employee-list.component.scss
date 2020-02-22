@@ -4,7 +4,7 @@
   background-size: cover;
   .employee-list-top {
     position: relative;
-    top: 12vh;
+    top: 21vh;
     .logo-image {
       width: 50%;
     }
@@ -42,7 +42,10 @@
       background: url('../../../../../assets/Employee-details.png') no-repeat;
       -webkit-background-size: contain;
       background-size: contain;
-      
+      &:hover {
+        color: #000 !important;
+        cursor: pointer;
+      }
       p {
         font-size: 120%;
       }

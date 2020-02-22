@@ -19,24 +19,24 @@
             </div>
         </div>
     </div>
-    <div class="employee-list-carousel">
+    <div class="employee-list-carousel" *ngIf="employeeList != null">
         <div [flickity]="{
                 pageDots: false,
                 contain: true,
                 initialIndex: '.is-initial-select'
                 }">
-            <div class="col-12 col-sm-6 col-md-4 mx-auto" [flickityChild] *ngFor="let employee of employeeList$">
+            <div class="col-12 col-sm-6 col-md-4 mx-auto" [flickityChild] *ngFor="let employee of employeeList">
                 <div class="employee-display-section">
                     <div class="employee-image mx-auto">
                         <img class="img-fluid rounded-circle" src="{{employee.image}}"
                         (error)="employee.image = '../../../assets/avatar.png'" alt="Employee Image" />
                     </div>
-                    <div class="employee-info text-center text-white pt-3">
+                    <div class="employee-info text-center text-white pt-3" (click)="onSelected(employee)">
                         <p class="mb-0">{{employee.fullName}}</p>
                         <p class="mb-0">{{employee.position}}</p>
                     </div>
                 </div>
-                <div class="employee-display-selected-section py-3 px-5">
+                <div class="employee-display-selected-section py-3 px-5 d-none">
                     <h4 class="text-center mb-0">{{employee.fullName}}</h4>
                     <span class="text-center">
                         <star-rating
@@ -45,7 +45,7 @@
                                 checkedcolor="red"
                                 uncheckedcolor="white"
                                 size="24px"
-                                readonly="false" (rate)="onRate($event)"></star-rating>
+                                readonly="true" (rate)="onRate($event)"></star-rating>
                         </span>
                     <div class="row">
                         <div class="col-8">
@@ -59,7 +59,7 @@
                                 (error)="employee.image = '../../../assets/avatar.png'" alt="Employee Image" />
                         </div>
                         <div class="col-12 text-center mt-1">
-                            <button class="btn btn-info mx-auto">more details</button>
+                            <button class="btn btn-info mx-auto" (click)="onSelected(employee)">more details</button>
                         </div>
                     </div>
                 </div>
@@ -71,6 +71,12 @@
         <app-search></app-search>
     </div>
 </div>
+
+<app-employee-details 
+                [employeeDetails]="selectedEmployee" 
+                [employeeDetailsProjectsList]="employeeProjectsList" 
+                [employeeDetailsCustomerComments]="employeeCustomerComments"
+                [employeeDetailsProjectsCarousel]="employeeProjectsCarousel"></app-employee-details>
 
 <!--End Employee List Section-->
 

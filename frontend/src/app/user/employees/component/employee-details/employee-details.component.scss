@@ -7,8 +7,9 @@
   background-size: cover;
   .employee-details-content {
     position: relative;
-    top: 85px;
+    top: 50px;
     color: #fff;
+    height: 2100px;
     .language-experience-year {
       .experience-year {
         @include progress-bar;
@@ -48,6 +49,17 @@
           &:hover {
             color: #aaa;
           }
+        }
+      }
+    }
+    .what-customer-say {
+      .customer-say-image {
+        img {
+          height: 70px;
+          width: 70px;
+        }
+        .customer-company-name {
+          vertical-align: middle;
         }
       }
     }

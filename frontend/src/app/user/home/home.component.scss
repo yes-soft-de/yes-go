@@ -1,10 +1,14 @@
 @import "~src/variables";
 
 .about-us {
-  min-height: 300px;
-  @include gradient-grey-background;
+  background: url('../../../assets/about-us-background.png') no-repeat;
+  background-size: cover;
+  min-height: 450px;
+  h2 {
+    margin-bottom: 10%
+  }
   span {
-    font-size: .7rem;
+    font-size: 1.3rem;
   }
   p {
     font-size: 1.8rem;
@@ -12,11 +16,18 @@
 }
 
 .our-price {
+  background-color: $dark-blue;
   p {
     font-size: 1.6rem;
     strong {
       color: #3399ff;}
   }
+}
+
+.yes-go-vision {
+  background: url('../../../assets/yesgo-vision-background.png') no-repeat;
+  background-size: cover;
+  min-height: 300px;
 }
 
 /*style for lg Screen*/

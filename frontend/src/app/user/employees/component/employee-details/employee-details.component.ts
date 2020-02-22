@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { StarRatingComponent } from 'ng-starrating';
 import { EmployeeDetail } from '../../entity/employee-detail';
@@ -21,32 +21,14 @@ import { HelperService } from 'src/app/user/shared/helper/helper.service';
   styleUrls: ['./employee-details.component.scss', '../employee-short-detail/employee-short-detail.component.scss']
 })
 export class EmployeeDetailsComponent implements OnInit {
-  employeeDetails: EmployeeDetail;
-  employeeCustomerComments$: Observable<EmployeeCustomerComments[]>;
-  employeeProjectsList: EmployeeProjects[];
-  employeeProjectsCarousel: any = [[]];
+  @Input() employeeDetails: EmployeeDetail;
+  @Input() employeeDetailsCustomerComments: EmployeeCustomerComments[];
+  @Input() employeeDetailsProjectsList: EmployeeProjects[];
+  @Input() employeeDetailsProjectsCarousel: any = [[]];
 
-  constructor(
-    private store: Store<UserState>) { }
+  constructor() { }
 
   ngOnInit() {
-    this.store.select(getEmployeeRoutingSelector).subscribe(
-      employeeDetail => this.employeeDetails = employeeDetail
-    );
-
-    // Dispatch our Loading Employee Customer Comments Action
-    this.store.dispatch(new employeeCustomerCommentsAction.LoadEmployeeCustomerComments(this.employeeDetails.id));
-    this.employeeCustomerComments$ = this.store.select(getCustomerCommentsSelector);
-
-    // Dispatch our Loading Employee Projects Action
-    this.store.dispatch(new employeeProjectsActions.LoadEmployeeProjects(this.employeeDetails.id));
-    this.store.select(getEmployeeProjectsSelector).subscribe(
-      customerProjects => {
-        this.employeeProjectsList = customerProjects;
-        this.employeeProjectsCarousel = HelperService.chunk(customerProjects, this.onResize());
-      }
-    );
-
   }
 
 
@@ -73,8 +55,5 @@ export class EmployeeDetailsComponent implements OnInit {
     return chunkSize;
   }
 
-  onRate(event) {
-    return;
-  }
 
 }

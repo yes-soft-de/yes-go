@@ -18,9 +18,12 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.slides = HelperService.chunk(this.cards, 1);
-    console.log(window.onload);
-    
+    this.slides = HelperService.chunk(this.cards, 1);    
+  }
+
+
+  onRate(event) {
+    return;
   }
 
 }

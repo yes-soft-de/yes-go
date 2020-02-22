@@ -1,5 +1,7 @@
+@import "~src/variables";
+
 footer {
-    background-color: #111;
+    background-color: $footer-blue;
     .footer-left {
       .footer-logo {
         width: 40%;

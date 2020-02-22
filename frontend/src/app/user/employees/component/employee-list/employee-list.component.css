@@ -5,7 +5,7 @@
 }
 .employee-list .employee-list-top {
   position: relative;
-  top: 12vh;
+  top: 21vh;
 }
 .employee-list .employee-list-top .logo-image {
   width: 50%;
@@ -42,6 +42,10 @@
   background: url("../../../../../assets/Employee-details.png") no-repeat;
   -webkit-background-size: contain;
   background-size: contain;
+}
+.employee-list-carousel .employee-display-section .employee-info:hover {
+  color: #000 !important;
+  cursor: pointer;
 }
 .employee-list-carousel .employee-display-section .employee-info p {
   font-size: 120%;

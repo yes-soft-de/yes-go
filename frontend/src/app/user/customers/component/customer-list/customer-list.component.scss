@@ -1,0 +1,9 @@
+@import "~src/variables";
+
+.our-customers {
+    background-color: $dark-blue;
+    .customer-image {
+        height: 60px;
+        width: 60px
+    }
+}

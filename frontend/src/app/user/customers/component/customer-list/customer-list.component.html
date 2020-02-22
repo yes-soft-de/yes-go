@@ -1,5 +1,33 @@
 <!--Start Our Customers Section-->
-<div class="our-customer py-5" *ngIf="customersList != null">
+<div class="our-customers text-center text-white py-5">
+
+  <div *ngIf="customersList.length != 0">
+    <div class="container">
+      <h2 class="h1 mb-5">Our Customer</h2>
+      <div class="row" *ngIf="customersList?.length < (onResize() + 1)">
+        <div class="col-12 col-sm-6 col-md-4 mx-auto mb-4" *ngFor="let customerInfo of customersList">
+          <div class="customer-image mx-auto">
+            <img class="img-fluid rounded-circle" src="{{customerInfo.image}}"
+                       (error)="customerInfo.image = '../../../assets/grey_avatar.png'" alt="Employee Image" />
+          </div>
+          <h4>{{customerInfo.clientName}}</h4>         
+        </div>
+      </div>
+    </div>
+  </div> 
+  <div class="" *ngIf="customersList.length == 0">
+    <h4 class="text-center">Loading...</h4>
+  </div>
+
+
+</div>
+<!--End Our Customers Section-->
+
+
+
+
+<!--Start Our Customers Section-->
+<!-- <div class="our-customer py-5" *ngIf="customersList != null">
     <div *ngIf="customersList.length != 0">
       <div class="container">
         <h3 class="text-center mb-4">Our Customer</h3>
@@ -11,9 +39,9 @@
                   <div class="employee-image">
                     <img class="img-fluid" src="{{customerInfo.image}}"
                          (error)="customerInfo.image = '../../../assets/grey_avatar.png'" alt="Employee Image" />
-                  </div>
+                  </div> -->
   <!--                <i class="fas fa-check-circle fa-2x text-secondary"></i>-->
-                </div>
+                <!-- </div>
                 <div class="col-10 col-sm-9">
                   <h6>{{customerInfo.clientName}}</h6>
                   <p>
@@ -23,8 +51,8 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="row" *ngIf="customersList?.length > onResize()">
+        </div> -->
+        <!-- <div class="row" *ngIf="customersList?.length > onResize()">
           <mdb-carousel [isControls]="true" class="w-100 carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
                         [animation]="'slide'">
             <mdb-carousel-item *ngFor="let customer of customers; let i = index">
@@ -35,9 +63,9 @@
                       <div class="employee-image">
                         <img class="img-fluid" src="{{customerInfo.image}}"
                              (error)="customerInfo.image = '../../../assets/grey_avatar.png'" alt="Employee Image" />
-                      </div>
+                      </div> -->
     <!--                    <i class="fas fa-check-circle fa-2x text-secondary"></i>-->
-                    </div>
+                    <!-- </div>
                     <div class="col-10 col-sm-9">
                       <h6>{{customerInfo.clientName}}</h6>
                       <p>
@@ -52,10 +80,10 @@
   
         </div>
       </div>
-    </div>
+    </div> 
     <div class="" *ngIf="customersList.length == 0">
       <h4 class="text-center">Loading...</h4>
     </div>
-  </div>
+  </div>-->
   <!--End Our Customers Section-->
   
