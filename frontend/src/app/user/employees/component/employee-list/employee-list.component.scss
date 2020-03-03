@@ -1,7 +1,5 @@
 .employee-list {
-  background: url('../../../../../assets/slider-background.jpg') no-repeat;
-  -webkit-background-size: cover;
-  background-size: cover;
+  position: relative;
   .employee-list-top {
     position: relative;
     top: 21vh;
@@ -9,49 +7,191 @@
       width: 50%;
     }
     p {
-      font-size: 2.7rem;
+      font-size: 2rem;
       color: #fff;
-      margin-bottom: -25px;
+      margin-bottom: -10px;
       font-weight: bold;
     }
   }
-
-}
-
-.employee-list-carousel {
-  height: 145vh;
-  .flickity-enabled.is-draggable {
+  .mobile-carousel {
+    height: 80vh;
     position: relative;
-    top: 60%;
-  }
-  .employee-display-section {
-    position: relative;
-    .employee-image {
-      height: 120px;
-      width: 120px;
-      background: url('../../../../../assets/profile-pic-frame.png') no-repeat;
-      -webkit-background-size: cover;
-      background-size: cover;
-    }
-    .employee-info {
-      width: 50%;
-      height: 105px;
-      position: absolute;
-      top: 80%;
-      left: 25%;
-      background: url('../../../../../assets/Employee-details.png') no-repeat;
+    top: 30vh;
+    .selected-employee {
+      background: url("../../../../../assets/employee-more-details.png") center center no-repeat;
       -webkit-background-size: contain;
       background-size: contain;
-      &:hover {
-        color: #000 !important;
-        cursor: pointer;
-      }
       p {
-        font-size: 120%;
+        font-weight: 700
+      }
+      .button-details {
+        cursor: pointer;
+        border: 2px solid #d8eef0;
+        border-radius: 20px;
+        background-color: #27a3c8;
+        padding: .2rem .8rem;
       }
     }
   }
-  .employee-display-selected-section {
-    display: none
+}
+
+#blade {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding-top: 5vw;
+}
+
+.circle-carousel { 
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  right: calc((95vw - 600px)/2);
+  left: calc((95vw - 600px)/2);
+  top: 125%;
+  margin-top: 0;
+  transition: transform .5s;
+  z-index: 201;
+  &__item { 
+    width: 100px; 
+    height: 100px; 
+    position: absolute; 
+    // background: #71439a; 
+    border-radius: 50%; 
+    text-align: center; 
+    line-height: 20px; 
+    color: #fff; 
+    transition: all .5s; 
+    display: flex;
+    opacity: .4;
+    justify-content: center; 
+    align-items: center;
+    overflow: hidden;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    cursor: pointer;
+    &.activate{
+      background: #333 !important;
+      border: 2px solid #333;
+      opacity: 1;
+      transform: scale(2.85);
+      -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+      filter: grayscale(0%);
+    }
+    &.ws-next-to-active {
+      opacity: .7;
+      transform: scale(1.3);
+    }
+
+    div {
+      background-size: cover;
+      background-position: center center;
+      width: 100%;
+      height: 100%;
+      transition: transform .5s;
+    }
   }
 }
+
+/*Style for lg Screen*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .employee-list {
+    .employee-list-top {
+      p {
+        font-size: 1.8rem;
+      }
+    }
+  }
+  #blade {
+    .circle-carousel {
+      top: 123% !important;
+    }
+  }
+}
+
+/*Style for md Screen*/
+@media (min-width: 768px) and (max-width: 991px) {
+  .employee-list {
+    .employee-list-top {
+      p {
+        font-size: 1.4rem;
+      }
+    }
+  }
+  #blade {
+    .circle-carousel {
+      top: 123% !important;
+    }
+  }
+}
+
+/*style for sm Screen*/
+@media (min-width: 576px) and (max-width: 767px) {
+  .employee-list {
+    .employee-list-top {
+      position: relative;
+      top: 23vh;
+      .logo-image {
+        width: 50%;
+      }
+
+      p {
+        display: inline-block;
+        font-size: 1.2rem;
+        margin: 0 5px -25px;
+      }
+    }
+  }
+}
+
+
+/*style for xs Screen*/
+@media (max-width: 575px) {
+  .employee-list {
+    .employee-list-top {
+      position: relative;
+      top: 23vh;
+      .logo-image {
+        width: 50%;
+      }
+
+      p {
+        display: inline-block;
+        font-size: 1.2rem;
+        margin: 0 5px -25px;
+      }
+    }
+    .mobile-carousel {
+      height: 67vh;
+      .selected-employee {
+        h4 { font-size: 1rem; }
+        p {
+          font-size: .8rem; }
+        .button-details {
+          padding: .1rem .6rem;
+          font-size: .85rem
+        }
+      }
+    }
+  }
+}
+
+
+/*style for xs Screen*/
+@media (max-width: 499px) {
+  .employee-list {
+    .mobile-carousel {
+      height: 73vh;
+      .selected-employee {
+        padding: 1.5rem 1.8rem !important;
+      }
+    }
+  }
+}
+
+/*style for xs Screen*/
+@media (max-width: 399px) {}
+

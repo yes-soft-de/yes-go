@@ -1,9 +1,12 @@
+@import "~src/variables";
+
 .search-section {
   input {
     background-color: transparent;
     border: none;
     background-image: url('../../../../../assets/search-input.png');
     background-repeat: no-repeat;
+    background-position: center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -11,31 +14,113 @@
     padding: 0 2rem;
   }
   button.btn {
-    background: url('../../../../../assets/search-button.png') no-repeat;
+    background: url('../../../../../assets/search-button.png') center center no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     width: 30%;
-    height: 83px;
-    font-size: 125%;
-    font-weight: 500;
+    height: 82px;
+    font-size: 103%;
+    font-weight: 700;
+    padding: .84rem .9rem;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
   }
 }
 
 .search-result {
-  //width: 100%;
-  background-color: #f8f9fa;
+  background-color: $dark-blue;
   .card-img-top {
     height: 40vh;
   }
 }
+/*Style for lg Screen*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .search-section {
+    input {
+      height: 71px;
+    }
+    button.btn {
+      height: 80px;
+      padding: .84rem .7rem;
+    }
+  }
+}
+
+/*Style for md Screen*/
+@media (min-width: 768px) and (max-width: 991px) {
+  .search-section {
+    input {
+      height: 59px;
+    }
+    button.btn {
+      height: 62px;
+      font-size: 71%;
+      width: 28%;
+    }
+  }
+}
+
+/*Style for sm Screen*/
+@media (min-width: 576px) and (max-width: 767px) {
+  .search-section {
+    input {
+      height: 54px;
+    }
+    button.btn {
+      height: 58px;
+      font-size: 63%;
+      width: 28%;
+    }
+  }
+}
+
 
 /*style for xs Screen*/
   @media (max-width: 575px) {
     .search-section {
+      input {
+        -webkit-background-size: contain;
+        -moz-background-size: contain;
+        background-size: contain;
+        height: 62px;
+        padding: 0 2rem;
+      }
       button.btn {
-        padding: .4rem .9rem;
-        font-size: .7rem;
+        -webkit-background-size: contain;
+        -moz-background-size: contain;
+        background-size: contain;
+        height: 61px;
+        font-size: 75%;
+        width: 30%;
+        padding: .84rem .7rem;
       }
     }
   }
+
+@media (max-width: 499px) {
+  .search-section {
+    input {
+      height: 52px;
+    }
+    button.btn {
+      height: 48px;
+      font-size: 67%;
+      padding: 2px;
+    }
+  }
+}
+
+/*style for xs Screen*/
+@media (max-width: 399px) {
+  .search-section {
+    input {
+      height: 42px;
+    }
+    button.btn {
+      height: 38px;
+      font-size: 52%;
+    }
+  }
+}

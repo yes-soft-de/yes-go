@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HelperService } from '../shared/helper/helper.service';
 
 @Component({
@@ -18,12 +18,7 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.slides = HelperService.chunk(this.cards, 1);    
-  }
-
-
-  onRate(event) {
-    return;
+    this.slides = HelperService.chunk(this.cards, 1);
   }
 
 }

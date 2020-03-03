@@ -18,7 +18,7 @@ import { HelperService } from 'src/app/user/shared/helper/helper.service';
 @Component({
   selector: 'app-employee-details',
   templateUrl: './employee-details.component.html',
-  styleUrls: ['./employee-details.component.scss', '../employee-short-detail/employee-short-detail.component.scss']
+  styleUrls: ['./employee-details.component.scss']
 })
 export class EmployeeDetailsComponent implements OnInit {
   @Input() employeeDetails: EmployeeDetail;
@@ -29,14 +29,6 @@ export class EmployeeDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
-
-
-  onRate($event: { oldValue: number, newValue: number, starRating: StarRatingComponent}) {
-    alert(`Old Value:${$event.oldValue},
-      New Value: ${$event.newValue},
-      Checked Color: ${$event.starRating.checkedcolor},
-      Unchecked Color: ${$event.starRating.uncheckedcolor}`);
   }
 
 

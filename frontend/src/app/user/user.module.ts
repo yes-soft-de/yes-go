@@ -10,8 +10,6 @@ import { FlickityModule } from 'ngx-flickity';
 import { EmployeeListComponent } from './employees/component/employee-list/employee-list.component';
 import { HomeComponent } from './home/home.component';
 import { EmployeeDetailsComponent } from './employees/component/employee-details/employee-details.component';
-import { EmployeeShortDetailComponent } from './employees/component/employee-short-detail/employee-short-detail.component';
-import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { SearchComponent } from './search/component/search/search.component';
 import { UserComponent } from './user.component';
@@ -23,20 +21,20 @@ import { reducers, effects } from './store/app-state';
 import {EmployeesGuard} from './employees/guards/employees.guard';
 import {EmployeeExistGuard} from './employees/guards/employee-exist.guard';
 import { CustomersGuards } from './customers/guards/customers.guard';
+import { HeaderProgressComponent } from './shared/header-progress/header-progress.component';
 
 
 @NgModule({
   declarations: [
     UserComponent,
-    HeaderComponent,
     FooterComponent,
     EmployeeListComponent,
     HomeComponent,
     EmployeeDetailsComponent,
-    EmployeeShortDetailComponent,
     SearchComponent,
     CustomerListComponent,
-    EmployeeKnowledgeComponent
+    EmployeeKnowledgeComponent,
+    HeaderProgressComponent
   ],
   imports: [
     CommonModule,
@@ -52,7 +50,7 @@ import { CustomersGuards } from './customers/guards/customers.guard';
   ],
   providers: [
     EmployeesGuard,
-    CustomersGuards, 
+    CustomersGuards,
     EmployeeExistGuard,
   ]
 })

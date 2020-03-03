@@ -1,4 +1,3 @@
-$black-blue: #fff;
 $dark-blue: #000510;
 $blue: #3399ff;
 $footer-blue: #000614;
@@ -76,7 +75,7 @@ $red: #C73015;
     // height: 25vh;
     display: inline-block;
     position: fixed;
-    left: 50vw;
+    left: calc(50vw - 64px);
     top: 40vh;
     width: 64px;
     height: 64px;

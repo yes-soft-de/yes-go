@@ -1,74 +1,195 @@
 <!--Start Employee List Section-->
-<div class="employee-list pt-5">
-    <div class="employee-list-top">
+<div class="employee-list">
+    <img src="../../../../../assets/slider-background.jpg" class="bg-responsive-image" alt="" />
+    <div>
+      <div class="employee-list-top">
         <div class="container">
-            <div class="row text-center">
-                <div class="col">
-                    <div class="logo-image">
-                        <img class="img-fluid" src="../../../../../assets/logo.svg" alt="logo" />
-                    </div>
-                </div>
-                <div class="col">
-                    <p>80%</p>
-                    <p>Evaluation</p>
-                </div>
-                <div class="col">
-                    <p>90%</p>
-                    <p>Evaluation</p>
-                </div>
+          <div class="row">
+            <div class="col-12 col-xl-4 text-center">
+              <div class="col-10 col-md-4 col-xl-8 logo-image mx-auto mb-2 d-none">
+                <img class="img-fluid" src="../../../../../assets/logo.svg" alt="logo" />
+              </div>
             </div>
-        </div>
-    </div>
-    <div class="employee-list-carousel" *ngIf="employeeList != null">
-        <div [flickity]="{
-                pageDots: false,
-                contain: true,
-                initialIndex: '.is-initial-select'
-                }">
-            <div class="col-12 col-sm-6 col-md-4 mx-auto" [flickityChild] *ngFor="let employee of employeeList">
-                <div class="employee-display-section">
-                    <div class="employee-image mx-auto">
-                        <img class="img-fluid rounded-circle" src="{{employee.image}}"
-                        (error)="employee.image = '../../../assets/avatar.png'" alt="Employee Image" />
-                    </div>
-                    <div class="employee-info text-center text-white pt-3" (click)="onSelected(employee)">
-                        <p class="mb-0">{{employee.fullName}}</p>
-                        <p class="mb-0">{{employee.position}}</p>
-                    </div>
+            <div class="col-12 col-sm-6 col-xl-4 text-center text-md-left">
+              <div class="row">
+                <div class="col-6 col-sm-12 col-md-6 align-self-center text-right text-sm-center text-md-right d-block d-sm-none d-md-block">
+                  <app-header-progress [progressPiecesNumber]="8"></app-header-progress>
                 </div>
-                <div class="employee-display-selected-section py-3 px-5 d-none">
-                    <h4 class="text-center mb-0">{{employee.fullName}}</h4>
+                <div class="col-6 col-sm-12 col-md-6 mb-3 text-left text-sm-center text-md-left pl-0">
+                  <p>80%</p>
+                  <p>Evaluation</p>
+                </div>
+                <div class="col-12 align-self-center text-sm-center text-md-right d-none d-sm-block d-md-none">
+                  <app-header-progress [progressPiecesNumber]="8"></app-header-progress>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-4 text-center text-md-left">
+              <div class="row">
+                <div class="col-6 col-sm-12 col-md-6 align-self-center text-right text-sm-center text-md-right d-block d-sm-none d-md-block">
+                  <app-header-progress [progressPiecesNumber]="9"></app-header-progress>
+                </div>
+                <div class="col-6 col-sm-12 col-md-6 mb-3 text-left text-sm-center text-md-left pl-0">
+                  <p>90%</p>
+                  <p>Evaluation</p>
+                </div>
+                <div class="col-12 align-self-center text-sm-center text-md-right d-none d-sm-block d-md-none">
+                  <app-header-progress [progressPiecesNumber]="9"></app-header-progress>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 d-block d-md-none" *ngIf="employeeList.length">
+        <div class="mobile-carousel">
+          <div class="row">
+            <mdb-carousel [isControls]="true" class="w-100 carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
+                          [animation]="'slide'">
+              <mdb-carousel-item *ngFor="let employee of employees; let i = index">
+                <div class="col-11 col-sm-9 mx-auto" *ngFor="let member of employee">
+                  <div class="selected-employee py-4 px-5">
+                    <h4 class="text-center mb-0">{{member.fullName}}</h4>
                     <span class="text-center">
-                        <star-rating
-                                value="{{employee.rating}}"
-                                totalstars="5"
-                                checkedcolor="red"
-                                uncheckedcolor="white"
-                                size="24px"
-                                readonly="true" (rate)="onRate($event)"></star-rating>
-                        </span>
+                      <star-rating
+                        value="{{member.rating}}"
+                        totalstars="5"
+                        checkedcolor="red"
+                        uncheckedcolor="white"
+                        size="18px"
+                        readonly="true"></star-rating>
+                      </span>
                     <div class="row">
-                        <div class="col-8">
-                            <p class="mb-0">{{employee.position}}</p>
-                            <p class="mb-0" *ngIf="employee.skills.length != 0"><strong>{{employee.skills[0]?.name}}</strong>, <strong> {{employee.skills[0]?.name}}</strong>, <strong> {{employee.skills[0]?.name}}</strong> ...</p>
-                            <p class="mb-0">{{employee.language}}</p>
-                            <p class="mb-0">{{employee.experiances}}</p>
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid rounded-circle" src="{{employee.image}}"
-                                (error)="employee.image = '../../../assets/avatar.png'" alt="Employee Image" />
-                        </div>
-                        <div class="col-12 text-center mt-1">
-                            <button class="btn btn-info mx-auto" (click)="onSelected(employee)">more details</button>
-                        </div>
+                      <div class="col-8">
+                        <p class="mb-0">{{member.position}}</p>
+<!--                        <p class="mb-0" *ngIf="member.skills.length != 0">{{member.skills[0]?.name}}, {{member.skills[1]?.name}} ...</p>-->
+                        <p class="mb-0">{{member.language}}</p>
+                      </div>
+                      <div class="col-4">
+                        <img class="img-fluid rounded-circle" src="{{member.image}}"
+                             (error)="member.image = '../../../assets/avatar.png'" alt="Employee Image" />
+                      </div>
+                      <div class="col-12 text-center mt-1">
+                        <button class="button-details mx-auto" (click)="onSelected(member)">more details</button>
+                      </div>
                     </div>
+                  </div>
                 </div>
-                
-            </div>
+              </mdb-carousel-item>
+            </mdb-carousel>
+          </div>
         </div>
-    </div>
-    <div class="py-5">
-        <app-search></app-search>
+      </div>
+
+      <div class="col-12 d-none d-md-block">
+        <div id="blade">
+          <div id="circle-carousel" class="circle-carousel">
+            <div class="circle-carousel__item" data-num="1" (click)="onSelected(employeeList[0])">
+              <div>
+                <img src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Hammam%20Zarefa.jpg" class="responsive-image d-inline-block" alt="">
+              </div>
+            </div>
+            <div class="circle-carousel__item" data-num="2" (click)="onSelected(employeeList[1])">
+              <div>
+                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Talal Danoun.jpg" alt="">
+              </div>
+            </div>
+            <div class="circle-carousel__item activate" data-num="3" (click)="onSelected(employeeList[2])">
+              <div class="circle-div">
+                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Mujeeba Haj Najeeb.jpg" alt="">
+              </div>
+            </div>
+            <div class="circle-carousel__item" data-num="4" (click)="onSelected(employeeList[3])">
+              <div>
+                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Mohammad Alkalaleeb.png" alt="">
+              </div>
+            </div>
+            <div class="circle-carousel__item" data-num="5" (click)="onSelected(employeeList[4])">
+              <div>
+                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Kenan Hussein.jpeg" alt="">
+              </div>
+            </div>
+            <div class="circle-carousel__item" data-num="6" (click)="onSelected(employeeList[5])">
+              <div>
+                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Qusai Ali.jpg" alt="">
+              </div>
+            </div>
+            <div class="circle-carousel__item" data-num="7" (click)="onSelected(employeeList[6])">
+              <div>
+                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Hanan Aljarmakani.jpg" alt="">
+              </div>
+            </div>
+            <div class="circle-carousel__item" data-num="8" (click)="onSelected(employeeList[7])">
+              <div>
+                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Ahmad Mustafa.jpg" alt="">
+              </div>
+            </div>
+            <div class="circle-carousel__item" data-num="9" (click)="onSelected(employeeList[8])">
+              <div>
+                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Bassel Salloum.png" alt="">
+              </div>
+            </div>
+            <div class="circle-carousel__item" data-num="10" (click)="onSelected(employeeList[9])">
+              <div>
+                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Mahmoud Aldiek.jpg" alt="">
+              </div>
+            </div>
+            <div class="circle-carousel__item" data-num="11" (click)="onSelected(employeeList[0])">
+              <div>
+                <img src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Hammam%20Zarefa.jpg" class="responsive-image d-inline-block" alt="">
+              </div>
+            </div>
+            <div class="circle-carousel__item" data-num="12" (click)="onSelected(employeeList[1])">
+              <div>
+                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Talal Danoun.jpg" alt="">
+              </div>
+            </div>
+            <div class="circle-carousel__item active" data-num="13" (click)="onSelected(employeeList[2])">
+              <div>
+                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Mujeeba Haj Najeeb.jpg" alt="">
+              </div>
+            </div>
+            <div class="circle-carousel__item" data-num="14" (click)="onSelected(employeeList[3])">
+              <div>
+                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Mohammad Alkalaleeb.png" alt="">
+              </div>
+            </div>
+            <div class="circle-carousel__item" data-num="15" (click)="onSelected(employeeList[4])">
+              <div>
+                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Kenan Hussein.jpeg" alt="">
+              </div>
+            </div>
+            <div class="circle-carousel__item" data-num="16" (click)="onSelected(employeeList[5])">
+              <div>
+                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Qusai Ali.jpg" alt="">
+              </div>
+            </div>
+            <div class="circle-carousel__item" data-num="17" (click)="onSelected(employeeList[6])">
+              <div>
+                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Hanan Aljarmakani.jpg" alt="">
+              </div>
+            </div>
+            <div class="circle-carousel__item" data-num="18" (click)="onSelected(employeeList[7])">
+              <div>
+                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Ahmad Mustafa.jpg" alt="">
+              </div>
+            </div>
+            <div class="circle-carousel__item" data-num="19" (click)="onSelected(employeeList[8])">
+              <div>
+                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Bassel Salloum.png" alt="">
+              </div>
+            </div>
+            <div class="circle-carousel__item" data-num="20" (click)="onSelected(employeeList[9])">
+              <div>
+                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Mahmoud Aldiek.jpg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="py-5">
+            <app-search></app-search>
+        </div>
     </div>
 </div>
 
@@ -79,48 +200,3 @@
                 [employeeDetailsProjectsCarousel]="employeeProjectsCarousel"></app-employee-details>
 
 <!--End Employee List Section-->
-
-<!--Start Employee Section-->
-<!--<div class="employee py-5">-->
-<!--    <div *ngIf="employeeList$ != null">-->
-<!--      <div class="container">-->
-<!--        <app-employee-short-detail [employee]="selectedEmployee"></app-employee-short-detail>-->
-<!--        <div class="row">-->
-<!--          <div class="col-10 our-team mx-auto">-->
-<!--            <div class="col-12">-->
-<!--                <h4 class="mb-3 mb-md-4">Our Team</h4>-->
-<!--            </div>-->
-<!--            <div class="col-12" *ngIf="employeeList$.length < (onResize() + 1)">-->
-<!--              <div class="row">-->
-<!--                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto" *ngFor="let employee of employeeList$">-->
-<!--                  <div class="team-member" [class.selected]="employee == selectedEmployee" (click)="onSelected(employee)">-->
-<!--  &lt;!&ndash;                  <i class="fas fa-external-link-alt fa-fw fa-sm"></i>&ndash;&gt;-->
-<!--                    <p>{{employee?.fullName}}</p>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="col-12" *ngIf="employeeList$.length > onResize()">-->
-<!--              <div class="row">-->
-<!--                <mdb-carousel [isControls]="true" class="w-100 carousel-multi-item multi-animation" [type]="'carousel-multi-item'"-->
-<!--                              [animation]="'slide'">-->
-<!--                  <mdb-carousel-item *ngFor="let employee of employees; let i = index">-->
-<!--                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-auto" *ngFor="let member of employee">-->
-<!--                      <div class="team-member" [class.selected]="member == selectedEmployee" (click)="onSelected(member)">-->
-<!--  &lt;!&ndash;                      <i class="fas fa-external-link-alt fa-fw fa-sm"></i>&ndash;&gt;-->
-<!--                        <p>{{member?.fullName}}</p>-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                  </mdb-carousel-item>-->
-<!--                </mdb-carousel>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div> &lt;!&ndash;.our-team&ndash;&gt;-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="" *ngIf="employeeList$ == null">-->
-<!--      <h4 class="text-center">Loading...</h4>-->
-<!--    </div>-->
-<!--  </div>-->
-  <!--End Employee Section-->

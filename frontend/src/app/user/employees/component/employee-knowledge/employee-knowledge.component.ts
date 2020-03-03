@@ -20,7 +20,7 @@ export class EmployeeKnowledgeComponent implements OnInit {
     this.jsonLdObject = {
       '@context': 'http://www.schema.org',
       '@type': 'Person',
-      '@id': 'http://yes-go.yes-soft.de/employee/' + this.employee.id,
+      '@id': 'http://yes-go.yes-soft.de',
       name: this.employee.fullName,
       nationality: 'Syrian',
       birthPlace: {

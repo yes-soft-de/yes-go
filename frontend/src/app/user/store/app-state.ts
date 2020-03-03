@@ -9,8 +9,6 @@ import { employeeProjectsReducer, EmployeeProjectsState } from '../employees/sto
 import { EmployeeProjectsEffects } from '../employees/store/effects/employee-projects.effects';
 import { searchReducer, SearchState } from '../search/store/reducers/search.reducer';
 import { SearchEffects } from '../search/store/effects/search.effects';
-import { routerReducer, RouterReducerState } from '@ngrx/router-store';
-import { RouterStateUrl } from '../../app/store/router-state';
 
 
 export interface UserState {

@@ -1,9 +1,10 @@
 @import "~src/variables";
 
 .about-us {
-  background: url('../../../assets/about-us-background.png') no-repeat;
-  background-size: cover;
   min-height: 450px;
+  & > img {
+    z-index: -1;
+  }
   h2 {
     margin-bottom: 10%
   }
@@ -87,8 +88,23 @@
 /*style for small than xs Screen*/
 @media (max-width: 499px) {
   .about-us {
+    min-height: 360px;
+    h2 {
+      font-size: 1.8rem;
+    }
+    span {
+      font-size: 1rem;
+    }
     p {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
+    }
+  }
+  .our-price {
+    h3 {
+      font-size: 1.7rem;
+    }
+    p {
+      font-size: 1.2rem;
     }
   }
 }

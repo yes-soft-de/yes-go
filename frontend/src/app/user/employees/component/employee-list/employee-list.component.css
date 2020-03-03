@@ -1,7 +1,14 @@
 .employee-list {
-  background: url("../../../../../assets/slider-background.jpg") no-repeat;
-  -webkit-background-size: cover;
-  background-size: cover;
+  position: relative;
+}
+.employee-list > img {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
 }
 .employee-list .employee-list-top {
   position: relative;
@@ -16,40 +23,84 @@
   margin-bottom: -25px;
   font-weight: bold;
 }
-.employee-list-carousel {
-  height: 145vh;
-}
-.employee-list-carousel .flickity-enabled.is-draggable {
+#blade {
   position: relative;
-  top: 60%;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding-top: 5vw;
 }
-.employee-list-carousel .employee-display-section {
-  position: relative;
-}
-.employee-list-carousel .employee-display-section .employee-image {
-  height: 120px;
-  width: 120px;
-  background: url("../../../../../assets/profile-pic-frame.png") no-repeat;
-  -webkit-background-size: cover;
-  background-size: cover;
-}
-.employee-list-carousel .employee-display-section .employee-info {
-  width: 50%;
-  height: 105px;
+#blade .mentor {
   position: absolute;
-  top: 80%;
-  left: 25%;
-  background: url("../../../../../assets/Employee-details.png") no-repeat;
-  -webkit-background-size: contain;
-  background-size: contain;
+  max-width: 600px;
+  top: -200px;
+  right: 25vw;
+  color: #fff;
+  font-size: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 8px 16px;
+  opacity: 0;
+  transition: opacity 0.5s, top 1.5s;
 }
-.employee-list-carousel .employee-display-section .employee-info:hover {
-  color: #000 !important;
-  cursor: pointer;
+#blade .mentor--show {
+  top: 10vw;
+  opacity: 1;
 }
-.employee-list-carousel .employee-display-section .employee-info p {
-  font-size: 120%;
+.circle-carousel {
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  right: 30vw;
+  top: 95%;
+  margin-top: 0px;
+  transition: transform 0.5s;
+  z-index: 201;
 }
-.employee-list-carousel .employee-display-selected-section {
-  display: none;
+.circle-carousel__item {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  color: #fff;
+  transition: all 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+.circle-carousel__item.active {
+  background: #333 !important;
+  border: 2px solid #333;
+  transform: scale(2.3);
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+.circle-carousel__item.next-to-active {
+  transform: scale(1.3);
+}
+.circle-carousel__item div {
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+}
+.top-svg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 10vw;
+  z-index: 200;
+}
+.bottom-svg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10vw;
 }

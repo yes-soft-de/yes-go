@@ -2,29 +2,32 @@
 
 
 .employee-details-section {
-  background: url('../../../../../assets/Employee-details-background.png') no-repeat;
-  -webkit-background-size: cover;
-  background-size: cover;
+  position: relative;
   .employee-details-content {
     position: relative;
     top: 50px;
     color: #fff;
-    height: 2100px;
+    padding-bottom: 20%;
     .language-experience-year {
       .experience-year {
+        h5 {
+          font-weight: 600;
+        }
         @include progress-bar;
       }
       p {
+        font-weight: 600;
         i { color: $red }
       }
     }
     .employee-details-image {
-      width: 50%;
+      width: 16vw;
     }
     .employee-skills-rate-section {
       p {
        font-weight: 600;
-       font-size: 1.2rem 
+       font-size: 1.2rem;
+       word-break: break-all
       }
     }
     .employee-skills {
@@ -66,81 +69,10 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.employee-details-sections {
-  .employee-details-contents {
-    background-color: #03142f5c;
-    p { text-align: justify; }
-    .program-expert {
-      .program-expert-info {
-        img {
-          height: 50px;
-          width: 50px;
-        }
-        & > div {
-          vertical-align: middle;
-        }
-        .program-expert-name {
-          font-weight: 500;
-        }
-      }
-    }
-    .language-experience-year {
-      .experience-year {
-        margin-top: 25%;
-        @include progress-bar;
-      }
-    }
-    .employee-detail-projects {
-      .customer-say {
-        min-height: 100px;
-        h6 a {
-          text-decoration: none;
-          &:hover {
-            color: #aaa;
-          }
-        }
-      }
-    }
-    .what-customer-say {
-      .customer-say-image {
-        img {
-          height: 70px;
-          width: 70px;
-        }
-        .customer-company-name {
-          vertical-align: middle;
-        }
-      }
-    }
-    .customer-say-about {
-      @include gradient-grey-background;
-      min-height: 300px;
-    }
-  }
-}
-
-/*style for md Screen*/
-@media (min-width: 768px) and (max-width: 991px) {
-  .employee-detail {
-    .employee-header-content {
-      top: -12vh;
-    }
-    .employee-body-section {
+/*style for lg Screen*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .employee-details-section {
+    .employee-details-content {
       .what-customer-say {
         .customer-say-image {
           img {
@@ -159,20 +91,44 @@
   }
 }
 
-/*style for sm Screen*/
-@media (min-width: 576px) and (max-width: 767px) {
-  h3 {
-    font-size: 1.5rem;}
-  .employee-detail {
-    .employee-header-content {
-      top: -9vh;
-    }
-    .employee-body-section {
-      .what-customer-say {
-        .customer-say-image {
+/*style for md Screen*/
+@media (min-width: 768px) and (max-width: 991px) {
+  .employee-details-section {
+    .employee-details-content {
+      .language-experience-year {
+        h5, p {
+          font-weight: 400;
+          font-size: 1rem;
+        }
+      }
+      .employee-skills-rate-section {
+        p {
+          font-weight: 400;
+          font-size: 1rem
+        }
+      }
+      .employee-skills {
+        .employee-skills-info {
           img {
             height: 50px;
             width: 50px;
+          }
+          .employee-skills-name {
+            font-weight: 500;
+          }
+        }
+      }
+      .employee-detail-projects {
+        .customer-say {
+          min-height: 100px;
+        }
+      }
+      .what-customer-say {
+        .customer-say-image {
+          text-align: center;
+          img {
+            height: 60px;
+            width: 60px;
           }
           .customer-company-name {
             h4 {
@@ -186,32 +142,41 @@
   }
 }
 
-/*style for xs Screen*/
-@media (max-width: 575px) {
-  h3 {
-    font-size: 1.3rem;}
-  .employee-detail {
-    .employee-header-content {
-      top: -13vh;
-      .employee-image {
-        background-color: transparent;
-        img {
-          padding: 10px;
-          background-color: #aaa;
+/*style for md Screen*/
+@media (max-width: 767px) {
+  .employee-details-section {
+    .employee-details-content {
+        padding-bottom: 35%;
+      .what-customer-say {
+        .customer-say-image {
+          text-align: center;
+          img {
+            height: 60px;
+            width: 60px;
+          }
+          .customer-company-name {
+            h4 {
+              font-size: 1rem;
+              margin-bottom: 0;
+            }
+          }
         }
       }
     }
-    .employee-body-section {
-      .language-experience-year {
-        .experience-year {
-          margin-top: 10%;
-        }
-      }
+  }
+}
+
+/*style for md Screen*/
+@media (max-width: 575px) {
+  .employee-details-section {
+    .employee-details-content {
+      padding-bottom: 35%;
       .what-customer-say {
         .customer-say-image {
+          text-align: center;
           img {
-            height: 50px;
-            width: 50px;
+            height: 60px;
+            width: 60px;
           }
           .customer-company-name {
             h4 {
