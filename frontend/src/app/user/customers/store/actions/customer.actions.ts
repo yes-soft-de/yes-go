@@ -1,5 +1,4 @@
 import { Action } from '@ngrx/store';
-import { CustomerList } from '../../entity/customer-list';
 
  // Defiine Customer Actions Type
 export enum customerActionsType {
@@ -28,7 +27,7 @@ export class LoadCustomersFailed implements Action {
 
 
 // Create Action Type
-export type action = 
-    | LoadCustomers 
-    | LoadCustomersSuccess 
+export type action =
+    | LoadCustomers
+    | LoadCustomersSuccess
     | LoadCustomersFailed;

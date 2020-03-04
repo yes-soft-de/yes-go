@@ -189,3 +189,46 @@
     }
   }
 }
+
+/*Style for Custom Screen*/
+@media (max-width: 399px) {
+
+  .employee-details-section {
+    .employee-details-content {
+      h3 {
+        font-size: 1.5rem
+      }
+      h4 {
+        font-size: 1.3rem;
+      }
+      .language-experience-year {
+        .experience-year {
+          h5 {
+            font-size: 1rem;
+            margin-top: 8px;
+          }
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+      .employee-details-image {
+        width: 30vw;
+      }
+      .employee-skills-rate-section {
+        p {
+          font-size: 1rem;
+        }
+      }
+      .employee-skills,
+      .employee-detail-projects,
+      .employee-summary-section,
+      .what-customer-say {
+        h3 { font-size: 1.3rem; }
+      }
+      .what-customer-say {
+        padding-bottom: 7rem !important;
+      }
+    }
+  }
+}

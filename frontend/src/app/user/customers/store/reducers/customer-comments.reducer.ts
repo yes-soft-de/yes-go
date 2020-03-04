@@ -23,14 +23,14 @@ export const defaultCustomerComments: CustomerCommentsState = {
     loading: false,
     loaded: false,
     error: ''
-}
+};
 
 // Assign The Default Customer to The InitialState
 export const initialState = customerCommentsAdepter.getInitialState(defaultCustomerComments);
 
 // Customer Reducer
 export function customerCommentsReducer(state = initialState, action: customerCommentsActions.action) {
-    switch(action.type) {
+    switch (action.type) {
         case customerCommentsActions.EmployeeCustomerCommentsActionsType.LOAD_EMPLOYEE_CUSTOMER_COMMENTS_SUCCESS:
             return customerCommentsAdepter.addAll(action.payload, {
                 ...state,
@@ -60,28 +60,10 @@ const getCustomerCommentsState = createSelector(
   (state: UserState) => state.customerComments
 );
 
-// Create Customer Comments Entities Selector
-export const customerCommentsEntitiesSelector = createSelector(
-    getCustomerCommentsState,
-    customerCommentsAdepter.getSelectors().selectEntities
-);
-
 // Create Selector To Get All Customers Directly
 export const getCustomerCommentsSelector = createSelector(
   getCustomerCommentsState,
   customerCommentsAdepter.getSelectors().selectAll
-);
-
-// Create Customer Loaded Selector
-export const customerCommentsLoadedSelector = createSelector(
-    getCustomerCommentsState,
-    (state: CustomerCommentsState) => state.loaded
-);
-
-// Create Customer Error Selector
-export const customerCommentsErrorSelector = createSelector(
-  getCustomerCommentsState,
-  (state: CustomerCommentsState) => state.error
 );
 
 

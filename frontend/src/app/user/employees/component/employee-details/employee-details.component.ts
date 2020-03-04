@@ -1,18 +1,8 @@
 import { Component, OnInit, HostListener, Input } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { StarRatingComponent } from 'ng-starrating';
 import { EmployeeDetail } from '../../entity/employee-detail';
 import { EmployeeCustomerComments } from '../../../customers/entity/employee-customer-comments';
 import { EmployeeProjects } from '../../entity/employee-projects';
-import * as employeeAction from '../../store/actions/employee.actions';
-import * as employeeCustomerCommentsAction from '../../../customers/store/actions/customer-comments.actions';
-import * as employeeProjectsActions from '../../store/actions/employee-projects.actions';
-import { UserState } from 'src/app/user/store/app-state';
-import { getCustomerCommentsSelector } from 'src/app/user/customers/store/reducers/customer-comments.reducer';
-import { Observable } from 'rxjs';
-import { getEmployeeRoutingSelector } from '../../store/reducer/employee.reducer';
-import { getEmployeeProjectsSelector } from '../../store/reducer/employee-projects.reducer';
-import { HelperService } from 'src/app/user/shared/helper/helper.service';
+
 
 
 @Component({

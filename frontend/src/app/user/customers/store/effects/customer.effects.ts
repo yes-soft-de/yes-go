@@ -12,7 +12,7 @@ export class CustomerEffects {
     constructor(
         private customerService: CustomerService,
         private actions$: Actions) {}
-      
+
     // load Employees Effects For Connecting With APi
     CustomersEffect$ = createEffect(() => this.actions$.pipe(
       ofType(customerAction.customerActionsType.LOAD_CUSTOMERS),
@@ -26,5 +26,5 @@ export class CustomerEffects {
           ))
       )
   );
-  
+
 }

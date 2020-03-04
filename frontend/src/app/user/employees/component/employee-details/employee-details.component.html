@@ -1,6 +1,7 @@
 <!--Start Employee Details Section-->
 <div class="employee-details-section py-5" *ngIf="employeeDetails != null">
-  <img src="../../../../../assets/Employee-details-background.png" class="bg-responsive-image" alt="" />
+  <img src="../../../../../assets/Employee-details-background.png" class="bg-responsive-image d-none d-md-block" alt="" />
+  <img src="../../../../../assets/mobile-employee-details-background.png" class="bg-responsive-image d-md-none" alt="" />
   <div class="container">
     <div class="col-10 mx-auto">
       <div class="employee-details-content">
@@ -13,7 +14,7 @@
               <p class="mb-0 text-break" *ngIf="employeeDetails.skills.length > 0">
                 <span class="m-2" *ngFor="let skill of employeeDetails.skills">{{skill.name}}</span>
               </p>
-              <p class="mb-0">Fine Art-Damascus University</p>
+              <p class="mb-0 text-break">Fine Art-Damascus University</p>
               <p class="mb-2">Rate</p>
               <span>
                 <star-rating
@@ -41,8 +42,8 @@
               </div>
               <p class="mb-0">Speaks in:</p>
               <p class="mb-0">
-                <span>100%</span>
-                <i class="fa fa-star mx-2 fa-fw" aria-hidden="true"></i>
+<!--                <span>100%</span>-->
+<!--                <i class="fa fa-star mx-2 fa-fw" aria-hidden="true"></i>-->
                 {{employeeDetails.language}}
               </p>
               <!-- <p class="mb-0 font-weight-bold"><span>100%</span><i class="fa fa-star mx-2 fa-fw" aria-hidden="true"></i> - Arabic</p> -->
@@ -59,7 +60,7 @@
           <!--Start Skills Section For md Screen And above-->
           <div class="col-md-4 d-none d-md-block">
             <div class="employee-skills-rate-section">
-              <p class="mb-0">Fine Art-Damascus University</p>
+              <p class="mb-0 text-break">Fine Art-Damascus University</p>
               <p class="mb-0 text-break" *ngIf="employeeDetails.skills.length > 0">
                 <span class="m-2" *ngFor="let skill of employeeDetails.skills">{{skill.name}}</span>
               </p>
@@ -90,8 +91,8 @@
               </div>
               <p class="mb-0">Speaks in:</p>
               <p class="mb-0">
-                <span>100%</span>
-                <i class="fa fa-star mx-2 fa-fw" aria-hidden="true"></i>
+<!--                <span>100%</span>-->
+<!--                <i class="fa fa-star mx-2 fa-fw" aria-hidden="true"></i>-->
                 {{employeeDetails.language}}
               </p>
               <!-- <p class="mb-0 font-weight-bold"><span>100%</span><i class="fa fa-star mx-2 fa-fw" aria-hidden="true"></i> - Arabic</p> -->
@@ -182,20 +183,20 @@
                 </h3>
                 <div class="col-12 col-md-10 mx-auto">
                   <div class="row">
-                    <div class="col-6 col-md-5 mx-auto">
+                    <div class="col-12 col-sm-6 col-md-5 mx-auto">
                       <p class="text-justify">
                         {{employeeDetails.details}}
                       </p>
                     </div>
-                    <div class="col-6 col-md-7">
+                    <div class="col-12 col-sm-6 col-md-7 d-none">
                       <div class="row">
-                        <div class="col-6 col-md-4 mx-auto mb-3">
+                        <div class="col-12 col-sm-6 col-md-4 mx-auto mb-3">
                           <img src="../../../../../assets/square01.jpg" class="img-fluid" alt="" />
                         </div>
-                        <div class="col-6 col-md-4 mx-auto mb-3">
+                        <div class="col-12 col-sm-6 col-md-4 mx-auto mb-3">
                           <img src="../../../../../assets/square01.jpg" class="img-fluid" alt="" />
                         </div>
-                        <div class="col-6 col-md-4 mx-auto mb-3">
+                        <div class="col-12 col-sm-6 col-md-4 mx-auto mb-3">
                           <img src="../../../../../assets/square01.jpg" class="img-fluid" alt="" />
                         </div>
                       </div>

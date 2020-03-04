@@ -27,9 +27,8 @@ export class LoadEmployeeCustomerCommentsFailed implements Action {
 
   
   
-  export type action =
-    | LoadEmployeeCustomerComments
-    | LoadEmployeeCustomerCommentsSuccess
-    | LoadEmployeeCustomerCommentsFailed;
+export type action =
+  | LoadEmployeeCustomerComments
+  | LoadEmployeeCustomerCommentsSuccess
+  | LoadEmployeeCustomerCommentsFailed;
     
-  

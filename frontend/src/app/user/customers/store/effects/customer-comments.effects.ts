@@ -24,7 +24,7 @@ export class EmployeeCustomerCommentsEffects {
                 catchError((error) => of(new customerCommentsActions.LoadEmployeeCustomerCommentsFailed(error)))
             )
         )
-    )); 
+    ));
 
-    
+
 }

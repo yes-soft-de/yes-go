@@ -11,12 +11,12 @@ import {UserState} from './store/app-state';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
-  searchResult$: Observable<Search[]>;
+  // searchResult$: Observable<Search[]>;
 
   constructor(private store: Store<UserState>) { }
 
   ngOnInit() {
-    this.searchResult$ = this.store.select(searchSelector);
+    // this.searchResult$ = this.store.select(searchSelector);
   }
 
 }

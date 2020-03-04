@@ -12,7 +12,7 @@ export interface CustomerState extends EntityState<CustomerList> {
     error: string;
 }
 
-// create cutomer adepter
+// create customer adepter
 export const customerAdepter: EntityAdapter<CustomerList> = createEntityAdapter<CustomerList>();
 
 // Create Default initial
@@ -23,14 +23,14 @@ export const defaultCustomer: CustomerState = {
     loading: false,
     loaded: false,
     error: ''
-}
+};
 
 // Assign The Default Customer to The InitialState
 export const initialState = customerAdepter.getInitialState(defaultCustomer);
 
 // Customer Reducer
 export function customerReducer(state = initialState, action: customerActions.action) {
-    switch(action.type) {
+    switch (action.type) {
         case customerActions.customerActionsType.LOAD_CUSTOMERS_SUCCESS:
             return customerAdepter.addAll(action.payload, {
                 ...state,
@@ -75,7 +75,7 @@ export const customersErrorSelector = createSelector(
 export const customersLoadedSuccessSelector = createSelector(
     getCustomersState,
     (state: CustomerState) => state.loaded
-); 
+);
 
 
 

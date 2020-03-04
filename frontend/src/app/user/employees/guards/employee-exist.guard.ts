@@ -17,7 +17,7 @@ export class EmployeeExistGuard implements CanActivate {
     return this.checkStore().pipe(
       switchMap(() => {
         const id = parseInt(route.params.id, 10);
-        return this.hasEmployee(id)
+        return this.hasEmployee(id);
       })
     );
   }

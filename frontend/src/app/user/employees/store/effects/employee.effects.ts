@@ -9,7 +9,7 @@ import { of } from 'rxjs';
 export class EmployeeEffects {
 
     constructor(
-        private employeeService: EmployeeService, 
+        private employeeService: EmployeeService,
         private actions$: Actions) {}
 
 
@@ -27,7 +27,7 @@ export class EmployeeEffects {
         )
     );
 
-    // Load Employee Details Effects For Connecting With API 
+    // Load Employee Details Effects For Connecting With API
     EmployeeEffect$ = createEffect(() => this.actions$.pipe(
         ofType(employeeActions.EmployeeActionsType.LOAD_EMPLOYEE),
         mergeMap(
@@ -38,5 +38,5 @@ export class EmployeeEffects {
             ))
         )
     );
-    
+
 }

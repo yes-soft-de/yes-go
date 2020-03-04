@@ -100,20 +100,10 @@ export const getEmployeesSelector = createSelector(
     employeeAdepter.getSelectors().selectAll
 );
 
-export const getEmployeesLoadingSelector = createSelector(
-    getEmployeesState,
-    (state: EmployeeState) => state.loading
-);
 
 export const getEmployeesLoadedSelector = createSelector(
     getEmployeesState,
     (state: EmployeeState) => state.loaded
-);
-
-// Create Employee Error Selector
-export const getErrorSelector = createSelector(
-    getEmployeesState,
-    (state: EmployeeState) => state.error
 );
 
 // Get Current Id For THis Employee

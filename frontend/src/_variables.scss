@@ -70,12 +70,9 @@ $red: #C73015;
 
 @mixin loader-ring() {
   .lds-ring {
-    // display: inline-block;
-    // width: 64px;
-    // height: 25vh;
     display: inline-block;
     position: fixed;
-    left: calc(50vw - 64px);
+    left: calc(50vw - (64px / 2));
     top: 40vh;
     width: 64px;
     height: 64px;

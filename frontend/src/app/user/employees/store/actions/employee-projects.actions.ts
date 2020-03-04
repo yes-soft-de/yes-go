@@ -1,5 +1,4 @@
 import { Action } from '@ngrx/store';
-import { EmployeeProjects } from '../../entity/employee-projects';
 
 export enum EmployeeActionsType {
     LOAD_EMPLOYEE_PROJECTS = 'Load Employee Projects',
@@ -26,10 +25,8 @@ export class LoadEmployeeProjectsFailed implements Action {
   constructor(public payload: string) {}
 }
 
-  
+
 export type action =
   | LoadEmployeeProjects
   | LoadEmployeeProjectsSuccess
   | LoadEmployeeProjectsFailed;
-    
-  

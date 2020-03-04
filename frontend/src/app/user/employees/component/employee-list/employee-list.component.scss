@@ -16,7 +16,7 @@
   .mobile-carousel {
     height: 80vh;
     position: relative;
-    top: 30vh;
+    top: 24vh;
     .selected-employee {
       background: url("../../../../../assets/employee-more-details.png") center center no-repeat;
       -webkit-background-size: contain;
@@ -133,7 +133,7 @@
   .employee-list {
     .employee-list-top {
       position: relative;
-      top: 23vh;
+      top: 16vh;
       .logo-image {
         width: 50%;
       }
@@ -153,7 +153,7 @@
   .employee-list {
     .employee-list-top {
       position: relative;
-      top: 23vh;
+      top: 16vh;
       .logo-image {
         width: 50%;
       }
@@ -193,5 +193,16 @@
 }
 
 /*style for xs Screen*/
-@media (max-width: 399px) {}
+@media (max-width: 399px) {
+  .employee-list {
+    .employee-list-top {
+      p {
+        font-size: 1rem;
+      }
+    }
+    .mobile-carousel {
+      top: 27vh;
+    }
+  }
+}
 

@@ -41,3 +41,10 @@
     margin: 0 1%;
   }
 }
+
+/*style for xs Screen*/
+@media (max-width: 399px) {
+  .dot {
+    height: 15px;
+  }
+}

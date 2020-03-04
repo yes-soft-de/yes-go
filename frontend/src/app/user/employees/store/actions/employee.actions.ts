@@ -15,19 +15,19 @@ export enum EmployeeActionsType {
 // Create Employees Loading Actions
 export class LoadEmployees implements Action {
     readonly type = EmployeeActionsType.LOAD_EMPLOYEES;
-  }
-  
-  // Create Employees Success Loading Actions
-  export class LoadEmployeesSuccess implements Action {
-    readonly type = EmployeeActionsType.LOAD_EMPLOYEES_SUCCESS;
-    constructor(public payload: EmployeeList[]) {}
-  }
-  
-  // Create Employees Failed Loading Actions
-  export class LoadEmployeesFailed implements Action {
-    readonly type = EmployeeActionsType.LOAD_EMPLOYEES_FAILED;
-    constructor(public payload: string) {}
-  }
+}
+
+// Create Employees Success Loading Actions
+export class LoadEmployeesSuccess implements Action {
+  readonly type = EmployeeActionsType.LOAD_EMPLOYEES_SUCCESS;
+  constructor(public payload: EmployeeList[]) {}
+}
+
+// Create Employees Failed Loading Actions
+export class LoadEmployeesFailed implements Action {
+  readonly type = EmployeeActionsType.LOAD_EMPLOYEES_FAILED;
+  constructor(public payload: string) {}
+}
 
 // Create Employee Loading Actions
 export class LoadEmployee implements Action {
@@ -48,14 +48,10 @@ export class LoadEmployeeFailed implements Action {
 }
 
 
-  
-  
-  export type action =
-    | LoadEmployees
-    | LoadEmployeesSuccess
-    | LoadEmployeesFailed
-    | LoadEmployee
-    | LoadEmployeeSuccess
-    | LoadEmployeeFailed;
-    
-  
+export type action =
+  | LoadEmployees
+  | LoadEmployeesSuccess
+  | LoadEmployeesFailed
+  | LoadEmployee
+  | LoadEmployeeSuccess
+  | LoadEmployeeFailed;
