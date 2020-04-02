@@ -1,8 +1,8 @@
 <!--Start Employee Details Section-->
-<div class="employee-details-section py-5" *ngIf="employeeDetails != null">
-  <img src="../../../../../assets/Employee-details-background.png" class="bg-responsive-image d-none d-md-block" alt="" />
-  <img src="../../../../../assets/mobile-employee-details-background.png" class="bg-responsive-image d-md-none" alt="" />
-  <div class="container">
+<div #empDetails id="emp-details" class="employee-details-section py-5" *ngIf="employeeDetails != null">
+  <img src="../../../../../assets/Employee-details-background.png" (load)="computerLoad($event)" [class.d-md-block]="loaded" class="bg-responsive-image d-none" alt="" />
+  <img src="../../../../../assets/mobile-employee-details-background.png" (load)="mobileLoad($event)"  [class.d-none]="!loaded" class="bg-responsive-image d-md-none" alt="" />
+  <div class="container" *ngIf="loaded">
     <div class="col-10 mx-auto">
       <div class="employee-details-content">
         <h3 class="text-center">{{employeeDetails.fullName}}</h3>
@@ -235,6 +235,9 @@
       </div><!--.employee-details-content-->
     </div>
   </div><!--.container-->
+  <div class="col-12 employee-details-loading p-5 text-center" *ngIf="! loaded">
+    <h2>loading...</h2>
+  </div>
 </div><!--.employee-details-section-->
 <!-- End Employee Details Section -->
 

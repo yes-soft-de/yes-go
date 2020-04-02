@@ -68,6 +68,10 @@
     }
   }
 }
+.employee-details-loading {
+  background-color: $dark-blue;
+  color: #fff;
+}
 
 /*style for lg Screen*/
 @media (min-width: 992px) and (max-width: 1199px) {

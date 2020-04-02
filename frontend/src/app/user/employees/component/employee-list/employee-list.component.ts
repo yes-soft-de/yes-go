@@ -39,7 +39,6 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
         this.employees = HelperService.chunk(employeeList, this.onResize());
       }
     );
-
   }
 
 
@@ -126,5 +125,9 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
           this.employeeProjectsCarousel = HelperService.chunk(customerProjects, this.onResize());
         }
       );
+    }
+
+    scroll(el: HTMLElement) {
+      el.scrollIntoView();
     }
 }

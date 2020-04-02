@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { UserRoutingModule } from '../controller/user-routing.module';
 import { NgxJsonLdModule } from '@ngx-lite/json-ld';
 import { FlickityModule } from 'ngx-flickity';
+// import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 
 import { EmployeeListComponent } from './employees/component/employee-list/employee-list.component';
 import { HomeComponent } from './home/home.component';
@@ -47,6 +48,7 @@ import { HeaderProgressComponent } from './shared/header-progress/header-progres
     FlickityModule,
     StoreModule.forFeature('user', reducers),
     EffectsModule.forFeature(effects),
+    // NgxPageScrollCoreModule
   ],
   providers: [
     EmployeesGuard,
