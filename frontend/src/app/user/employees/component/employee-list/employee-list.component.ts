@@ -1,4 +1,7 @@
 import {Component, OnInit, HostListener, ViewChild, ElementRef, AfterViewInit, AfterContentInit} from '@angular/core';
+import { Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import {EasingLogic, PageScrollService} from 'ngx-page-scroll-core';
 import { EmployeeList } from '../../entity/employee-list';
 import { Store, select } from '@ngrx/store';
 import { UserState } from 'src/app/user/store/app-state';
@@ -27,7 +30,9 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
   employeeProjectsCarousel: any = [[]];
 
 
-  constructor(private store: Store<UserState>) { }
+  constructor(private store: Store<UserState>,
+              private pageScrollService: PageScrollService,
+              @Inject(DOCUMENT) private document: any) { }
 
   ngOnInit() {
     // Dispatch Loading Employee
@@ -39,6 +44,7 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
         this.employees = HelperService.chunk(employeeList, this.onResize());
       }
     );
+
   }
 
 
@@ -125,9 +131,14 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
           this.employeeProjectsCarousel = HelperService.chunk(customerProjects, this.onResize());
         }
       );
+
+      // Smooth scrolling section
+      setTimeout(() => {
+        this.pageScrollService.scroll({
+          document: this.document,
+          scrollTarget: '.employee-details-section',
+        });
+      }, 750);
     }
 
-    scroll(el: HTMLElement) {
-      el.scrollIntoView();
-    }
 }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 // import { CommonModule } from '@angular/common';
-import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from '../user/static/not-found/not-found.component';
 
 
@@ -13,7 +13,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [],
   imports: [
-      RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules, onSameUrlNavigation: 'reload'}),
+      RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'}),
       // CommonModule
   ],
     exports: [RouterModule]

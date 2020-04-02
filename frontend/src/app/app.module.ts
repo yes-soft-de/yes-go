@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './controller/app-routing.module';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 
 // import { NgxJsonLdModule } from '@ngx-lite/json-ld';
 import { AppComponent } from './app/app.component';
@@ -28,7 +29,8 @@ import {HttpClientModule} from '@angular/common/http';
     StoreModule.forRoot(reducers),
     StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),  // initialize the root application state
     EffectsModule.forRoot([]),
-    StoreDevtoolsModule.instrument()
+    StoreDevtoolsModule.instrument(),
+    NgxPageScrollCoreModule.forRoot({duration: 500})
   ],
   providers: [{ provide: RouterStateSerializer, useClass: CustomSerializer }],
   bootstrap: [AppComponent]
