@@ -1,7 +1,12 @@
-import {Component, OnInit, HostListener, ViewChild, ElementRef, AfterViewInit, AfterContentInit} from '@angular/core';
+import {
+  Component,
+  OnInit,
+  HostListener,
+  AfterViewInit,
+} from '@angular/core';
 import { Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import {EasingLogic, PageScrollService} from 'ngx-page-scroll-core';
+import { PageScrollService } from 'ngx-page-scroll-core';
 import { EmployeeList } from '../../entity/employee-list';
 import { Store, select } from '@ngrx/store';
 import { UserState } from 'src/app/user/store/app-state';
@@ -28,7 +33,6 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
   employeeCustomerComments: EmployeeCustomerComments[];
   employeeProjectsList: EmployeeProjects[];
   employeeProjectsCarousel: any = [[]];
-
 
   constructor(private store: Store<UserState>,
               private pageScrollService: PageScrollService,
