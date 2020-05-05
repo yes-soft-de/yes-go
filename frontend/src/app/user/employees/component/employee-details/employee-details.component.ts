@@ -19,7 +19,15 @@ export class EmployeeDetailsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    setTimeout(() => {
+      console.log('employeeDetails', this.employeeDetails);
+      console.log('employeeDetailsCustomerComments', this.employeeDetailsCustomerComments);
+      console.log('employeeDetailsProjectsList', this.employeeDetailsProjectsList);
+
+    }, 5000);
+
+  }
 
 
   // Host For Fetch Screen Size And Change The Chunk Array Size
