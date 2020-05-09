@@ -20,12 +20,12 @@ export class EmployeeDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    setTimeout(() => {
-      console.log('employeeDetails', this.employeeDetails);
-      console.log('employeeDetailsCustomerComments', this.employeeDetailsCustomerComments);
-      console.log('employeeDetailsProjectsList', this.employeeDetailsProjectsList);
-
-    }, 5000);
+    // setTimeout(() => {
+    //   console.log('employeeDetails', this.employeeDetails);
+    //   console.log('employeeDetailsCustomerComments', this.employeeDetailsCustomerComments);
+    //   console.log('employeeDetailsProjectsList', this.employeeDetailsProjectsList);
+    //
+    // }, 5000);
 
   }
 

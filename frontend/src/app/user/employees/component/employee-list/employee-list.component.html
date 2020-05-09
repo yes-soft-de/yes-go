@@ -64,7 +64,7 @@
                       <div class="col-8">
                         <p class="mb-0">{{member.position}}</p>
 <!--                        <p class="mb-0" *ngIf="member.skills.length != 0">{{member.skills[0]?.name}}, {{member.skills[1]?.name}} ...</p>-->
-                        <p class="mb-0">{{member.language}}</p>
+                        <p class="mb-0">{{member.language.split('-', 2).join('-')}} ...</p>
                       </div>
                       <div class="col-4">
                         <img class="img-fluid rounded-circle" src="{{member.image}}"
@@ -84,119 +84,156 @@
 
       <div class="col-12 d-none d-md-block">
         <div id="blade">
-          <div id="circle-carousel" class="circle-carousel">
-            <div class="circle-carousel__item" data-num="1" (click)="onSelected(employeeList[0])">
+          <div #circleCarousel id="circle-carousel" class="circle-carousel">
+            <div id="{{'employee-'+ employee.id}}" *ngFor="let employee of employeeList;  let i = index" class="circle-carousel__item" [attr.data-num]="i + 1" (click)="onSelected(employeeList[i])">
               <div>
-                <a>
-                  <img src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Hammam%20Zarefa.jpg" class="responsive-image d-inline-block" alt="">
-                </a>
+                <img src="{{employee.image}}" class="responsive-image" alt="">
               </div>
             </div>
-            <div class="circle-carousel__item" data-num="2" (click)="onSelected(employeeList[1])">
+            <div *ngFor="let employee of employeeList;  let j = index" class="circle-carousel__item" [attr.data-num]="j + (employeeList.length + 1)" (click)="onSelected(employeeList[j])">
               <div>
-                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Talal Danoun.jpg" alt="">
+                <img src="{{employee.image}}" class="responsive-image" alt="">
               </div>
             </div>
-            <div class="circle-carousel__item activate" data-num="3" (click)="onSelected(employeeList[2])">
-              <div class="circle-div">
-                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Mujeeba Haj Najeeb.jpg" alt="">
-              </div>
-            </div>
-            <div class="circle-carousel__item" data-num="4" (click)="onSelected(employeeList[3])">
-              <div>
-                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Mohammad Alkalaleeb.png" alt="">
-              </div>
-            </div>
-            <div class="circle-carousel__item" data-num="5" (click)="onSelected(employeeList[4])">
-              <div>
-                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Kenan Hussein.jpeg" alt="">
-              </div>
-            </div>
-            <div class="circle-carousel__item" data-num="6" (click)="onSelected(employeeList[5])">
-              <div>
-                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Qusai Ali.jpg" alt="">
-              </div>
-            </div>
-            <div class="circle-carousel__item" data-num="7" (click)="onSelected(employeeList[6])">
-              <div>
-                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Hanan Aljarmakani.jpg" alt="">
-              </div>
-            </div>
-            <div class="circle-carousel__item" data-num="8" (click)="onSelected(employeeList[7])">
-              <div>
-                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Ahmad Mustafa.jpg" alt="">
-              </div>
-            </div>
-            <div class="circle-carousel__item" data-num="9" (click)="onSelected(employeeList[8])">
-              <div>
-                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Bassel Salloum.png" alt="">
-              </div>
-            </div>
-            <div class="circle-carousel__item" data-num="10" (click)="onSelected(employeeList[9])">
-              <div>
-                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Mahmoud Aldiek.jpg" alt="">
-              </div>
-            </div>
-            <div class="circle-carousel__item" data-num="11" (click)="onSelected(employeeList[0])">
-              <div>
-                <img src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Hammam%20Zarefa.jpg" class="responsive-image d-inline-block" alt="">
-              </div>
-            </div>
-            <div class="circle-carousel__item" data-num="12" (click)="onSelected(employeeList[1])">
-              <div>
-                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Talal Danoun.jpg" alt="">
-              </div>
-            </div>
-            <div class="circle-carousel__item active" data-num="13" (click)="onSelected(employeeList[2])">
-              <div>
-                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Mujeeba Haj Najeeb.jpg" alt="">
-              </div>
-            </div>
-            <div class="circle-carousel__item" data-num="14" (click)="onSelected(employeeList[3])">
-              <div>
-                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Mohammad Alkalaleeb.png" alt="">
-              </div>
-            </div>
-            <div class="circle-carousel__item" data-num="15" (click)="onSelected(employeeList[4])">
-              <div>
-                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Kenan Hussein.jpeg" alt="">
-              </div>
-            </div>
-            <div class="circle-carousel__item" data-num="16" (click)="onSelected(employeeList[5])">
-              <div>
-                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Qusai Ali.jpg" alt="">
-              </div>
-            </div>
-            <div class="circle-carousel__item" data-num="17" (click)="onSelected(employeeList[6])">
-              <div>
-                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Hanan Aljarmakani.jpg" alt="">
-              </div>
-            </div>
-            <div class="circle-carousel__item" data-num="18" (click)="onSelected(employeeList[7])">
-              <div>
-                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Ahmad Mustafa.jpg" alt="">
-              </div>
-            </div>
-            <div class="circle-carousel__item" data-num="19" (click)="onSelected(employeeList[8])">
-              <div>
-                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Bassel Salloum.png" alt="">
-              </div>
-            </div>
-            <div class="circle-carousel__item" data-num="20" (click)="onSelected(employeeList[9])">
-              <div>
-                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Mahmoud Aldiek.jpg" alt="">
+<!--            <div class="circle-carousel__item" data-num="1" (click)="onSelected(employeeList[0])">-->
+<!--              <div>-->
+<!--                <img src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Hammam%20Zarefa.jpg" class="responsive-image" alt="">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="circle-carousel__item" data-num="2" (click)="onSelected(employeeList[1])">-->
+<!--              <div>-->
+<!--                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Talal Danoun.jpg" alt="">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="circle-carousel__item activate" data-num="3" (click)="onSelected(employeeList[2])">-->
+<!--              <div class="circle-div">-->
+<!--                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Mujeeba Haj Najeeb.jpg" alt="">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="circle-carousel__item" data-num="4" (click)="onSelected(employeeList[3])">-->
+<!--              <div>-->
+<!--                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Mohammad Alkalaleeb.png" alt="">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="circle-carousel__item" data-num="5" (click)="onSelected(employeeList[4])">-->
+<!--              <div>-->
+<!--                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Kenan Hussein.jpeg" alt="">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="circle-carousel__item" data-num="6" (click)="onSelected(employeeList[5])">-->
+<!--              <div>-->
+<!--                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Qusai Ali.jpg" alt="">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="circle-carousel__item" data-num="7" (click)="onSelected(employeeList[6])">-->
+<!--              <div>-->
+<!--                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Hanan Aljarmakani.jpg" alt="">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="circle-carousel__item" data-num="8" (click)="onSelected(employeeList[7])">-->
+<!--              <div>-->
+<!--                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Ahmad Mustafa.jpg" alt="">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="circle-carousel__item" data-num="9" (click)="onSelected(employeeList[8])">-->
+<!--              <div>-->
+<!--                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Bassel Salloum.png" alt="">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="circle-carousel__item" data-num="10" (click)="onSelected(employeeList[9])">-->
+<!--              <div>-->
+<!--                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Mahmoud Aldiek.jpg" alt="">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="circle-carousel__item" data-num="11" (click)="onSelected(employeeList[0])">-->
+<!--              <div>-->
+<!--                <img src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Hammam%20Zarefa.jpg" class="responsive-image d-inline-block" alt="">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="circle-carousel__item" data-num="12" (click)="onSelected(employeeList[1])">-->
+<!--              <div>-->
+<!--                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Talal Danoun.jpg" alt="">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="circle-carousel__item activate" data-num="13" (click)="onSelected(employeeList[2])">-->
+<!--              <div>-->
+<!--                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Mujeeba Haj Najeeb.jpg" alt="">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="circle-carousel__item" data-num="14" (click)="onSelected(employeeList[3])">-->
+<!--              <div>-->
+<!--                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Mohammad Alkalaleeb.png" alt="">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="circle-carousel__item" data-num="15" (click)="onSelected(employeeList[4])">-->
+<!--              <div>-->
+<!--                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Kenan Hussein.jpeg" alt="">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="circle-carousel__item" data-num="16" (click)="onSelected(employeeList[5])">-->
+<!--              <div>-->
+<!--                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Qusai Ali.jpg" alt="">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="circle-carousel__item" data-num="17" (click)="onSelected(employeeList[6])">-->
+<!--              <div>-->
+<!--                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Hanan Aljarmakani.jpg" alt="">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="circle-carousel__item" data-num="18" (click)="onSelected(employeeList[7])">-->
+<!--              <div>-->
+<!--                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Ahmad Mustafa.jpg" alt="">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="circle-carousel__item" data-num="19" (click)="onSelected(employeeList[8])">-->
+<!--              <div>-->
+<!--                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Bassel Salloum.png" alt="">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="circle-carousel__item" data-num="20" (click)="onSelected(employeeList[9])">-->
+<!--              <div>-->
+<!--                <img class="responsive-image" src="https://yes-soft.de/yes-go/Uploads/Team%20photos/Mahmoud Aldiek.jpg" alt="">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+        </div>
+      </div>
+    </div>
+      <!--      <div class="col-12 col-sm-10 col-md-8 col-lg-5 search-div mx-auto">-->
+      <!--Start Search Section-->
+      <div class="search-section search-div pb-4">
+        <div class="container">
+          <div class="col-11 col-sm-10 col-md-8 col-lg-7 col-xl-6 mx-auto text-center">
+            <div class="input-group">
+              <input
+                #searchingInput
+                type="text"
+                #searchInput
+                class="form-control"
+                (keyup)="search($event)"
+                placeholder="Type Here To Search">
+              <!-- Search Result List -->
+              <div #searchListItems class="search-input-list p-2">
+                <div class="" *ngIf="dataSearch.length != 0">
+                  <p class="mb-0 pb-2" *ngFor="let data of dataSearch " [attr.data-id]="'employee-' + data.id" (click)="findEmployee($event)">
+                    <span class="font-weight-bold">{{ data.fullName }}</span> |
+                    <span class="text-white">{{ data.position }}</span>
+                  </p>
+                  <!--              <p data-id="employee-6"(click)="findEmployee($event)">Talal Danoun</p>-->
+                </div>
+                <div class="" *ngIf="dataSearch.length == 0">
+                  <h5 class="">Search...</h5>
+                </div>
               </div>
             </div>
           </div>
+          <!--    <div class="col-12"></div>-->
         </div>
       </div>
-      <div class="col-12 col-sm-10 col-md-8 col-lg-5 mx-auto">
-        <input type="text" class="form-control" placeholder="Search">
+      <div class="py-5">
+        <app-search></app-search>
       </div>
-        <div class="py-5">
-            <app-search></app-search>
-        </div>
-    </div>
+  </div>
 </div>
 
 <app-employee-details

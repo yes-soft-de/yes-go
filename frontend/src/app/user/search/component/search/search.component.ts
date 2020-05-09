@@ -12,41 +12,41 @@ import { Search } from '../../entity/search';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  @ViewChild('searchInput', {static: true}) inputSearch: ElementRef;
-  dataSearch: Search[];
-  imageClicked: boolean;
-  typing = false;
+  // @ViewChild('searchInput', {static: true}) inputSearch: ElementRef;
+  // dataSearch: Search[];
+  // imageClicked: boolean;
+  // typing = false;
 
 
   constructor(private store: Store<UserState>) {
   }
 
   ngOnInit() {
-    this.imageClicked = true;
-    this.store.select(fromReducer.searchSelector).subscribe(
-      searchResult => {
-        this.dataSearch = searchResult;
-        this.typing = false;
-      }
-    );
+    // this.imageClicked = true;
+    // this.store.select(fromReducer.searchSelector).subscribe(
+    //   searchResult => {
+    //     this.dataSearch = searchResult;
+    //     this.typing = false;
+    //   }
+    // );
   }
 
   search(text) {
-    this.imageClicked = false;
-    if (text.target.value !== '') {
-      this.typing = true;
-      this.store.dispatch(new searchActions.LoadSearch(text.target.value));
-    } else {
-      this.typing = false;
-      this.store.dispatch(new searchActions.LoadSearch(null));
-    }
+    // this.imageClicked = false;
+    // if (text.target.value !== '') {
+    //   this.typing = true;
+    //   this.store.dispatch(new searchActions.LoadSearch(text.target.value));
+    // } else {
+    //   this.typing = false;
+    //   this.store.dispatch(new searchActions.LoadSearch(null));
+    // }
   }
 
   inputRest() {
-    this.imageClicked = true;
-    this.typing = false;
-    this.inputSearch.nativeElement.value = '';
-    this.store.dispatch(new searchActions.LoadSearch(null));
+    // this.imageClicked = true;
+    // this.typing = false;
+    // this.inputSearch.nativeElement.value = '';
+    // this.store.dispatch(new searchActions.LoadSearch(null));
   }
 
 }

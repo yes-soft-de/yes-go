@@ -3,6 +3,7 @@
 
 .employee-details-section {
   position: relative;
+  margin: -1px 0;
   .employee-details-content {
     position: relative;
     top: 50px;
@@ -42,6 +43,9 @@
         .employee-skills-name {
           font-weight: 500;
         }
+        .employee-skills-title {
+          color: #acabab;
+        }
       }
     }
     .employee-detail-projects {
@@ -70,7 +74,7 @@
 }
 .employee-details-loaded {
   background-color: $dark-blue;
-  color: #fff; 
+  color: #fff;
 }
 
 /*style for lg Screen*/
@@ -118,7 +122,10 @@
             width: 50px;
           }
           .employee-skills-name {
-            font-weight: 500;
+            font-weight: bold;
+          }
+          .employee-skills-title {
+            color: #acabab;
           }
         }
       }

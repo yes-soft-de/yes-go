@@ -1,5 +1,8 @@
+@import "~src/variables";
+
 .employee-list {
   position: relative;
+  //height: 140vh;
   .employee-list-top {
     position: relative;
     top: 21vh;
@@ -33,6 +36,32 @@
       }
     }
   }
+  .search-div {
+    input { position: relative; }
+    .search-input-list {
+      position: absolute;
+      //top: 58px;
+      background-image: url(../../../../../assets/yesgo-vision-background.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      background-size: cover;
+      width: 100%;
+      border-radius: 30px;
+
+      //width: calc(100% - 30px);
+      //background: #fff;
+      //margin-top: -5px;
+      //border-top: 1px solid #ccc;
+      z-index: 99;
+      display: none;
+      p {
+        padding: 10px;
+        cursor: pointer;
+      }
+    }
+  }
 }
 
 #blade {
@@ -51,7 +80,7 @@
   position: absolute;
   right: calc((95vw - 600px)/2);
   left: calc((95vw - 600px)/2);
-  top: 125%;
+  top: 190%;
   margin-top: 0;
   transition: transform .5s;
   z-index: 201;
@@ -107,7 +136,7 @@
   }
   #blade {
     .circle-carousel {
-      top: 123% !important;
+      top: 190% !important;
     }
   }
 }
@@ -123,7 +152,7 @@
   }
   #blade {
     .circle-carousel {
-      top: 123% !important;
+      top: 185% !important;
     }
   }
 }
@@ -206,3 +235,132 @@
   }
 }
 
+/*
+  Search Section
+  -------------------------------------
+ */
+
+.search-section {
+  input {
+    background-color: transparent;
+    border: none;
+    background-image: url('../../../../../assets/search-input.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    height: 72px;
+    padding: 0 2rem;
+  }
+  button.btn {
+    background: url('../../../../../assets/search-button.png') center center no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    width: 30%;
+    height: 82px;
+    font-size: 103%;
+    font-weight: 700;
+    padding: .84rem .9rem;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+}
+
+.search-result {
+  background-color: $dark-blue;
+  .card-img-top {
+    height: 40vh;
+  }
+}
+/*Style for lg Screen*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .search-section {
+    input {
+      height: 70px;
+    }
+    button.btn {
+      height: 80px;
+      padding: .84rem .7rem;
+    }
+  }
+}
+
+/*Style for md Screen*/
+@media (min-width: 768px) and (max-width: 991px) {
+  .search-section {
+    input {
+      height: 59px;
+    }
+    button.btn {
+      height: 62px;
+      font-size: 71%;
+      width: 28%;
+    }
+  }
+}
+
+/*Style for sm Screen*/
+@media (min-width: 576px) and (max-width: 767px) {
+  .search-section {
+    input {
+      height: 54px;
+    }
+    button.btn {
+      height: 58px;
+      font-size: 63%;
+      width: 28%;
+    }
+  }
+}
+
+
+/*style for xs Screen*/
+@media (max-width: 575px) {
+  .search-section {
+    input {
+      -webkit-background-size: contain;
+      -moz-background-size: contain;
+      background-size: contain;
+      height: 62px;
+      padding: 0 2rem;
+    }
+    button.btn {
+      -webkit-background-size: contain;
+      -moz-background-size: contain;
+      background-size: contain;
+      height: 61px;
+      font-size: 75%;
+      width: 30%;
+      padding: .84rem .7rem;
+    }
+  }
+}
+
+@media (max-width: 499px) {
+  .search-section {
+    input {
+      height: 52px;
+    }
+    button.btn {
+      height: 48px;
+      font-size: 67%;
+      padding: 2px;
+    }
+  }
+}
+
+/*style for xs Screen*/
+@media (max-width: 399px) {
+  .search-section {
+    input {
+      height: 42px;
+    }
+    button.btn {
+      height: 38px;
+      font-size: 52%;
+    }
+  }
+}
