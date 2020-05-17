@@ -1,8 +1,8 @@
 <!--Start Employee List Section-->
 <div class="employee-list">
-  <img src="../../../../../assets/slider-background.jpg" (load)="computerLoad($event)" [class.d-md-block]="loaded" class="bg-responsive-image d-none" alt=""/>
-  <img src="../../../../../assets/mobile-slider-background.jpg" (load)="mobileLoad($event)" [class.d-none]="!loaded" class="bg-responsive-image d-md-none" alt=""/>
-  <div *ngIf="loaded">
+  <img src="../../../../../assets/slider-background.jpg" class="bg-responsive-image d-none d-md-block" alt=""/>
+  <img src="../../../../../assets/mobile-slider-background.jpg" class="bg-responsive-image d-md-none" alt=""/>
+  <div>
     <div class="employee-list-top">
       <div class="container">
         <div class="row">
@@ -253,9 +253,6 @@
     <div class="py-5">
       <app-search></app-search>
     </div>
-  </div>
-  <div class="employee-list-loaded text-center p-5 my-0" *ngIf="!loaded">
-    <h2 class="pb-5">Loading...</h2>
   </div>
 </div>
 

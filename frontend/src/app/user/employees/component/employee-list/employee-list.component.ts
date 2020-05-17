@@ -43,7 +43,6 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
   employeeProjectsCarousel: any = [[]];
   angle = 0;
   totalItems: any;
-  loaded = false;
 
   constructor(private render: Renderer2, private store: Store<UserState>,
               private pageScrollService: PageScrollService,
@@ -212,24 +211,6 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
       arr[j] = temp;
     }
     return arr;
-  }
-
-  // Hide Desktop Background Image Until complete Loading
-  computerLoad(event: Event) {
-    if (event.returnValue) {
-      this.loaded = true;
-    } else {
-      this.loaded = false;
-    }
-  }
-
-  // Hide Mobile Background Image Until complete Loading
-  mobileLoad(event: Event) {
-    if (event.returnValue) {
-      this.loaded = true;
-    } else {
-      this.loaded = false;
-    }
   }
 
 
