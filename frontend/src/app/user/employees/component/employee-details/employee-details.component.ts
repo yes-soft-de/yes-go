@@ -4,7 +4,6 @@ import { EmployeeCustomerComments } from '../../../customers/entity/employee-cus
 import { EmployeeProjects } from '../../entity/employee-projects';
 
 
-
 @Component({
   selector: 'app-employee-details',
   templateUrl: './employee-details.component.html',
@@ -20,13 +19,6 @@ export class EmployeeDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // setTimeout(() => {
-    //   console.log('employeeDetails', this.employeeDetails);
-    //   console.log('employeeDetailsCustomerComments', this.employeeDetailsCustomerComments);
-    //   console.log('employeeDetailsProjectsList', this.employeeDetailsProjectsList);
-    //
-    // }, 5000);
-
   }
 
 
@@ -45,6 +37,7 @@ export class EmployeeDetailsComponent implements OnInit {
     return chunkSize;
   }
 
+  // Hide Desktop Background Image Until complete Loading
   computerLoad(event: Event) {
     if (event.returnValue) {
       this.loaded = true;
@@ -53,6 +46,7 @@ export class EmployeeDetailsComponent implements OnInit {
     }
   }
 
+  // Hide Mobile Background Image Until complete Loading
   mobileLoad(event: Event) {
     if (event.returnValue) {
       this.loaded = true;

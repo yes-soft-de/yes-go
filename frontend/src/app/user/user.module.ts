@@ -23,7 +23,6 @@ import {EmployeeExistGuard} from './employees/guards/employee-exist.guard';
 import { CustomersGuards } from './customers/guards/customers.guard';
 import { HeaderProgressComponent } from './shared/header-progress/header-progress.component';
 
-
 @NgModule({
   declarations: [
     UserComponent,

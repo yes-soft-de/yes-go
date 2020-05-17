@@ -43,6 +43,7 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
   employeeProjectsCarousel: any = [[]];
   angle = 0;
   totalItems: any;
+  loaded = false;
 
   constructor(private render: Renderer2, private store: Store<UserState>,
               private pageScrollService: PageScrollService,
@@ -75,6 +76,7 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
       const centerX = container.offsetWidth / 2;
       const centerY = container.offsetHeight / 2;
       const radius = 1100;
+      const rotatedAngle = 360 / (this.employeeList.length * 2);
       // xl: 700, lg: 600,
 
       const carouselItems = this.circleCarousel.nativeElement.children;
@@ -90,21 +92,20 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
         const x = Math.round(centerX + radius * Math.sin(this.angle * Math.PI / 180));
         const y = Math.round(centerY + radius * -Math.cos(this.angle * Math.PI / 180));
         // carouselItems[i].setAttribute('style', `top:${y - h2}px; right:${x - w2}px`);
-        this.render.setAttribute(carouselItems[i], 'style', `top:${y - h2}px; right:${x - w2}px`);
+        carouselItems[i].setAttribute('style', `top:${y - h2}px; right:${x - w2}px`);
+        // this.render.setAttribute(carouselItems[i], 'style', `top:${y - h2}px; right:${x - w2}px`);
         this.render.addClass(carouselItems[0], 'activate');
         this.render.setAttribute(carouselItems[i].firstChild, 'style', 'transform: rotate(' + rotate / 2 + 'deg)');
       }
       // Setting initial state
       this.render.setAttribute(container, 'style', 'transform: rotate(' + -rotate / 2 + 'deg)');
-      // $('#circle-carousel').css('transform', 'rotate(' + -rotate / 2 + 'deg)');
-      // $('.circle-carousel__item div').css('transform', 'rotate(' + rotate / 2 + 'deg)');
 
       // const activateClass = this.render.selectRootElement('.circle-carousel__item');
       $('.activate').prev().addClass('ws-next-to-active');
       $('.activate').next().addClass('ws-next-to-active');
       // this.render.addClass(this.render.nextSibling(activateClass), 'ws-next-to-active');
 
-      $('.circle-carousel__item').on('click', function() {
+      $('#circle-carousel').on('click', '.circle-carousel__item', function(e) {
         var thisNum = $(this).data('num');
         var currentNum = $('.activate').data('num');
         var numOfRotations = (thisNum - currentNum);
@@ -115,7 +116,7 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
           numOfRotations -= this.totalItems;
         }
         // The Rotated Degree That Add To '.circle-carousel' Element When Pressing On '.circle-carousel__item' Element
-        rotated += (11.25 * numOfRotations);
+        rotated += (rotatedAngle * numOfRotations);
 
         $('#circle-carousel').css('transform', 'rotate(' + rotated + 'deg)');
         $('.circle-carousel__item div').css('transform', 'rotate(' + -rotated + 'deg)');
@@ -126,7 +127,7 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
         $('.activate').next().addClass('ws-next-to-active');
 
       });
-    }, 2000);
+    }, 3000);
   }
 
   // Host For Fetch Screen Size And Change The Chunk Array Size
@@ -184,7 +185,6 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
   }
 
   findEmployee(event) {
-    // console.log(this.searchListItems.nativeElement.style.top);
     // Get The data-id attribute
     const dataId = event.path['1'].getAttribute('data-id');
     // Get The Children Inside The Search Result List
@@ -213,5 +213,24 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
     }
     return arr;
   }
+
+  // Hide Desktop Background Image Until complete Loading
+  computerLoad(event: Event) {
+    if (event.returnValue) {
+      this.loaded = true;
+    } else {
+      this.loaded = false;
+    }
+  }
+
+  // Hide Mobile Background Image Until complete Loading
+  mobileLoad(event: Event) {
+    if (event.returnValue) {
+      this.loaded = true;
+    } else {
+      this.loaded = false;
+    }
+  }
+
 
 }
