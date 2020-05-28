@@ -2,7 +2,7 @@ import {
   Component,
   OnInit,
   HostListener,
-  AfterViewInit, ViewChild, ElementRef, Renderer2,
+  AfterViewInit, ViewChild, ElementRef, Renderer2, ViewEncapsulation, HostBinding,
 } from '@angular/core';
 import { Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
@@ -70,64 +70,75 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
 
 
   ngAfterViewInit() {
-    setTimeout(() => {
-      const container = this.circleCarousel.nativeElement;    // The Parent container
-      const centerX = container.offsetWidth / 2;
-      const centerY = container.offsetHeight / 2;
-      const radius = 1100;
-      const rotatedAngle = 360 / (this.employeeList.length * 2);
-      // xl: 700, lg: 600,
+    // Set Interval Until The Element Rendering in the browser
+    const setIntervalValue = setInterval(() => {
+      if (this.circleCarousel.nativeElement.childElementCount > 0) {
+        // SetTimeout For 2 second to apply [ carouselItems[i].setAttribute('style', `top:${y - h2}px; right:${x - w2}px`) ]
+        setTimeout( () => {
+          const container = this.circleCarousel.nativeElement;    // The Parent container
+          const centerX = container.offsetWidth / 2;
+          const centerY = container.offsetHeight / 2;
+          const radius = 1100;
+          const rotatedAngle = 360 / (this.employeeList.length * 2);
+          // xl: 700, lg: 600,
+          console.log(this.circleCarousel.nativeElement.children.length);
+          const carouselItems = this.circleCarousel.nativeElement.children;
+          this.totalItems = carouselItems.length;
+          // const rotate = -1460 / totalItems;
+          const rotate = -1 / this.totalItems;
+          let rotated = -rotate / 2;
 
-      const carouselItems = this.circleCarousel.nativeElement.children;
-      this.totalItems = carouselItems.length;
-      // const rotate = -1460 / totalItems;
-      const rotate = -1 / this.totalItems;
-      let rotated = -rotate / 2;
+          for (let i = 0; i < carouselItems.length ; i++) {
+            const w2 = carouselItems[i].offsetWidth / 2; // true: margin included
+            const h2 = carouselItems[i].offsetHeight / 2;
+            this.angle = 360 / this.totalItems * i;
+            const x = Math.round(centerX + radius * Math.sin(this.angle * Math.PI / 180));
+            const y = Math.round(centerY + radius * -Math.cos(this.angle * Math.PI / 180));
+            // (carouselItems[i] as HTMLElement).style.top = `${y - h2}px`;
+            // this.render.setAttribute(carouselItems[i], 'style', `top:${y - h2}px; right:${x - w2}px`);
+            carouselItems[i].setAttribute('style', `top:${y - h2}px; right:${x - w2}px`);
+            this.render.addClass(carouselItems[0], 'activate');
+            this.render.setAttribute(carouselItems[i].firstChild, 'style', 'transform: rotate(' + rotate / 2 + 'deg)');
+          }
+          // Setting initial state
+          this.render.setAttribute(container, 'style', 'transform: rotate(' + -rotate / 2 + 'deg)');
 
-      for (let i = 0; i < carouselItems.length ; i++) {
-        const w2 = carouselItems[i].offsetWidth / 2; // true: margin included
-        const h2 = carouselItems[i].offsetHeight / 2;
-        this.angle = 360 / this.totalItems * i;
-        const x = Math.round(centerX + radius * Math.sin(this.angle * Math.PI / 180));
-        const y = Math.round(centerY + radius * -Math.cos(this.angle * Math.PI / 180));
-        // carouselItems[i].setAttribute('style', `top:${y - h2}px; right:${x - w2}px`);
-        carouselItems[i].setAttribute('style', `top:${y - h2}px; right:${x - w2}px`);
-        // this.render.setAttribute(carouselItems[i], 'style', `top:${y - h2}px; right:${x - w2}px`);
-        this.render.addClass(carouselItems[0], 'activate');
-        this.render.setAttribute(carouselItems[i].firstChild, 'style', 'transform: rotate(' + rotate / 2 + 'deg)');
+          // const activateClass = this.render.selectRootElement('.circle-carousel__item');
+          $('.activate').prev().addClass('ws-next-to-active');
+          $('.activate').next().addClass('ws-next-to-active');
+          // this.render.addClass(this.render.nextSibling(activateClass), 'ws-next-to-active');
+
+          $('#circle-carousel').on('click', '.circle-carousel__item', function(e) {
+            var thisNum = $(this).data('num');
+            var currentNum = $('.activate').data('num');
+            var numOfRotations = (thisNum - currentNum);
+            if (numOfRotations < -this.totalItems / 2) {
+              numOfRotations += this.totalItems;
+            }
+            if (numOfRotations > this.totalItems / 2) {
+              numOfRotations -= this.totalItems;
+            }
+            // The Rotated Degree That Add To '.circle-carousel' Element When Pressing On '.circle-carousel__item' Element
+            rotated += (rotatedAngle * numOfRotations);
+
+            $('#circle-carousel').css('transform', 'rotate(' + rotated + 'deg)');
+            $('.circle-carousel__item div').css('transform', 'rotate(' + -rotated + 'deg)');
+            $('.circle-carousel__item').removeClass('activate').removeClass('ws-next-to-active');
+
+            $(this).addClass('activate');
+            $('.activate').prev().addClass('ws-next-to-active');
+            $('.activate').next().addClass('ws-next-to-active');
+
+          });
+        }, 3000);
+
+        clearInterval(setIntervalValue); // Clear If Elements Is rendering
       }
-      // Setting initial state
-      this.render.setAttribute(container, 'style', 'transform: rotate(' + -rotate / 2 + 'deg)');
-
-      // const activateClass = this.render.selectRootElement('.circle-carousel__item');
-      $('.activate').prev().addClass('ws-next-to-active');
-      $('.activate').next().addClass('ws-next-to-active');
-      // this.render.addClass(this.render.nextSibling(activateClass), 'ws-next-to-active');
-
-      $('#circle-carousel').on('click', '.circle-carousel__item', function(e) {
-        var thisNum = $(this).data('num');
-        var currentNum = $('.activate').data('num');
-        var numOfRotations = (thisNum - currentNum);
-        if (numOfRotations < -this.totalItems / 2) {
-          numOfRotations += this.totalItems;
-        }
-        if (numOfRotations > this.totalItems / 2) {
-          numOfRotations -= this.totalItems;
-        }
-        // The Rotated Degree That Add To '.circle-carousel' Element When Pressing On '.circle-carousel__item' Element
-        rotated += (rotatedAngle * numOfRotations);
-
-        $('#circle-carousel').css('transform', 'rotate(' + rotated + 'deg)');
-        $('.circle-carousel__item div').css('transform', 'rotate(' + -rotated + 'deg)');
-        $('.circle-carousel__item').removeClass('activate').removeClass('ws-next-to-active');
-
-        $(this).addClass('activate');
-        $('.activate').prev().addClass('ws-next-to-active');
-        $('.activate').next().addClass('ws-next-to-active');
-
-      });
-    }, 3000);
+    }, 100);
   }
+
+
+
 
   // Host For Fetch Screen Size And Change The Chunk Array Size
   @HostListener('window:resize', ['$event'])
