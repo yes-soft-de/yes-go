@@ -130,7 +130,7 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
             $('.activate').next().addClass('ws-next-to-active');
 
           });
-        }, 3000);
+        }, 3500);
 
         clearInterval(setIntervalValue); // Clear If Elements Is rendering
       }

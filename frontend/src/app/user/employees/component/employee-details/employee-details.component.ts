@@ -27,7 +27,9 @@ export class EmployeeDetailsComponent implements OnInit {
   onResize(event?) {
     const screenWidth = window.innerWidth;
     let chunkSize = 4;      // make 4 chunk In every array
-    if (screenWidth >= 768 && screenWidth <= 992) {
+    if (screenWidth >= 992 && screenWidth <= 1600) {
+      chunkSize = 3;        // make 3 chunk In every array
+    } else if (screenWidth >= 768 && screenWidth <= 991) {
       chunkSize = 3;        // make 3 chunk In every array
     } else if (screenWidth >= 576 && screenWidth <= 767) {
       chunkSize = 2;        // make 2 chunk In every array

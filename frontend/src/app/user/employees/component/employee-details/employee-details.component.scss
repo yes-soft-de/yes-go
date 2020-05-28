@@ -51,6 +51,9 @@
     .employee-detail-projects {
       .customer-say {
         min-height: 100px;
+        img {
+          border-radius: 10%;
+        }
         h6 a {
           text-decoration: none;
           &:hover {
