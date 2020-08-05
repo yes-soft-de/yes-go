@@ -1,27 +1,27 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {RouterModule, Routes} from '@angular/router';
-import {UserComponent} from '../user/user.component';
-import {HomeComponent} from '../user/home/home.component';
-import {EmployeeDetailComponent} from '../user/employee/component/employee-detail/employee-detail.component';
+import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from '../user/home/home.component';
+import { UserComponent } from '../user/user.component';
+import { EmployeesGuard } from '../user/employees/guards/employees.guard';
+import { CustomersGuards } from '../user/customers/guards/customers.guard';
+
 
 const routes: Routes = [
   {
     path: '',
     component: UserComponent,
     children: [
-      {path: '', component: HomeComponent},
-      {path: 'employee/:id', component: EmployeeDetailComponent}
+      {
+        path: '',
+        canActivate: [EmployeesGuard, CustomersGuards],
+        component: HomeComponent
+      }
     ]
   }
 ];
 
 @NgModule({
-  declarations: [],
-  imports: [
-      RouterModule.forChild(routes),
-      CommonModule
-  ],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class UserRoutingModule { }

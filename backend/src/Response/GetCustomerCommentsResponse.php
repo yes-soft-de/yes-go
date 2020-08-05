@@ -13,6 +13,7 @@ class GetCustomerCommentsResponse
     public $date;
     public $details;
 
+
     /**
      * @return mixed
      */

@@ -55,7 +55,6 @@ class CommentManager
         if (!$comment) {
 
         } else {
-            $comment->setIsActive(false);
             $this->entityManager->flush();
         }
         return $comment;

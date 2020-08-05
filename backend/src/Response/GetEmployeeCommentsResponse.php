@@ -7,11 +7,11 @@ namespace App\Response;
 class GetEmployeeCommentsResponse
 {
     public $id;
-    public $customer;
-    public $employee;
     public $body;
     public $date;
     public $details;
+    public $clientName;
+    public $image;
 
     /**
      * @return mixed
@@ -27,38 +27,6 @@ class GetEmployeeCommentsResponse
     public function setId($id): void
     {
         $this->id = $id;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCustomer()
-    {
-        return $this->customer;
-    }
-
-    /**
-     * @param mixed $customer
-     */
-    public function setCustomer($customer): void
-    {
-        $this->customer = $customer;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getEmployee()
-    {
-        return $this->employee;
-    }
-
-    /**
-     * @param mixed $employee
-     */
-    public function setEmployee($employee): void
-    {
-        $this->employee = $employee;
     }
 
     /**
@@ -107,6 +75,38 @@ class GetEmployeeCommentsResponse
     public function setDetails($details): void
     {
         $this->details = $details;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getClientName()
+    {
+        return $this->clientName;
+    }
+
+    /**
+     * @param mixed $clientName
+     */
+    public function setClientName($clientName): void
+    {
+        $this->clientName = $clientName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param mixed $image
+     */
+    public function setImage($image): void
+    {
+        $this->image = $image;
     }
 
 

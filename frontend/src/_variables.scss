@@ -1,6 +1,8 @@
-$black-blue: #fff;
-$dark-background: #333;
+$dark-blue: #000510;
 $blue: #3399ff;
+$footer-blue: #000614;
+$red: #C73015;
+
 
 @mixin gradient-grey-background {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f8f9fa+0,c8c8c8+100 */
@@ -70,8 +72,8 @@ $blue: #3399ff;
   .lds-ring {
     display: inline-block;
     position: fixed;
-    left: 50vw;
-    top: 50vh;
+    left: calc(50vw - (64px / 2));
+    top: 40vh;
     width: 64px;
     height: 64px;
   }
@@ -79,9 +81,9 @@ $blue: #3399ff;
     box-sizing: border-box;
     display: block;
     position: absolute;
-    //left: 50%;
-    width: 51px;
-    height: 51px;
+    top: 40%;
+    width: 60px;
+    height: 60px;
     margin: 6px;
     border: 6px solid #fff;
     border-radius: 50%;

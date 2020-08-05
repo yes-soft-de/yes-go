@@ -1,10 +1,16 @@
 @import "~src/variables";
 
 .about-us {
-  min-height: 300px;
-  @include gradient-grey-background;
+  min-height: 450px;
+  margin: -1px 0;
+  & > img {
+    z-index: -1;
+  }
+  h2 {
+    margin-bottom: 10%
+  }
   span {
-    font-size: .7rem;
+    font-size: 1.3rem;
   }
   p {
     font-size: 1.8rem;
@@ -12,18 +18,25 @@
 }
 
 .our-price {
+  background-color: $dark-blue;
   p {
-    font-size: 2rem;
+    font-size: 1.6rem;
     strong {
       color: #3399ff;}
   }
+}
+
+.yes-go-vision {
+  background: url('../../../assets/yesgo-vision-background.png') no-repeat;
+  background-size: cover;
+  min-height: 300px;
 }
 
 /*style for lg Screen*/
 @media (min-width: 992px) and (max-width: 1199px) {
   .our-price {
     p {
-      font-size: 1.8rem;
+      font-size: 1.4rem;
     }
   }
 }
@@ -38,7 +51,7 @@
 
   .our-price {
     p {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
     }
   }
 }
@@ -53,7 +66,7 @@
 
   .our-price {
     p {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
     }
   }
 }
@@ -68,7 +81,7 @@
 
   .our-price {
     p {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
     }
   }
 }
@@ -76,8 +89,23 @@
 /*style for small than xs Screen*/
 @media (max-width: 499px) {
   .about-us {
+    min-height: 360px;
+    h2 {
+      font-size: 1.8rem;
+    }
+    span {
+      font-size: 1rem;
+    }
     p {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
+    }
+  }
+  .our-price {
+    h3 {
+      font-size: 1.7rem;
+    }
+    p {
+      font-size: 1.2rem;
     }
   }
 }

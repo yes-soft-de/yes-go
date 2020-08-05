@@ -72,5 +72,9 @@ class ServicesManager
     {
         return $result = $this->servicesRepository->findServiceByld($request->getId());
     }
+    public function getServiceTeam(GetByIdRequest $request)
+    {
+        return $result=$this->servicesRepository->findServiceTeam($request->getId());
+    }
 
 }

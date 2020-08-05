@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HelperService } from '../shared/helper/helper.service';
 
 @Component({
   selector: 'app-home',
@@ -7,26 +8,17 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   cards = [
-    {description: 'Its team consists of developers, designers, content makers, testers and team managers'},
-    {description: 'Our Team are working together remotely and results are always great'},
-    {description: 'They use up-to-date technologies to bring your imaginary requirements to reality'}
+    {description: 'Yes Go is a product of Yes Soft company.'},
+    {description: 'Our whole crew is at your service.'},
+    {description: 'Try us, you’ll never regret.'}
   ];
 
   slides: any = [[]];
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
-    this.slides = this.chunk(this.cards, 1);
-  }
-
-  // create chunk of About us text array to use it in painting carousel
-  chunk(paintingsArr, chunkSize) {
-    const arr = [];
-    for (let i = 0, len = paintingsArr.length; i < len; i += chunkSize) {
-      arr.push(paintingsArr.slice(i, i + chunkSize));
-    }
-    return arr;
+    this.slides = HelperService.chunk(this.cards, 1);
   }
 
 }

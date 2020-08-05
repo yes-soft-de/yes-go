@@ -48,6 +48,16 @@ class ProjectEntity
      */
     private $projectsEmployee;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $isActive;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $image;
+
     public function __construct()
     {
         $this->projectsEmployee = new ArrayCollection();
@@ -145,6 +155,30 @@ class ProjectEntity
                 $projectsEmployee->setProject(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getIsActive(): ?bool
+    {
+        return $this->isActive;
+    }
+
+    public function setIsActive(?bool $isActive): self
+    {
+        $this->isActive = $isActive;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }

@@ -1,0 +1,50 @@
+.dot {
+  //background-color: #FAE089;
+  height: 25px;
+  width: 10px;
+  background-color: #C73015;
+  display: inline-block;
+  margin: 0 2%;
+}
+//'linear-gradient(90deg, rgba(121,9,9,1) 22%, rgba(75,255,0,1) 100%)'
+
+/*Style for lg Screen*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .dot {
+    height: 22px;
+    width: 9px;
+  }
+}
+
+/*Style for md Screen*/
+@media (min-width: 768px) and (max-width: 991px) {
+  .dot {
+    height: 20px;
+    width: 6px;
+  }
+}
+
+/*Style for sm Screen*/
+@media (min-width: 576px) and (max-width: 767px) {
+  .dot {
+    height: 20px;
+    width: 6px;
+    margin: 0 1.5%;
+  }
+}
+
+/*Style for sm Screen*/
+@media (max-width: 575px) {
+  .dot {
+    height: 20px;
+    width: 6px;
+    margin: 0 1%;
+  }
+}
+
+/*style for xs Screen*/
+@media (max-width: 399px) {
+  .dot {
+    height: 15px;
+  }
+}

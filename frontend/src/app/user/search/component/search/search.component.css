@@ -1,0 +1,33 @@
+.search-section input {
+  background-color: transparent;
+  border: none;
+  background-image: url("../../../../../assets/search-input.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  height: 72px;
+  padding: 0 2rem;
+}
+.search-section button.btn {
+  background: url("../../../../../assets/search-button.png") no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  width: 30%;
+  height: 83px;
+  font-size: 125%;
+  font-weight: 500;
+}
+.search-result {
+  background-color: #f8f9fa;
+}
+.search-result .card-img-top {
+  height: 40vh;
+}
+@media (max-width: 575px) {
+  .search-section button.btn {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.7rem;
+  }
+}

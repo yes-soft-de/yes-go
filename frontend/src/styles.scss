@@ -1,13 +1,72 @@
 /* You can add global styles to this file, and also import other style files */
 @import "variables";
 @import "typography";
-//@import "~animate.css/animate.css";
-//@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 
+
+/****** Start Global Class ******/
 // Loader Ring Function
 @include loader-ring;
 
+// Global Responsive background image
+.bg-responsive-image {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+}
+
+// Global Responsive image
+.responsive-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 // Edit Carousel Inside Employee List Component
+.employee-list {
+  .carousel-indicators {
+    display: none;
+  }
+  .controls-top {
+    position: relative;
+    z-index: 9;
+    a {
+      position: absolute;
+      top: 11vh;
+      i {
+        display: none;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 70px;
+        width: 50px;
+      }
+      &:first-child {
+        &:after {
+          background: url('assets/arrow-left.png') center center no-repeat;
+          -webkit-background-size: contain;
+          background-size: contain;
+          left: 3vw;
+        }
+      }
+      &:last-child {
+        &:after {
+          background: url('assets/arrow-right.png') center center no-repeat;
+          -webkit-background-size: contain;
+          background-size: contain;
+          right: -95vw;
+        }
+      }
+    }
+  }
+}
+
+// Edit Carousel Inside Employee details Component
 .employee {
   .carousel-indicators {
     bottom: -75% !important;
@@ -24,17 +83,16 @@
   }
 }
 
-// Edit Carousel Inside Customers List Component
-.our-customer {
+// Edit Carousel Inside Home Component
+.about-us {
   .carousel-indicators {
-    bottom: -40% !important;
+    bottom: -47% !important;
   }
 
   .carousel .carousel-indicators li {
-    width: .8rem;
-    height: .8rem;
-    margin: 0 7px;
-    background-color: #aaa;
+    width: 1rem;
+    height: 1rem;
+    margin: 0 10px;
     &.active {
       background-color: $blue;
     }
@@ -45,16 +103,17 @@
   }
 }
 
-// Edit Carousel Inside Home Component
-.about-us {
+// Edit Carousel Inside Employee Details Component
+.employee-details-section {
   .carousel-indicators {
-    bottom: -90% !important;
+    bottom: -40% !important;
   }
 
   .carousel .carousel-indicators li {
-    width: 1rem;
-    height: 1rem;
-    margin: 0 10px;
+    width: .8rem;
+    height: .8rem;
+    margin: 0 7px;
+    background-color: #aaa;
     &.active {
       background-color: $blue;
     }
@@ -115,9 +174,16 @@
 /*style for xs Screen*/
 @media (max-width: 575px) {
   // Edit Carousel Inside Customers List Component
-  .our-customer {
-    .carousel-indicators {
-      bottom: -60% !important;
+  .employee-list {
+    .controls-top {
+      a {
+        top: 12vh;
+        &:after {
+          content: '';
+          height: 50px;
+          width: 35px;
+        }
+      }
     }
   }
 
@@ -133,7 +199,6 @@
   }
 
   .employee .carousel .carousel-indicators li,
-  .our-customer .carousel .carousel-indicators li,
   .about-us .carousel .carousel-indicators li {
     width: .7rem;
     height: .7rem;
@@ -143,4 +208,27 @@
 }
 
 /*style for small than xs Screen*/
-@media (max-width: 499px) {}
+@media (max-width: 499px) {
+  .employee-list {
+    .controls-top {
+      a {
+        top: -10vh;
+      }
+    }
+  }
+
+  .about-us {
+    .carousel-indicators {
+      bottom: -5% !important;
+    }
+  }
+}
+
+/*style for small than xs Screen*/
+@media (max-width: 399px) {
+  .about-us {
+    .carousel-indicators {
+      bottom: -5% !important;
+    }
+  }
+}

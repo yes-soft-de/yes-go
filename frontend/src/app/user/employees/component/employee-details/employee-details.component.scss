@@ -1,0 +1,248 @@
+@import "~src/variables";
+
+
+.employee-details-section {
+  position: relative;
+  margin: -1px 0;
+  .employee-details-content {
+    position: relative;
+    top: 50px;
+    color: #fff;
+    padding-bottom: 20%;
+    .language-experience-year {
+      .experience-year {
+        h5 {
+          font-weight: 600;
+        }
+        @include progress-bar;
+      }
+      p {
+        font-weight: 600;
+        i { color: $red }
+      }
+    }
+    .employee-details-image {
+      width: 16vw;
+    }
+    .employee-skills-rate-section {
+      p {
+       font-weight: 600;
+       font-size: 1.2rem;
+       word-break: break-all
+      }
+    }
+    .employee-skills {
+      .employee-skills-info {
+        img {
+          height: 50px;
+          width: 50px;
+        }
+        & > div {
+          vertical-align: middle;
+        }
+        .employee-skills-name {
+          font-weight: 500;
+        }
+        .employee-skills-title {
+          color: #acabab;
+        }
+      }
+    }
+    .employee-detail-projects {
+      .customer-say {
+        min-height: 100px;
+        img {
+          border-radius: 10%;
+        }
+        h6 a {
+          text-decoration: none;
+          &:hover {
+            color: #aaa;
+          }
+        }
+      }
+    }
+    .what-customer-say {
+      .customer-say-image {
+        img {
+          height: 70px;
+          width: 70px;
+        }
+        .customer-company-name {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+.employee-details-loaded {
+  background-color: $dark-blue;
+  color: #fff;
+}
+
+/*style for lg Screen*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .employee-details-section {
+    .employee-details-content {
+      .what-customer-say {
+        .customer-say-image {
+          img {
+            height: 60px;
+            width: 60px;
+          }
+          .customer-company-name {
+            h4 {
+              font-size: 1.2rem;
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*style for md Screen*/
+@media (min-width: 768px) and (max-width: 991px) {
+  .employee-details-section {
+    .employee-details-content {
+      .language-experience-year {
+        h5, p {
+          font-weight: 400;
+          font-size: 1rem;
+        }
+      }
+      .employee-skills-rate-section {
+        p {
+          font-weight: 400;
+          font-size: 1rem
+        }
+      }
+      .employee-skills {
+        .employee-skills-info {
+          img {
+            height: 50px;
+            width: 50px;
+          }
+          .employee-skills-name {
+            font-weight: bold;
+          }
+          .employee-skills-title {
+            color: #acabab;
+          }
+        }
+      }
+      .employee-detail-projects {
+        .customer-say {
+          min-height: 100px;
+        }
+      }
+      .what-customer-say {
+        .customer-say-image {
+          text-align: center;
+          img {
+            height: 60px;
+            width: 60px;
+          }
+          .customer-company-name {
+            h4 {
+              font-size: 1rem;
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*style for md Screen*/
+@media (max-width: 767px) {
+  .employee-details-section {
+    .employee-details-content {
+        padding-bottom: 35%;
+      .what-customer-say {
+        .customer-say-image {
+          text-align: center;
+          img {
+            height: 60px;
+            width: 60px;
+          }
+          .customer-company-name {
+            h4 {
+              font-size: 1rem;
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*style for md Screen*/
+@media (max-width: 575px) {
+  .employee-details-section {
+    .employee-details-content {
+      padding-bottom: 35%;
+      .what-customer-say {
+        .customer-say-image {
+          text-align: center;
+          img {
+            height: 60px;
+            width: 60px;
+          }
+          .customer-company-name {
+            h4 {
+              font-size: 1rem;
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*Style for Custom Screen*/
+@media (max-width: 399px) {
+
+  .employee-details-section {
+    .employee-details-content {
+      h3 {
+        font-size: 1.5rem
+      }
+      h4 {
+        font-size: 1.3rem;
+      }
+      .language-experience-year {
+        .experience-year {
+          h5 {
+            font-size: 1rem;
+            margin-top: 8px;
+          }
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+      .employee-details-image {
+        width: 30vw;
+      }
+      .employee-skills-rate-section {
+        p {
+          font-size: 1rem;
+        }
+      }
+      .employee-skills,
+      .employee-detail-projects,
+      .employee-summary-section,
+      .what-customer-say {
+        h3 { font-size: 1.3rem; }
+      }
+      .what-customer-say {
+        padding-bottom: 7rem !important;
+      }
+    }
+  }
+}

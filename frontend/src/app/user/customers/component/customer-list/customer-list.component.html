@@ -1,0 +1,23 @@
+<!--Start Our Customers Section-->
+<div class="our-customers text-center text-white pb-5">
+
+  <div *ngIf="customersList.length != 0">
+    <div class="container">
+      <h2 class="h1 mb-5">Our Customer</h2>
+      <div class="row">
+        <div class="col-6 col-md-4 mx-auto mb-4" *ngFor="let customerInfo of customersList">
+          <div class="customer-image mx-auto">
+            <img class="img-fluid rounded-circle" src="{{customerInfo.image}}"
+                       (error)="customerInfo.image = '../../../assets/grey_avatar.png'" alt="Employee Image" />
+          </div>
+          <h4>{{customerInfo.clientName}}</h4>         
+        </div>
+      </div>
+    </div>
+  </div> 
+  <div class="" *ngIf="customersList.length == 0">
+    <h4 class="text-center">Loading...</h4>
+  </div>
+
+</div>
+<!--End Our Customers Section-->

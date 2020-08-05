@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {RouterModule, Routes} from '@angular/router';
-import {NotFoundComponent} from '../user/static-page/not-found/not-found.component';
+// import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from '../user/static/not-found/not-found.component';
+
 
 const routes: Routes = [
   {path: '', loadChildren: () => import('../user/user.module').then(m => m.UserModule)},
@@ -13,9 +14,9 @@ const routes: Routes = [
   declarations: [],
   imports: [
       RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'}),
-      CommonModule
+      // CommonModule
   ],
     exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [NotFoundComponent];
+
