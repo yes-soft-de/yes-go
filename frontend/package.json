@@ -54,7 +54,7 @@
     "ngx-page-scroll-core": "^7.0.1",
     "ngx-toastr": "^10.2.0",
     "ngx-wow": "^2.0.1",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "popper.js": "^1.15.0",
     "rxjs": "~6.4.0",
     "sitemap-generator-cli": "^4.3.0",
